@@ -1,4 +1,4 @@
-require 'dotenv/load'
+#require 'dotenv/load'
 require 'sinatra'
 
 # NOTE: ENV variables should be set directly in terminal for testing on localhost

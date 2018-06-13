@@ -1,5 +1,5 @@
 require 'facebook/messenger'
-require 'dotenv/load'
+#require 'dotenv/load'
 require_relative 'persistent_menu'
 require_relative 'greetings'
 include Facebook::Messenger
@@ -114,8 +114,8 @@ def unknown_command
 end
 
 def wait_for_command
-  puts "Received '#{message.inspect}' from #{message.sender}"
   Bot.on :message do |message|
+  puts "Received '#{message.inspect}' from #{message.sender}"
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
     sender_id = message.sender['id']
     case message.text
@@ -137,16 +137,16 @@ end
 
 # Start conversation loop
 def wait_for_any_input
-  puts "Received '#{message.inspect}' from #{message.sender}"
   Bot.on :message do |message|
+  puts "Received '#{message.inspect}' from #{message.sender}"
     puts "Received '#{message.inspect}' from #{message.sender}"
     show_replies_menu(message.sender['id'], HUMOR)
   end
 end
 
-def is_text_message?(message)
-  !message.text.nil?
-end
+# def is_text_message?(message)
+#   !message.text.nil?
+# end
 
 
 
