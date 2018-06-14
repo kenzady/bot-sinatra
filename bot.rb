@@ -78,22 +78,22 @@ end
 def user_objectives
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
-#    stress_mgmt_init(message.sender['id'])
+    stress_mgmt_init(message.sender['id'])
   end
 end
 
 def stress_mgmt_init(recipient_id)
-  gif_options = {
-    recipient: { id: recipient_id },
-    attachment: {
-      type: 'image',
-      payload: {
-        url: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif'
+  Bot.on :message do |message|
+    gif_options = {
+      recipient: { id: recipient_id },
+      attachment: {
+        type: 'image',
+        payload: {
+          url: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif'
+        }
       }
     }
-  }
-  Bot.on :message do |message|
-  say(message.sender['id'],
+    say(message.sender['id'],
       "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
   end
   Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
