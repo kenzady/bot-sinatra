@@ -3,7 +3,7 @@ require_relative 'bot' # you can comment this line out until you create a bot.rb
 
 # you may need this lines in order to test your server before you create bot.rb later
 require 'facebook/messenger'
-#include Facebook::Messenger
+# include Facebook::Messenger
 
 # run both Sinatra and facebook-messenger on /webhook
 map("/webhook") do
