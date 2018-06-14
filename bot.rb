@@ -77,9 +77,7 @@ end
 # Checking on what the user wants to work on
 def user_objectives
   say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
-
 end
 
-end
 wait_for_any_input
 #get_started
