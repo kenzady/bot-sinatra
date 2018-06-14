@@ -84,7 +84,7 @@ OBJECTIVES = [
     content_type: 'text',
     title: 'Confiance en moi',
     payload: 'CONFIANCE'
-  }
+  },
   {
     content_type: 'text',
     title: 'Gérer mon stress',
