@@ -19,7 +19,7 @@ IDIOMS = {
   unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu m'éclairer ?"
 }
 
-HUMOR = [
+HUMOUR = [
   {
     content_type: 'text',
     title: 'Sévèrement stréssé',
@@ -93,7 +93,7 @@ AHEAD = [
 # Bot.on :postback do |postback|
 #   sender_id = postback.sender['id']
 #   case postback.payload
-#   when 'START' then show_replies_menu(postback.sender['id'], HUMOR)
+#   when 'START' then show_replies_menu(postback.sender['id'], HUMOUR)
 #   end
 # end
 
@@ -123,7 +123,7 @@ def humour_analysis
       say(message.sender['id'], ANS_HUMOUR[:good], AHEAD) #ask to continue though
     else #instead of clicking on a button, the user gave an input not understandable for Delphos
       message.reply(text: ANS_HUMOUR[:unknown_command]) #bot ask for new answer
-      show_humour_replies(sender_id, HUMOUR) #re-show the menu with humor buttons
+      show_humour_replies(sender_id, HUMOUR) #re-show the menu with humour buttons
     end
   end
 end
