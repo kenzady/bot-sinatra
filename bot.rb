@@ -78,7 +78,7 @@ end
 def user_objectives
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
-    stress_mgmt_init
+    # stress_mgmt_init
   end
 end
 
@@ -99,4 +99,5 @@ def stress_mgmt_init
 end
 
 wait_for_any_input
+stress_mgmt_init
 # get_started
