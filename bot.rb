@@ -81,8 +81,10 @@ def user_objectives
       type: 'image',
       payload: {
         url: 'http://sky.net/visual-aids-for-stupid-organisms/pig.jpg'
+      }
     }
   }
+
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
     say(message.sender['id'],
@@ -91,11 +93,6 @@ def user_objectives
   end
 end
 
-def
-
-end
-
-end
 
 wait_for_any_input
 # get_started
