@@ -78,11 +78,11 @@ end
 def user_objectives
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
-    stress_mgmt_init(message.sender['id'])
+    handle_objective(message.sender['id'])
   end
 end
 
-def stress_mgmt_init(recipient_id)
+def handle_objective(recipient_id)
   Bot.on :message do |message|
     gif_options = {
       recipient: { id: recipient_id },
@@ -97,6 +97,17 @@ def stress_mgmt_init(recipient_id)
       "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
   end
   Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
+  stress_mgmt_init(recipient_id)
+end
+
+def stress_mgmt_init(recipient_id)
+  say(
+    recipient_id,
+    text:
+    "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître.
+    Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?",
+    GESTION_STRESS
+  )
 end
 
 wait_for_any_input

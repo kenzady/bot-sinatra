@@ -1,5 +1,5 @@
 class StressManagmenent
-  def self.enable
+  # def self.enable
 
-  end
+  # end
 end

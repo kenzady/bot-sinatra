@@ -106,3 +106,21 @@ OBJECTIVES = [
     payload: 'HAKUNA_MATATA'
   }
 ]
+
+GESTION_STRESS = [
+  {
+    content_type: 'text',
+    title: 'Oui',
+    payload: 'OUI'
+  },
+  {
+    content_type: 'text',
+    title: 'Plus ou moins',
+    payload: 'MORE_LESS'
+  },
+  {
+    content_type: 'text',
+    title: 'Non',
+    payload: 'Non'
+  },
+]
