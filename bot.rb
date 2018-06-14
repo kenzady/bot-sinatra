@@ -41,10 +41,10 @@ def humour_analysis
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
     sender_id = message.sender['id']
-    answer = message.text
+    answer = message.text.downcase
     if answer.include?("sévèrement") || answer.include?("moyennement")
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
-    elsif answer.include?("pas")
+    elsif answer.include?("peu")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) #ask to continue though
     else
       say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
