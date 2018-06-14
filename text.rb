@@ -94,12 +94,12 @@ OBJECTIVES = [
     content_type: 'text',
     title: 'Eviter le conflit',
     payload: 'CONFLIT'
-  }
+  },
   {
     content_type: 'text',
     title: 'Impulsivité',
     payload: 'IMPULSIVITE'
-  }
+  },
   {
     content_type: 'text',
     title: 'Vivre au présent',
