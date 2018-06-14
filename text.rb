@@ -1,7 +1,15 @@
 IDIOMS = {
-  greetings: "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?",
-  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu m'éclairer ?",
-  objectives: "C'est noté. Sur quel objectif voudrais-tu travailler en priorité ?"
+  greetings:
+  "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et
+  pour vivre sans stress.
+  Comment te sens-tu aujourd’hui ?",
+  unknown_command:
+  "Désolé, je n'ai pas compris ta réponse,peux-tu m'éclairer ?",
+  objectives:
+  "C'est noté. Sur quel objectif voudrais-tu travailler en priorité ?",
+  gestion_stress:
+  "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître.
+  Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?"
 }
 
 HUMOUR = [

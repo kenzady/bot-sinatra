@@ -101,13 +101,7 @@ def handle_objective(recipient_id)
 end
 
 def stress_mgmt_init(recipient_id)
-  say(
-    recipient_id,
-    text:
-    "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître.
-    Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?",
-    GESTION_STRESS
-  )
+  say(recipient_id, IDIOMS[:gestion_stress, GESTION_STRESS)
 end
 
 wait_for_any_input
