@@ -93,7 +93,7 @@ AHEAD = [
 # Bot.on :postback do |postback|
 #   sender_id = postback.sender['id']
 #   case postback.payload
-#   when 'START' then show_replies_menu(postback.sender['id'], HUMOUR)
+#   when 'START' then show_humour_replies(postback.sender['id'], HUMOUR)
 #   end
 # end
 
@@ -129,7 +129,7 @@ def humour_analysis
 end
 
 # Display a set of quick replies that serves as a starter
-def show_replies_menu(id, quick_replies)
+def show_humour_replies(id, quick_replies)
   say(id, IDIOMS[:greetings], quick_replies)
   humour_analysis
 end
