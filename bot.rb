@@ -14,86 +14,13 @@ Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 #PersistentMenu.enable
 
 
-IDIOMS = {
-  greetings: "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress. Comment te sens-tu aujourd’hui ?",
-  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu m'éclairer ?"
-}
-
-HUMOUR = [
-  {
-    content_type: 'text',
-    title: 'Sévèrement stréssé',
-    payload: 'HIGLY_STRESSED'
-  },
-  {
-    content_type: 'text',
-    title: 'Peu stressé',
-    payload: 'SOMEWHAT_STRESSED'
-  },
-  {
-    content_type: 'text',
-    title: 'Pas du tout stressé',
-    payload: 'NOT_STRESSED'
-  }
-]
-
-ANS_HUMOUR = {
-    bad: "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?",
-    good: "Je suis ravi de l'apprendre ! Serais-tu quand-même intéressé(e) par le fait de mieux comprendre, puis potentiellement tester ma méthode ? Cela pourrait toujours te servir !",
-    unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ton action stp ?"
-  }
-
-CAUSE_STRESS = [
-  {
-    content_type: 'text',
-    title: 'Famille',
-    payload: 'FAMILLE'
-  },
-  {
-    content_type: 'text',
-    title: 'Vie sentimentale',
-    payload: 'LOVE'
-  },
-  {
-    content_type: 'text',
-    title: 'Vie professionnelle',
-    payload: 'WORK'
-  },
-  {
-    content_type: 'text',
-    title: 'Sport',
-    payload: 'SPORT'
-  },
-  {
-    content_type: 'text',
-    title: 'Santé',
-    payload: 'SANTE'
-  },
-  {
-    content_type: 'text',
-    title: 'Ne sais pas',
-    payload: 'DONT_KNOW'
-  }
-]
-
-AHEAD = [
-  {
-    content_type: 'text',
-    title: 'Allons-y!',
-    payload: 'GO'
-  },
-  {
-    content_type: 'text',
-    title: 'Non, merci!',
-    payload: 'NO_THANKS'
-  }
-]
-
 # #Logic for postbacks
-# Bot.on :postback do |postback|
-#   sender_id = postback.sender['id']
-#   case postback.payload
-#   when 'START' then show_humour_replies(postback.sender['id'], HUMOUR)
+# def get_started
+#   Bot.on :postback do |postback|
+#     sender_id = postback.sender['id']
+#     case postback.payload
+#     when 'START' then show_humour_replies(postback.sender['id'], HUMOUR)
+#     end
 #   end
 # end
 
@@ -109,7 +36,7 @@ def say(recipient_id, text, quick_replies = nil)
   Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
 end
 
-
+#ne pas oublier d'insérer la méthode is text message
 def humour_analysis
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -118,9 +45,9 @@ def humour_analysis
     # a tester avec des ifs > if answer.include?("sévèrement")||answer.include?()
     case message.text
     when /sévèrement/i, /moyennement/i, /mal/i, /triste/i, /malheureux/i #the user is stressed
-      say(message.sender['id'], ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
+      say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
     when /pas/i, /heureux/i, /bien/i, /content/i # the user is not stressed
-      say(message.sender['id'], ANS_HUMOUR[:good], AHEAD) #ask to continue though
+      say(sender_id, ANS_HUMOUR[:good], AHEAD) #ask to continue though
     else #instead of clicking on a button, the user gave an input not understandable for Delphos
       message.reply(text: ANS_HUMOUR[:unknown_command]) #bot ask for new answer
       show_humour_replies(sender_id, HUMOUR) #re-show the menu with humour buttons
@@ -134,7 +61,7 @@ def show_humour_replies(id, quick_replies)
   humour_analysis
 end
 
-# Start conversation loop
+# Start conversation loop (to remove after uncommenting the postback method which does not work yet)
 def wait_for_any_input
   Bot.on :message do |message|
   puts "Received '#{message.inspect}' from #{message.sender}"
@@ -142,8 +69,10 @@ def wait_for_any_input
   end
 end
 
-# def is_text_message?(message)
-#   !message.text.nil?
-# end
+# Check if the message input is in a text format
+def is_text_message?(message)
+  !message.text.nil?
+end
 
 wait_for_any_input
+#get_started
