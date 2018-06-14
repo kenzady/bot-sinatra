@@ -143,6 +143,40 @@ GESTION_STRESS = [
   },
 ]
 
+ANS_RESOLUTION_STRESS = {
+  oui: "Génial ! Je suis content de l'apprendre. Qu'est ce qui t'a le plus aidé selon toi ?",
+  moins: "C'est un début ! Qu'est ce qui t'a le plus aidé selon toi ?",
+  non: "J'en suis navré... :disappointed: Néanmoins, est-ce que tu sais pourquoi ça n'a pas marché?",
+}
+
+  RAISONS_EFFICACITE = [
+    {
+      content_type: 'text',
+      title: "Aide extérieure",
+      payload: 'EXT_HELP'
+    },
+    {
+      content_type: 'text',
+      title: "Motivation personnelle",
+      payload: 'PERSONAL_MOTIV'
+    },
+    {
+      content_type: 'text',
+      title: "Les deux",
+      payload: 'BOTH'
+    },
+    {
+      content_type: 'text',
+      title: "Je ne sais pas",
+      payload: 'DONT_KNOW'
+    },
+    {
+      content_type: 'text',
+      title: "Passer directement à la méthode",
+      payload: 'METHOD'
+    }
+  ]
+
 REPONSE_TERNAIRE = [
   {
     content_type: 'text',

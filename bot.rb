@@ -3,6 +3,7 @@ require 'facebook/messenger'
 require_relative 'persistent_menu'
 require_relative 'greetings'
 require_relative 'text'
+require_relative 'stress_management'
 include Facebook::Messenger
 # Facebook::Messenger::Bot
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
@@ -44,10 +45,10 @@ def humour_analysis
     answer = message.text.downcase
     if answer.include?("sévèrement") || answer.include?("moyennement")
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) # Asks for the causes of the stress
-      user_objectives
+      what_is_ur_objective
     elsif answer.include?("peu")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
-      user_objectives
+      what_is_ur_objective
     else
       say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
       humour_analysis
@@ -75,7 +76,7 @@ def is_text_message?(message)
 end
 
 # Checking on what the user wants to work on
-def user_objectives
+def what_is_ur_objective
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
     handle_objective(message.sender['id'])
@@ -100,31 +101,7 @@ def handle_objective(recipient_id)
 #  Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
 end
 
-def stress_mgmt_init(recipient_id)
-  say(recipient_id, IDIOMS[:gestion_stress], GESTION_STRESS)
-  past_efficiency
-end
 
-def past_efficiency
-Bot.on :message do |message|
-    puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-    sender_id = message.sender['id']
-    answer = message.text.downcase
-    if answer.include?("oui") || answer.include?("moyennement")
-      say(sender_id, ANS_EFFICIENCY[:bad], REPONSE_TERNAIRE) # Asks for the causes of the stress
-      # ajouter methode
-    elsif answer.include?("moins")
-      say(sender_id, ANS_EFFICIENCY[:good], REPONSE_TERNAIRE) # Asks to continue though
-      # ajouter methode
-    elsif answer.include?("non")
-      say(sender_id, ANS_EFFICIENCY[:good], PQ_INACTION) # Asks to continue though
-      # ajouter methode
-    else
-      say(sender_id, ANS_EFFICIENCY[:unknown_command], GESTION_STRESS)
-      past_efficiency
-    end
-  end
-end
 
 wait_for_any_input
 
