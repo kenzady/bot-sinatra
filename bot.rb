@@ -78,6 +78,7 @@ end
 def user_objectives
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
+    stress_mgmt_init(message.sender['id'])
   end
 end
 
@@ -98,8 +99,6 @@ def stress_mgmt_init(recipient_id)
   Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
 end
 
-Bot.on :message do |message|
-  wait_for_any_input
-  stress_mgmt_init(message.sender['id'])
-end
+wait_for_any_input
+
 # get_started
