@@ -36,7 +36,7 @@ def say(recipient_id, text, quick_replies = nil)
   Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
 end
 
-#ne pas oublier d'insérer la méthode is text message
+#ne pas oublier d'insérer la méthode is_text_message?(message)
 def humour_analysis
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -44,21 +44,14 @@ def humour_analysis
     answer = message.text.downcase
     if answer.include?("sévèrement") || answer.include?("moyennement")
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
+      user_objectives
     elsif answer.include?("peu")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) #ask to continue though
+      user_objectives
     else
       say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
       humour_analysis
     end
-    # case message.text
-    # when /sévèrement/i, /moyennement/i, /mal/i, /triste/i, /malheureux/i #the user is stressed
-    #   say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
-    # when /pas/i, /heureux/i, /bien/i, /content/i # the user is not stressed
-    #   say(sender_id, ANS_HUMOUR[:good], AHEAD) #ask to continue though
-    # else #instead of clicking on a button, the user gave an input not understandable for Delphos
-    #   message.reply(text: ANS_HUMOUR[:unknown_command]) #bot ask for new answer
-    #   show_humour_replies(sender_id, HUMOUR) #re-show the menu with humour buttons
-    # end
   end
 end
 
@@ -81,5 +74,12 @@ def is_text_message?(message)
   !message.text.nil?
 end
 
+# Checking on what the user wants to work on
+def user_objectives
+  say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
+
+end
+
+end
 wait_for_any_input
 #get_started
