@@ -87,12 +87,17 @@ def user_objectives
 
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
-    say(message.sender['id'],
-      "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
-    Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN'])
+   # stress_mgmt_init
   end
 end
 
+# def stress_mgmt_init
+#   Bot.on :message |message|
+#   say(message.sender['id'],
+#       "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
+#   Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN'])
+
+# end
 
 wait_for_any_input
 # get_started
