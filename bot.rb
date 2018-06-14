@@ -98,8 +98,8 @@ def stress_mgmt_init(recipient_id)
   Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
 end
 
-wait_for_any_input
 Bot.on :message do |message|
+  wait_for_any_input
   stress_mgmt_init(message.sender['id'])
 end
 # get_started
