@@ -102,6 +102,28 @@ end
 
 def stress_mgmt_init(recipient_id)
   say(recipient_id, IDIOMS[:gestion_stress], GESTION_STRESS)
+  past_efficiency
+end
+
+def past_efficiency
+Bot.on :message do |message|
+    puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+    sender_id = message.sender['id']
+    answer = message.text.downcase
+    if answer.include?("oui") || answer.include?("moyennement")
+      say(sender_id, ANS_EFFICIENCY[:bad], REPONSE_TERNAIRE) # Asks for the causes of the stress
+      # ajouter methode
+    elsif answer.include?("moins")
+      say(sender_id, ANS_EFFICIENCY[:good], REPONSE_TERNAIRE) # Asks to continue though
+      # ajouter methode
+    elsif answer.include?("non")
+      say(sender_id, ANS_EFFICIENCY[:good], PQ_INACTION) # Asks to continue though
+      # ajouter methode
+    else
+      say(sender_id, ANS_EFFICIENCY[:unknown_command], GESTION_STRESS)
+      past_efficiency
+    end
+  end
 end
 
 wait_for_any_input
