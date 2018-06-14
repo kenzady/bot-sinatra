@@ -64,8 +64,8 @@ end
 # Starts conversation loop (to remove after uncommenting the postback method which does not work yet)
 def wait_for_any_input
   Bot.on :message do |message|
-  puts "Received '#{message.inspect}' from #{message.sender}"
-  show_humour_replies(message.sender['id'], HUMOUR)
+    puts "Received '#{message.inspect}' from #{message.sender}"
+    show_humour_replies(message.sender['id'], HUMOUR)
   end
 end
 
