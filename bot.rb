@@ -76,9 +76,25 @@ end
 
 # Checking on what the user wants to work on
 def user_objectives
+  gif_options = {
+    attachment: {
+      type: 'image',
+      payload: {
+        url: 'http://sky.net/visual-aids-for-stupid-organisms/pig.jpg'
+    }
+  }
   Bot.on :message do |message|
     say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
+    say(message.sender['id'],
+      "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
+    Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN'])
   end
+end
+
+def
+
+end
+
 end
 
 wait_for_any_input
