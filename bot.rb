@@ -96,7 +96,7 @@ def handle_objective(recipient_id)
     }
     say(message.sender['id'],
       "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
-    StressManagmenent.stress_mgmt_init(recipient_id)
+    #StressManagmenent.stress_mgmt_init(recipient_id)
   end
 #  Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
 end
