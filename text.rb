@@ -3,7 +3,7 @@ IDIOMS = {
   unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu m'éclairer ?"
 }
 
-HUMOR = [
+HUMOUR = [
   {
     content_type: 'text',
     title: 'Sévèrement stréssé',
@@ -21,7 +21,7 @@ HUMOR = [
   }
 ]
 
-ANS_HUMOR = {
+ANS_HUMOUR = {
     bad: "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?",
     good: "Je suis ravi de l'apprendre ! Serais-tu quand-même intéressé(e) par le fait de mieux comprendre, puis potentiellement tester ma méthode ? Cela pourrait toujours te servir !",
     unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ton action stp ?"
