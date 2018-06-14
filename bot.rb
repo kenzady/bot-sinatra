@@ -42,16 +42,23 @@ def humour_analysis
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
     sender_id = message.sender['id']
     answer = message.text
-    # a tester avec des ifs > if answer.include?("sévèrement")||answer.include?()
-    case message.text
-    when /sévèrement/i, /moyennement/i, /mal/i, /triste/i, /malheureux/i #the user is stressed
+    if answer.include?("sévèrement") || answer.include?("moyennement")
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
-    when /pas/i, /heureux/i, /bien/i, /content/i # the user is not stressed
+    elsif answer.include?("pas")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) #ask to continue though
-    else #instead of clicking on a button, the user gave an input not understandable for Delphos
-      message.reply(text: ANS_HUMOUR[:unknown_command]) #bot ask for new answer
-      show_humour_replies(sender_id, HUMOUR) #re-show the menu with humour buttons
+    else
+      say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
+      humour_analysis
     end
+    # case message.text
+    # when /sévèrement/i, /moyennement/i, /mal/i, /triste/i, /malheureux/i #the user is stressed
+    #   say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
+    # when /pas/i, /heureux/i, /bien/i, /content/i # the user is not stressed
+    #   say(sender_id, ANS_HUMOUR[:good], AHEAD) #ask to continue though
+    # else #instead of clicking on a button, the user gave an input not understandable for Delphos
+    #   message.reply(text: ANS_HUMOUR[:unknown_command]) #bot ask for new answer
+    #   show_humour_replies(sender_id, HUMOUR) #re-show the menu with humour buttons
+    # end
   end
 end
 
