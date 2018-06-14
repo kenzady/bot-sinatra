@@ -101,7 +101,7 @@ def handle_objective(recipient_id)
 end
 
 def stress_mgmt_init(recipient_id)
-  say(recipient_id, IDIOMS[:gestion_stress, GESTION_STRESS)
+  say(recipient_id, IDIOMS[:gestion_stress], GESTION_STRESS)
 end
 
 wait_for_any_input
