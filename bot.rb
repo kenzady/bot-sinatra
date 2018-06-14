@@ -2,6 +2,7 @@ require 'facebook/messenger'
 #require 'dotenv/load'
 require_relative 'persistent_menu'
 require_relative 'greetings'
+require_relative 'text'
 include Facebook::Messenger
 #Facebook::Messenger::Bot
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
@@ -36,7 +37,7 @@ HUMOR = [
   }
 ]
 
-ANS_HUMOR = {
+ANS_HUMOUR = {
     bad: "Ça tombe bien, je suis là pour t'aider ! Qu'est ce qui cause ton stress en ce moment ?",
     good: "Je suis ravi de l'apprendre ! Serais-tu quand-même intéressé(e) par le fait de mieux comprendre, puis potentiellement tester ma méthode ? Cela pourrait toujours te servir !",
     unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ton action stp ?"
@@ -108,23 +109,21 @@ def say(recipient_id, text, quick_replies = nil)
   Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
 end
 
-def unknown_command
-    message.reply(text: ANS_HUMOR[:unknown_command]) #bot ask for new answer
-    show_replies_menu(sender_id, HUMOR) #re-show the menu with humor buttons
-end
 
-def wait_for_command
+def humour_analysis
   Bot.on :message do |message|
-  puts "Received '#{message.inspect}' from #{message.sender}"
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
     sender_id = message.sender['id']
+    answer = message.text
+    # a tester avec des ifs > if answer.include?("sévèrement")||answer.include?()
     case message.text
     when /sévèrement/i, /moyennement/i, /mal/i, /triste/i, /malheureux/i #the user is stressed
-      say(message.sender['id'], ANS_HUMOR[:bad], CAUSE_STRESS) #ask for the causes of the stress
+      say(message.sender['id'], ANS_HUMOUR[:bad], CAUSE_STRESS) #ask for the causes of the stress
     when /pas/i, /heureux/i, /bien/i, /content/i # the user is not stressed
-      say(message.sender['id'], ANS_HUMOR[:good], AHEAD) #ask to continue though
+      say(message.sender['id'], ANS_HUMOUR[:good], AHEAD) #ask to continue though
     else #instead of clicking on a button, the user gave an input not understandable for Delphos
-      unknown_command
+      message.reply(text: ANS_HUMOUR[:unknown_command]) #bot ask for new answer
+      show_humour_replies(sender_id, HUMOUR) #re-show the menu with humor buttons
     end
   end
 end
@@ -132,30 +131,19 @@ end
 # Display a set of quick replies that serves as a starter
 def show_replies_menu(id, quick_replies)
   say(id, IDIOMS[:greetings], quick_replies)
-  wait_for_command
+  humour_analysis
 end
 
 # Start conversation loop
 def wait_for_any_input
   Bot.on :message do |message|
   puts "Received '#{message.inspect}' from #{message.sender}"
-    puts "Received '#{message.inspect}' from #{message.sender}"
-    show_replies_menu(message.sender['id'], HUMOR)
+  show_humour_replies(message.sender['id'], HUMOUR)
   end
 end
 
 # def is_text_message?(message)
 #   !message.text.nil?
-# end
-
-
-
-
-# def greetings
-#   Bot.on :message do |message|
-#       puts "Received '#{message.inspect}' from #{message.sender}"
-#     message.reply(text: IDIOMS[:greeting])
-#   end
 # end
 
 wait_for_any_input
