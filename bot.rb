@@ -88,6 +88,130 @@ AHEAD = [
   }
 ]
 
+
+OBJECTIF_PRIORITAIRE = 
+[
+  {
+    content_type: 'text',
+    title: 'Maîtriser mes peurs',
+    payload: 'PEURS'
+  },
+  {
+    content_type: 'text',
+    title: 'Gagner de la confiance en moi',
+    payload: 'CONFIANCE'
+  },
+  {
+    content_type: 'text',
+    title: 'Mieux gérer mon stress',
+    payload: 'GERER_STRESS'
+  },
+  {
+    content_type: 'text',
+    title: 'Éviter le confllit',
+    payload: 'CONFLIT'
+  },
+  {
+    content_type: 'text',
+    title: 'Vivre le moment présent',
+    payload: 'VIVRE_PRESENT'
+  },
+  {
+    content_type: 'text',
+    title: 'Je ne sais pas trop',
+    payload: 'NE_SAIT_PAS'
+  }
+]
+
+
+RESOUDRE_CELA = [
+  {
+    content_type: 'text',
+    title: 'Oui',
+    payload: 'OUI_ESSAYE_RESOUDRE'
+  },
+  {
+    content_type: 'text',
+    title: 'Plus ou moins',
+    payload: 'PLUS_OU_MOINS_RESOUDRE'
+  },
+  {
+    content_type: 'text',
+    title: 'Non',
+    payload: 'NON_RESOUDRE'
+  }
+]
+
+MARCHE = [
+  {
+    content_type: 'text',
+    title: 'Oui',
+    payload: 'OUI_MARCHE'
+  },
+  {
+    content_type: 'text',
+    title: 'Plus ou moins',
+    payload: 'PLUS_OU_MOINS_MARCHE'
+  },
+  {
+    content_type: 'text',
+    title: 'Non',
+    payload: 'NON_MARCHE'
+  }
+]
+
+PLUS_AIDE = [
+  {
+    content_type: 'text',
+    title: 'Aide exterieure',
+    payload: 'AIDE_EXTERIEURE'
+  },
+  {
+    content_type: 'text',
+    title: 'Motivation personnelle',
+    payload: 'MOTIVATION_PERSO'
+  },
+  {
+    content_type: 'text',
+    title: 'Les deux',
+    payload: 'LES_DEUX'
+  }
+]
+
+
+AIDE_EXTERIEURE = [
+  {
+    content_type: 'text',
+    title: 'Aide professionelle',
+    payload: 'AIDE_PRO'
+  },
+  {
+    content_type: 'text',
+    title: 'Aide de mon entourage',
+    payload: 'AIDE_ENTOURAGE'
+  },
+  {
+    content_type: 'text',
+    title: 'Aide sur Internet',
+    payload: 'AIDE_INTERNET'
+  }
+]
+
+MOTIVE = [
+  {
+    content_type: 'text',
+    title: 'Oui !',
+    payload: 'OUI_MOTIVE'
+  },
+  {
+    content_type: 'text',
+    title: 'Non ...',
+    payload: 'NON_MOTIVE'
+  }
+]
+
+
+
 # #Logic for postbacks
 # Bot.on :postback do |postback|
 #   sender_id = postback.sender['id']
