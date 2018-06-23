@@ -88,6 +88,50 @@ AHEAD = [
   }
 ]
 
+THEMES = [
+  {
+    content_type: 'text',
+    title: 'Moment présent',
+    payload: 'MOMENT_PRESENT'
+  },
+  {
+    content_type: 'text',
+    title: 'Acceptation',
+    payload: 'ACCEPTATION'
+  },
+  [
+  {
+    content_type: 'text',
+    title: 'Valeurs',
+    payload: 'VALEURS'
+  },
+  {
+    content_type: 'text',
+    title: 'Actions engagées',
+    payload: 'ACTIONS_ENGAGEES'
+  },
+  {
+    content_type: 'text',
+    title: 'Défusion',
+    payload: 'DEFUSION'
+  },
+  {
+    content_type: 'text',
+    title: 'Soi observateur',
+    payload: 'SOI_OBSERVATEUR'
+  },
+  {
+    content_type: 'text',
+    title: 'Surprends-moi',
+    payload: 'RANDOM'
+  },
+  {
+    content_type: 'text',
+    title: 'Réexplique moi les thèmes',
+    payload: 'EXPLIQUER_THEMES'
+  }
+]
+
 # #Logic for postbacks
 # Bot.on :postback do |postback|
 #   sender_id = postback.sender['id']
