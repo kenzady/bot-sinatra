@@ -85,17 +85,16 @@ end
 
 def handle_objective(recipient_id)
   Bot.on :message do |message|
-    gif_options = {
-      recipient: { id: recipient_id },
-      attachment: {
-        type: 'image',
-        payload: {
-          url: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif'
-        }
-      }
-    }
-    say(message.sender['id'],
-      "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
+    # gif_options = {
+    #   recipient: { id: recipient_id },
+    #   attachment: {
+    #     type: 'image',
+    #     payload: {
+    #       url: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif'
+    #     }
+    #   }
+    # }
+    say(message.sender['id'], "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
     StressManagmenent.stress_mgmt_init(recipient_id)
   end
 #  Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
