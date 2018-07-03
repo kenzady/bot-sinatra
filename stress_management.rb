@@ -1,7 +1,7 @@
 class StressManagmenent
   def self.stress_mgmt_init(recipient_id)
     say(recipient_id, IDIOMS[:gestion_stress], GESTION_STRESS)
-    as_tu_deja_essaye_resoudre
+    StressManagement.as_tu_deja_essaye_resoudre
   end
 
   def self.as_tu_deja_essaye_resoudre

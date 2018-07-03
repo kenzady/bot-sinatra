@@ -122,6 +122,11 @@ OBJECTIVES = [
     content_type: 'text',
     title: 'Vivre au présent',
     payload: 'HAKUNA_MATATA'
+  },
+  {
+    content_type: 'text',
+    title: 'Je ne sais pas trop',
+    payload: 'NE_SAIT_PAS'
   }
 ]
 
