@@ -111,11 +111,29 @@ def essaye_resoudre_cela(recipient_id)
       say(message.sender['id'], ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE)
     elsif answer.include?("pas")
     say(message.sender['id'], ANS_RESOLUTION_STRESS[:non], PQ_INACTION)
+    pourquoi_inaction(message.sender['id'])
     else
-      say(message.sender['id'], ANS_HUMOUR[:unknown_command], HUMOUR)
-      humour_ana
+      say(message.sender['id'], IDIOMS[:unknown_command])
+    end
   end
-  end
+end
+
+
+def pourquoi_inaction(recipient_id)
+  Bot.on :message do |message|
+      answer = message.text.downcase
+      if answer.include?("n'osais")
+        say(message.sender['id'], "Ca arrive souvent en effet. Ne t'inquiète pas, ici tes données sont protégées et je ne divulguerai pas ce que tu me dis. Tu es libre de dire ce que tu veux ! Nous allons travailler ensemble pour que tu ailles mieux. Allons-y !")
+      elsif answer.include?("savais")
+        say(message.sender['id'], "C'est un problème assez commun. Malgré les nombreuses ressources à disposition, il est parfois difficile de trouver un outil qui nous convient. En tous cas, je suis la pour t'aider à aller mieux et nous allons parcourir ce chemin ensemble")
+      elsif answer.include?("moyens")
+      say(message.sender['id'], "Bonne nouvelle, je suis gratuit ET à ta disposition 24/24, n'est-ce pas génial ? Tu peux me contacter à tout moment et je serai la pour t'aider, deal ?")
+      elsif answer.include?("besoin")
+      say(message.sender['id'], "Alors je suis ravi que tu aies compris que tu avais besoin d'aide et que tu soies venu me voir. Je suis la pour t'aider et nous allons faire en sorte que tu ailles mieux, ensemble. Allons y !")
+      else
+        say(message.sender['id'], IDIOMS[:unknown_command])
+      end
+    end
 end
 
 
