@@ -106,15 +106,13 @@ def essaye_resoudre_cela(recipient_id)
   Bot.on :message do |message|
     answer = message.text.downcase
     if answer.include?("oui")
-      say(sender_id, ANS_RESOLUTION_STRESS[:oui], RAISONS_EFFICACITE) # Asks for the causes of the stress
-      what_helped_the most
+      say(message.sender['id'], ANS_RESOLUTION_STRESS[:oui], RAISONS_EFFICACITE)
     elsif answer.include?("plus")
-      say(sender_id, ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE) # Asks to continue though
-      what_helped_the most
+      say(message.sender['id'], ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE)
     elsif answer.include?("pas")
-    say(sender_id, ANS_RESOLUTION_STRESS[:non], PQ_INACTION)
+    say(message.sender['id'], ANS_RESOLUTION_STRESS[:non], PQ_INACTION)
     else
-      say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
+      say(message.sender['id'], ANS_HUMOUR[:unknown_command], HUMOUR)
       humour_ana
   end
   end
