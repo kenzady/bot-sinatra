@@ -96,12 +96,29 @@ def handle_objective(recipient_id)
     # }
     say(message.sender['id'], "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
     say(message.sender['id'], IDIOMS[:gestion_stress], GESTION_STRESS)
-
+    essaye_resoudre_cela(message.sender['id'])
     #StressManagmenent.stress_mgmt_init(recipient_id)
   end
 #  Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
 end
 
+def essaye_resoudre_cela(recipient_id)
+  Bot.on :message do |message|
+    answer = message.text.downcase
+    if answer.include?("oui")
+      say(sender_id, ANS_RESOLUTION_STRESS[:oui], RAISONS_EFFICACITE) # Asks for the causes of the stress
+      what_helped_the most
+    elsif answer.include?("plus")
+      say(sender_id, ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE) # Asks to continue though
+      what_helped_the most
+    elsif answer.include?("pas")
+    say(sender_id, ANS_RESOLUTION_STRESS[:non], PQ_INACTION)
+    else
+      say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
+      humour_ana
+  end
+  end
+end
 
 
 wait_for_any_input
