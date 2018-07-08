@@ -4,6 +4,7 @@ require_relative 'persistent_menu'
 require_relative 'greetings'
 require_relative 'text'
 require_relative 'stress_management'
+require_relative 'methode'
 include Facebook::Messenger
 # Facebook::Messenger::Bot
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
