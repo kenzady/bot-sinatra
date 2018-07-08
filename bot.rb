@@ -95,7 +95,8 @@ def handle_objective(recipient_id)
     #   }
     # }
     say(message.sender['id'], "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
-    say(message.sender['id'], "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître. Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela?")
+    say(message.sender['id'], "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître. Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela?",
+GESTION_STRESS[:gestion], GESTION_STRESS)
 
     #StressManagmenent.stress_mgmt_init(recipient_id)
   end
