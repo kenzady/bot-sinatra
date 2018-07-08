@@ -1,8 +1,7 @@
 IDIOMS = {
   greetings:
-  "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et
-  pour vivre sans stress.
-  Comment te sens-tu aujourd’hui ?",
+  "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress.
+Comment te sens-tu aujourd’hui ?",
   unknown_command:
   "Désolé, je n'ai pas compris ta réponse,peux-tu m'éclairer ?",
   objectives:
@@ -218,7 +217,9 @@ PQ_INACTION = [
   },
   {
     content_type: 'text',
-    title: "Je ne pensais pas avoir",
+    title: "Je ne pensais pas avoir besoin",
     payload: 'THINK'
   },
 ]
+
+
