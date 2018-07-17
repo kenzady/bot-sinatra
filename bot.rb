@@ -57,6 +57,8 @@ def humour_analysis
   end
 end
 
+
+# Displays a set of quick replies that serves as a starter
 # Displays a set of quick replies that serves as a starter
 def show_humour_replies(id, quick_replies)
   say(id, IDIOMS[:greetings], quick_replies)
