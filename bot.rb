@@ -81,8 +81,14 @@ end
 # Checking on what the user wants to work on
 def what_is_ur_objective
   Bot.on :message do |message|
-    say(message.sender['id'], IDIOMS[:objectives], OBJECTIVES)
-    handle_objective(message.sender['id'])
+    sender_id = message.sender['id']
+    answer = message.text.downcase
+    if answer.include?("non")
+      say(sender_id, "Okay ! N'hésite pas à revenir si tu as besoin d'aide !")
+    else
+      say(sender_id, IDIOMS[:objectives], OBJECTIVES)
+      handle_objective(message.sender['id'])
+    end
   end
 end
 
