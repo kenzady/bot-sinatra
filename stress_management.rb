@@ -14,10 +14,10 @@ class StressManagement
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       sender_id = message.sender['id']
       answer = message.text.downcase
-      if answer.include?("oui") #|| answer.include?("moyennement")
+      if answer.include?("oui") || answer.include?("moyennement")
         say(sender_id, ANS_EFFICIENCY[:good], REPONSE_TERNAIRE) # Asks whether the user method was efficient
         StressManagement.analyse_reponse_resolution_stress
-      elsif answer.include?("moins")
+      elsif answer.include?("moins") || answer.include?("peu")
         say(sender_id, ANS_EFFICIENCY[:good], REPONSE_TERNAIRE) # Asks whether the user method was efficient
         StressManagement.analyse_reponse_resolution_stress
       elsif answer.include?("non")
@@ -37,10 +37,10 @@ class StressManagement
       answer = message.text.downcase
       if answer.include?("oui") || answer.include?("moyennement")
         say(sender_id, ANS_RESOLUTION_STRESS[:oui], RAISONS_EFFICACITE) #asks the user what helped them
-        #StressManagement.analyse_efficacite
-      elsif answer.include?("moins")
+        StressManagement.analyse_efficacite
+      elsif answer.include?("moins") || answer.include?("peu")
         say(sender_id, ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE) #asks the user what helped them
-        #StressManagement.analyse_efficacite
+        StressManagement.analyse_efficacite
       elsif answer.include?("pas") || answer.include?("non")
         say(sender_id, ANS_RESOLUTION_STRESS[:non], RAISONS_INEFFICACITE) #asks the user why it didn't work
         StressManagement.analyse_inefficacite
