@@ -15,12 +15,14 @@ class IntroductionHexaflex
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       sender_id = message.sender['id']
       answer = message.text.downcase
-      if answer.include?("présent") #|| answer.include?("moyennement")
-        say(sender_id, REPONSE_CHOIX_DIM[:moment_present])
+      if answer.include?("présent")
+        say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
         exercice = MomentPresent.exo_random
-        MomentPresent.exercice
+        MomentPresent.exercice # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("défusion")
-        say(sender_id, REPONSE_CHOIX_DIM[:defusion])
+        say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
+        exercice = Defusion.exo_random
+        Defusion.exercice # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
       elsif answer.include?("valeurs")
