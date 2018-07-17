@@ -1,3 +1,8 @@
+require 'facebook/messenger'
+# require 'dotenv/load'
+require_relative 'text'
+include Facebook::Messenger
+
 class StressManagmenent
   def self.stress_mgmt_init(recipient_id)
     say(recipient_id, IDIOMS[:gestion_stress], GESTION_STRESS)
