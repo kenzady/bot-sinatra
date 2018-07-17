@@ -1,15 +1,18 @@
 IDIOMS = {
   greetings:
-  "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et
-  pour vivre sans stress.
-  Comment te sens-tu aujourd’hui ?",
+  "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress.
+Comment te sens-tu aujourd’hui ?",
   unknown_command:
-  "Désolé, je n'ai pas compris ta réponse,peux-tu m'éclairer ?",
+  "Désolé, je n'ai pas compris ta réponse, peux-tu m'éclairer ?",
   objectives:
   "C'est noté. Sur quel objectif voudrais-tu travailler en priorité ?",
   gestion_stress:
   "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître.
 Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?"
+  methode:
+"Passons aux choses sérieuses. Moi, ma méthode préférée pour gérer mon stress est la méthode des Thérapies cognitivo-comportementales (TCC). Il s'agit d'une méthode validée scientifiquement qui va t'aider à chasser toutes tes pensées négatives, et les réactions qui vont avec. Voici une liste d'articles intéressants
+si tu veux en savoir plus sur le sujet"
+
 }
 
 HUMOUR = [
@@ -218,7 +221,49 @@ PQ_INACTION = [
   },
   {
     content_type: 'text',
-    title: "Je ne pensais pas avoir",
+    title: "Je ne pensais pas avoir besoin",
     payload: 'THINK'
   },
 ]
+
+METHODE_ARTICLES = [
+  {
+    type: 'web_url',
+    url:"google.com",
+    title: "Article 1"
+  },
+  {
+    type: 'web_url',
+    url:"google.com",
+    title: "Article 2"
+  },
+  {
+    type: 'web_url',
+    url:"google.com",
+    title: "Article "
+  }
+]
+
+METHODE_MOTIVE = [
+  {
+    content_type: 'text',
+    title: 'Oui !',
+    payload: 'OUI'
+  },
+  {
+    content_type: 'text',
+    title: 'Non...',
+    payload: 'NON'
+  },
+]
+
+ANS_METHODE_MOTIVE = {
+  oui:
+    "Trop cool! (+gif)",
+
+  non:
+    "Dommage... N'hésite pas à revenir vers moi si tu changes d'avis, je suis toujours là pour t'aider !",
+
+  unknown_command:
+  "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+}
