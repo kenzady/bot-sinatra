@@ -81,21 +81,21 @@ class StressManagement
       sender_id = message.sender['id']
       answer = message.text.downcase
       if answer.include?("extérieure")
-        say(sender_id, ANS_EFFICIENCY[:aide_exterieure], TYPE_AIDE_EXTERIEURE)
+        say(sender_id, ANS_WHY_EFFICIENCY[:aide_exterieure], TYPE_AIDE_EXTERIEURE)
         Methode.aide_exterieure
       elsif answer.include?("personnelle")
-        say(sender_id, ANS_EFFICIENCY[:motivation_personnelle])
+        say(sender_id, ANS_WHY_EFFICIENCY[:motivation_personnelle])
         Methode.methode_init
       elsif answer.include?("deux")
-        say(sender_id, ANS_EFFICIENCY[:both])
+        say(sender_id, ANS_WHY_EFFICIENCY[:both])
         Methode.methode_init
       elsif answer.include?("sais pas")
-        say(sender_id, ANS_EFFICIENCY[:dont_know])
+        say(sender_id, ANS_WHY_EFFICIENCY[:dont_know])
         Methode.methode_init
       elsif answer.include?("methode")
         Methode.methode_init
       else
-        say(sender_id, ANS_EFFICIENCY[:unknown_command])
+        say(sender_id, ANS_WHY_EFFICIENCY[:unknown_command])
         StressManagement.analyse_efficacite
       end
     end
