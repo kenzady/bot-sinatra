@@ -187,6 +187,52 @@ ANS_RESOLUTION_STRESS = {
     }
   ]
 
+
+ANS_WHY_EFFICIENCY = {
+  aide_exterieure: "Très bien ! Quel type d'aide as-tu consultée ?",
+  motivation_personnelle: "Bravo ! C'est grandiose que tu aies une motivation personnelle forte car cela acompte pour beaucoup dans le fait de se sentir mieux ! Je pense que nous allons travailler ensemble de façon merveilleuse si tu gardes ta motivation au beau fixe !",
+  both: "Génial ! Nous allons faire du travail très bénéfique ensemble ! J'ai hâte de voir ce que cela donne !",
+  dont_know: "Aucun souci ! On ne sais pas toujours ce qui nous a aidé le plus. Mais nous allons faire un travail génial ensemble c'est certain !",
+  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+}
+
+
+TYPE_AIDE_EXTERIEURE = [
+    {
+      content_type: 'text',
+      title: "Aide professionelle",
+      payload: 'PRO_HELP'
+    },
+    {
+      content_type: 'text',
+      title: "Aide de mon entourage",
+      payload: 'ENTOURAGE_HELP'
+    },
+    {
+      content_type: 'text',
+      title: "Aide sur Internet",
+      payload: 'INTERNET_HELP'
+    },
+    {
+      content_type: 'text',
+      title: "Je ne sais pas",
+      payload: 'DONT_KNOW'
+    },
+    {
+      content_type: 'text',
+      title: "Passer directement à la méthode",
+      payload: 'METHOD'
+    }
+  ]
+
+ANS_AIDE_EXTERIEURE = {
+  aide_pro: "C'est génial que tu aies pris le temps d'aller voir un spécialiste ! Cela va nous permettre de commencer sur des bases solides !",
+  aide_entourage: "C'est super que tu aies des gens de confiance sur qui compter ! Et le fait que tu aies eu le courage de te livrer à eux me fait penser que nous allons pouvoir grandement avancer ensemble !",
+  aide_internet: "C'est une mine d'information c'est sûr ! Je peux moi-même être considéré comme de l'aide sur Internet ! Nous allons bien travailler ensemble, j'en suis convaincu !",
+  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:",
+  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+}
+
 RAISONS_INEFFICACITE = [
     {
       content_type: 'text',
