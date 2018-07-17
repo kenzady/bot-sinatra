@@ -41,7 +41,7 @@ class StressManagement
       elsif answer.include?("moins")
         say(sender_id, ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE) #asks the user what helped them
         #StressManagement.analyse_efficacite
-      elsif answer.include?("non")
+      elsif answer.include?("pas") || answer.include?("non")
         say(sender_id, ANS_RESOLUTION_STRESS[:non], RAISONS_INEFFICACITE) #asks the user why it didn't work
         StressManagement.analyse_inefficacite
       end
