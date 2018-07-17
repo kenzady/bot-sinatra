@@ -62,7 +62,7 @@ def self.analyse_inefficacite
       elsif answer.include?("sais pas")
         say(sender_id, ANS_RESOLUTION_STRESS[:dont_know])
       else
-        say(sender_id, ANS_EFFICIENCY[:unknown_command]
+        say(sender_id, ANS_EFFICIENCY[:unknown_command])
         StressManagement.analyse_inefficacite
       end
     end
