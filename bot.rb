@@ -50,7 +50,7 @@ def humour_analysis
     elsif answer.include?("peu")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
       what_is_ur_objective
-    else
+    elsif
       say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
       humour_analysis
     end
