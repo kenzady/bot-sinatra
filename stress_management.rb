@@ -81,13 +81,13 @@ class StressManagement
       sender_id = message.sender['id']
       answer = message.text.downcase
       if answer.include?("extérieure")
-        say(sender_id, ANS_EFFICIENCY[:savait_pas])
-        Methode.methode_init
+        say(sender_id, ANS_EFFICIENCY[:aide_exterieure], TYPE_AIDE_EXTERIEURE)
+        Methode.aide_exterieure
       elsif answer.include?("personnelle")
-        say(sender_id, ANS_EFFICIENCY[:non_investissement])
+        say(sender_id, ANS_EFFICIENCY[:motivation_personnelle])
         Methode.methode_init
       elsif answer.include?("deux")
-        say(sender_id, ANS_EFFICIENCY[:pas_marche])
+        say(sender_id, ANS_EFFICIENCY[:both])
         Methode.methode_init
       elsif answer.include?("sais pas")
         say(sender_id, ANS_EFFICIENCY[:dont_know])
@@ -95,9 +95,36 @@ class StressManagement
       elsif answer.include?("methode")
         Methode.methode_init
       else
-        say(sender_id, ANS_INEFFICIENCY[:unknown_command])
-        StressManagement.analyse_inefficacite
+        say(sender_id, ANS_EFFICIENCY[:unknown_command])
+        StressManagement.analyse_efficacite
       end
     end
   end
+
+
+  def self.aide_exterieure
+      Bot.on :message do |message|
+        puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+        sender_id = message.sender['id']
+        answer = message.text.downcase
+        if answer.include?("pro")
+          say(sender_id, ANS_AIDE_EXTERIEURE[:aide_pro])
+          Methode.aide_exterieure
+        elsif answer.include?("entourage")
+          say(sender_id, ANS_AIDE_EXTERIEURE[:aide_entourage])
+          Methode.methode_init
+        elsif answer.include?("internet")
+          say(sender_id, ANS_AIDE_EXTERIEURE[:aide_internet])
+          Methode.methode_init
+        elsif answer.include?("sais pas")
+          say(sender_id, ANS_AIDE_EXTERIEURE[:dont_know])
+          Methode.methode_init
+        elsif answer.include?("methode")
+          Methode.methode_init
+        else
+          say(sender_id, ANS_AIDE_EXTERIEURE[:unknown_command])
+          StressManagement.aide_exterieure
+        end
+      end
+    end
 end
