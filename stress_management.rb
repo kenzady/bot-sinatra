@@ -41,6 +41,7 @@ class StressManagement
         say(sender_id, ANS_RESOLUTION_STRESS[:moins])
       elsif answer.include?("non")
         say(sender_id, ANS_RESOLUTION_STRESS[:non])
+      end
     end
   end
 end
