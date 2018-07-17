@@ -109,7 +109,7 @@ class StressManagement
         answer = message.text.downcase
         if answer.include?("pro")
           say(sender_id, ANS_AIDE_EXTERIEURE[:aide_pro])
-          Methode.aide_exterieure
+          Methode.methode_init
         elsif answer.include?("entourage")
           say(sender_id, ANS_AIDE_EXTERIEURE[:aide_entourage])
           Methode.methode_init
