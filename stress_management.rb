@@ -82,7 +82,7 @@ class StressManagement
       answer = message.text.downcase
       if answer.include?("extérieure")
         say(sender_id, ANS_WHY_EFFICIENCY[:aide_exterieure], TYPE_AIDE_EXTERIEURE)
-        Methode.aide_exterieure
+        StressManagement.aide_exterieure
       elsif answer.include?("personnelle")
         say(sender_id, ANS_WHY_EFFICIENCY[:motivation_personnelle])
         Methode.methode_init
