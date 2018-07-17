@@ -1,7 +1,7 @@
 class Methode
   def self.methode_init(recipient_id)
     say(recipient_id, IDIOMS[:methode], METHODE_ARTICLES)
-    say(recipient_id, IDIOMS[:methode], METHODE_MOTIVE)
+    say(recipient_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
     Methode.es_tu_motive
   end
 

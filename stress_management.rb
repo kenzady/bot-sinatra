@@ -36,12 +36,37 @@ class StressManagement
       sender_id = message.sender['id']
       answer = message.text.downcase
       if answer.include?("oui") || answer.include?("moyennement")
-        say(sender_id, ANS_RESOLUTION_STRESS[:oui])
+        say(sender_id, ANS_RESOLUTION_STRESS[:oui], RAISONS_EFFICACITE) #asks the user what helped them
+        #StressManagement.analyse_efficacite
       elsif answer.include?("moins")
-        say(sender_id, ANS_RESOLUTION_STRESS[:moins])
+        say(sender_id, ANS_RESOLUTION_STRESS[:moins], RAISONS_EFFICACITE) #asks the user what helped them
+        #StressManagement.analyse_efficacite
       elsif answer.include?("non")
-        say(sender_id, ANS_RESOLUTION_STRESS[:non])
+        say(sender_id, ANS_RESOLUTION_STRESS[:non], RAISONS_INEFFICACITE) #asks the user why it didn't work
+        StressManagement.analyse_inefficacite
       end
     end
   end
+
+def self.analyse_inefficacite
+    Bot.on :message do |message|
+      puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+      sender_id = message.sender['id']
+      answer = message.text.downcase
+      if answer.include?("savais pas")
+        say(sender_id, ANS_INEFFICIENCY[:savait_pas])
+      elsif answer.include?("investi")
+        say(sender_id, ANS_RESOLUTION_STRESS[:non_investissement])
+      elsif answer.include?("outil")
+        say(sender_id, ANS_RESOLUTION_STRESS[:pas_marche])
+      elsif answer.include?("sais pas")
+        say(sender_id, ANS_RESOLUTION_STRESS[:dont_know])
+      else
+        say(sender_id, ANS_EFFICIENCY[:unknown_command]
+        StressManagement.analyse_inefficacite
+      end
+    end
+  end
+
+
 end
