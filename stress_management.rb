@@ -3,7 +3,7 @@ require 'facebook/messenger'
 require_relative 'text'
 include Facebook::Messenger
 
-class StressManagmenent
+class StressManagement
   def self.stress_mgmt_init(recipient_id)
     say(recipient_id, IDIOMS[:gestion_stress], GESTION_STRESS)
     StressManagement.as_tu_deja_essaye_resoudre
@@ -16,16 +16,16 @@ class StressManagmenent
       answer = message.text.downcase
       if answer.include?("oui") || answer.include?("moyennement")
         say(sender_id, ANS_EFFICIENCY[:good], REPONSE_TERNAIRE) # Asks whether the user method was efficient
-        StressManagmenent.analyse_reponse_resolution_stress
+        StressManagement.analyse_reponse_resolution_stress
       elsif answer.include?("moins")
         say(sender_id, ANS_EFFICIENCY[:good], REPONSE_TERNAIRE) # Asks whether the user method was efficient
-        StressManagmenent.analyse_reponse_resolution_stress
+        StressManagement.analyse_reponse_resolution_stress
       elsif answer.include?("non")
         say(sender_id, ANS_EFFICIENCY[:bad], PQ_INACTION) # Asks why the user method did not work to manage his stress
-        StressManagmenent.analyse_reponse_resolution_stress
+        StressManagement.analyse_reponse_resolution_stress
       else
         say(sender_id, ANS_EFFICIENCY[:unknown_command], GESTION_STRESS)
-        StressManagmenent.as_tu_deja_essaye_resoudre
+        StressManagement.as_tu_deja_essaye_resoudre
       end
     end
   end
