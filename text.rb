@@ -11,7 +11,9 @@ Comment te sens-tu aujourd’hui ?",
   Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?",
   methode:
 "Passons aux choses sérieuses. Moi, ma méthode préférée pour gérer mon stress est la méthode des Thérapies cognitivo-comportementales (TCC). Il s'agit d'une méthode validée scientifiquement qui va t'aider à chasser toutes tes pensées négatives, et les réactions qui vont avec. Voici une liste d'articles intéressants
-si tu veux en savoir plus sur le sujet"
+si tu veux en savoir plus sur le sujet",
+  motive_ou_pas:
+  "Es-tu motivé pour tester cette méthode ensemble à travers d'exercices assez fun ?"
 
 }
 
@@ -148,13 +150,13 @@ GESTION_STRESS = [
     content_type: 'text',
     title: 'Non',
     payload: 'Non'
-  },
+  }
 ]
 
 ANS_RESOLUTION_STRESS = {
   oui: "Génial ! Je suis content de l'apprendre. Qu'est ce qui t'a le plus aidé selon toi ?",
   moins: "C'est un début ! Qu'est ce qui t'a le plus aidé selon toi ?",
-  non: "J'en suis navré... :disappointed: Néanmoins, est-ce que tu sais pourquoi ça n'a pas marché?",
+  non: "J'en suis navré... :disappointed: Néanmoins, est-ce que tu sais pourquoi ça n'a pas marché?"
 }
 
   RAISONS_EFFICACITE = [
@@ -184,6 +186,42 @@ ANS_RESOLUTION_STRESS = {
       payload: 'METHOD'
     }
   ]
+
+RAISONS_INEFFICACITE = [
+    {
+      content_type: 'text',
+      title: "Je ne savais pas comment faire/vers quoi me tourner",
+      payload: 'SAVAIT_PAS'
+    },
+    {
+      content_type: 'text',
+      title: "Je ne me suis pas investi(e)",
+      payload: 'NON_INVESTISSEMENT'
+    },
+    {
+      content_type: 'text',
+      title: "L'outil n'a pas marché",
+      payload: 'PAS_MARCHE'
+    },
+    {
+      content_type: 'text',
+      title: "Je ne sais pas",
+      payload: 'DONT_KNOW'
+    },
+    {
+      content_type: 'text',
+      title: "Passer directement à la méthode",
+      payload: 'METHOD'
+    }
+  ]
+
+ANS_INEFFICIENCY = {
+  savait_pas: "Je comprends, souvent les gens ont peur de se livrer, et n'osent pas aller voir un spécialiste. Mais ne t'inquiète pas, je suis la pour toi et nous allons avancer dans cette aventure tous les deux, pas à pas ! :blush:",
+  non_investissement: "C'est souvent un problème, surtout quand on ne peut pas utiliser l'outil à tout instant (psychologue par exemple). C'est pour ca que je pourrais t'être très utile ! En étant tout le temps dans ta poche, je peux essayer de te garder investi ! C'est très important de rester motivé afin d'aller mieux sur le long-terme ! :blush:",
+  pas_marche: "Désolé d'apprendre ça. Mais tu sais, chacun a un outil qui lui correspond le mieux, et peut-être que pour toi, je suis celui qu'il faut. Il ne faut pas perdre courage et nous allons avancer tous les deux main dans la main ! :blush:",
+  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:",
+  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+}
 
 REPONSE_TERNAIRE = [
   {
