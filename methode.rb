@@ -1,3 +1,5 @@
+require_relative 'text'
+
 class Methode
   def self.methode_init(sender_id)
     say(sender_id, IDIOMS[:methode], METHODE_ARTICLES)
