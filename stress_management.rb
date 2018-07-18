@@ -66,7 +66,7 @@ class StressManagement
       elsif answer.include?("methode")
         Methode.methode_init(sender_id)
       else
-        say(sender_id, ANS_INEFFICIENCY[:unknown_command])
+        say(sender_id, ANS_INEFFICIENCY[:unknown_command], RAISONS_INEFFICACITE)
         StressManagement.analyse_inefficacite(sender_id)
       end
     end
