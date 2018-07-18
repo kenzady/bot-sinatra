@@ -2,7 +2,7 @@ class Methode
   def self.methode_init(sender_id)
     say(sender_id, IDIOMS[:methode], METHODE_ARTICLES)
     say(sender_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
-    Methode.es_tu_motive
+    Methode.es_tu_motive(sender_id)
   end
 
   def self.es_tu_motive(sender_id)

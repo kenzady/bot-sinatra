@@ -118,7 +118,7 @@ class StressManagement
         elsif answer.include?("methode")
           Methode.methode_init(sender_id)
         else
-          say(sender_id, ANS_AIDE_EXTERIEURE[:unknown_command])
+          say(sender_id, ANS_AIDE_EXTERIEURE[:unknown_command], TYPE_AIDE_EXTERIEURE)
           StressManagement.aide_exterieure(sender_id)
         end
       end
