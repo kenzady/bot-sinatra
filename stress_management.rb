@@ -1,6 +1,7 @@
 require 'facebook/messenger'
 # require 'dotenv/load'
 require_relative 'text'
+require_relative 'methode'
 include Facebook::Messenger
 
 class StressManagement

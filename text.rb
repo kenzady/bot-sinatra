@@ -191,7 +191,7 @@ ANS_RESOLUTION_STRESS = {
 ANS_WHY_EFFICIENCY = {
   aide_exterieure: "Très bien ! Quel type d'aide as-tu consultée ?",
   motivation_personnelle: "Bravo ! C'est grandiose que tu aies une motivation personnelle forte car cela acompte pour beaucoup dans le fait de se sentir mieux ! Je pense que nous allons travailler ensemble de façon merveilleuse si tu gardes ta motivation au beau fixe !",
-  both: "Génial ! Nous allons faire du travail très bénéfique ensemble ! J'ai hâte de voir ce que cela donne !",
+  both: "Génial ! Nous allons faire du très bon travail ensemble ! J'ai hâte de voir ce que cela donne !",
   dont_know: "Aucun souci ! On ne sais pas toujours ce qui nous a aidé le plus. Mais nous allons faire un travail génial ensemble c'est certain !",
   unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
 }
