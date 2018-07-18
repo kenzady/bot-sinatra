@@ -2,18 +2,17 @@ require_relative 'textes_introduction_hexaflex'
 require_relative 'moment_present/exos_moment_present'
 
 class IntroductionHexaflex
-  def self.presentation_hexaflex(recipient_id) # presente rapidement le sujet et demande au user de choisir une dimension
+  def self.presentation_hexaflex(sender_id) # presente rapidement le sujet et demande au user de choisir une dimension
     Bot.on :message do |message|
-      say(recipient_id, PRESENTATION_HEXAFLEX[:act])
-      say(recipient_id, PRESENTATION_HEXAFLEX[:flexibilité]) # il faudra rajouter une liste d'articles explicanr chaque branche car pour l'instant le user ne sais pas de quoi il s'agit avant de cliquer
-      say(recipient_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
+      say(sender_id, PRESENTATION_HEXAFLEX[:act])
+      say(sender_id, PRESENTATION_HEXAFLEX[:flexibilité]) # il faudra rajouter une liste d'articles explicanr chaque branche car pour l'instant le user ne sais pas de quoi il s'agit avant de cliquer
+      say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
     end
   end
 
-  def self.analyse_choix_dimension
+  def self.analyse_choix_dimension(sender_id)
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-      sender_id = message.sender['id']
       answer = message.text.downcase
       if answer.include?("présent")
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension

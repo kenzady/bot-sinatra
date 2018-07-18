@@ -1,14 +1,13 @@
 class Methode
-  def self.methode_init(recipient_id)
-    say(recipient_id, IDIOMS[:methode], METHODE_ARTICLES)
-    say(recipient_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
+  def self.methode_init(sender_id)
+    say(sender_id, IDIOMS[:methode], METHODE_ARTICLES)
+    say(sender_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
     Methode.es_tu_motive
   end
 
-  def self.es_tu_motive
+  def self.es_tu_motive(sender_id)
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-      sender_id = message.sender['id']
       answer = message.text.downcase
       if answer.include?("oui")
         say(sender_id, ANS_METHODE_MOTIVE[:oui])

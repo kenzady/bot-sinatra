@@ -39,20 +39,19 @@ def say(recipient_id, text, quick_replies = nil)
 end
 
 # Ne pas oublier d'insérer la méthode is_text_message?(message)
-def humour_analysis
+def humour_analysis(sender_id)
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-    sender_id = message.sender['id']
     answer = message.text.downcase
     if answer.include?("sévèrement") || answer.include?("moyennement")
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) # Asks for the causes of the stress
-      what_is_ur_objective
+      what_is_ur_objective(sender_id)
     elsif answer.include?("peu")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
-      what_is_ur_objective
+      what_is_ur_objective(sender_id)
     elsif
       say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
-      humour_analysis
+      humour_analysis(sender_id)
     end
   end
 end
@@ -60,16 +59,17 @@ end
 
 # Displays a set of quick replies that serves as a starter
 # Displays a set of quick replies that serves as a starter
-def show_humour_replies(id, quick_replies)
-  say(id, IDIOMS[:greetings], quick_replies)
-  humour_analysis
+def show_humour_replies(sender_id, quick_replies)
+  say(sender_id, IDIOMS[:greetings], quick_replies)
+  humour_analysis(sender_id)
 end
 
 # Starts conversation loop (to remove after uncommenting the postback method which does not work yet)
 def wait_for_any_input
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}"
-    show_humour_replies(message.sender['id'], HUMOUR)
+    sender_id = message.sender['id']
+    show_humour_replies(sender_id, HUMOUR)
   end
 end
 
@@ -79,23 +79,22 @@ def is_text_message?(message)
 end
 
 # Checking on what the user wants to work on
-def what_is_ur_objective
+def what_is_ur_objective(sender_id)
   Bot.on :message do |message|
-    sender_id = message.sender['id']
     answer = message.text.downcase
     if answer.include?("non")
       say(sender_id, "Okay ! N'hésite pas à revenir si tu as besoin d'aide !")
     else
       say(sender_id, IDIOMS[:objectives], OBJECTIVES)
-      handle_objective(message.sender['id'])
+      handle_objective(sender_id)
     end
   end
 end
 
-def handle_objective(recipient_id)
+def handle_objective(sender_id)
   Bot.on :message do |message|
     # gif_options = {
-    #   recipient: { id: recipient_id },
+    #   recipient: { id: sender_id },
     #   attachment: {
     #     type: 'image',
     #     payload: {
@@ -104,8 +103,8 @@ def handle_objective(recipient_id)
     #   }
     # }
     if message
-      say(message.sender['id'], "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
-      StressManagement.stress_mgmt_init(recipient_id)
+      say(sender_id, "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
+      StressManagement.stress_mgmt_init(sender_id)
     end
   end
 #  Bot.deliver(gif_options, access_token: ENV['ACCESS_TOKEN']) # cat working gif
