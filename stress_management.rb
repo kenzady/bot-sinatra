@@ -80,7 +80,7 @@ class StressManagement
       if answer.include?("extérieure")
         say(sender_id, ANS_WHY_EFFICIENCY[:aide_exterieure], TYPE_AIDE_EXTERIEURE)
         StressManagement.aide_exterieure(sender_id)
-      elsif answer.include?("personnelle")
+      elsif answer.include?("person")
         say(sender_id, ANS_WHY_EFFICIENCY[:motivation_personnelle])
         Methode.methode_init(sender_id)
       elsif answer.include?("deux")
@@ -92,7 +92,7 @@ class StressManagement
       elsif answer.include?("methode")
         Methode.methode_init(sender_id)
       else
-        say(sender_id, ANS_WHY_EFFICIENCY[:unknown_command])
+        say(sender_id, ANS_WHY_EFFICIENCY[:unknown_command], RAISONS_EFFICACITE)
         StressManagement.analyse_efficacite
       end
     end

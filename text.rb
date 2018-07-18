@@ -159,33 +159,33 @@ ANS_RESOLUTION_STRESS = {
   non: "J'en suis navré... :disappointed: Néanmoins, est-ce que tu sais pourquoi ça n'a pas marché?"
 }
 
-  RAISONS_EFFICACITE = [
-    {
-      content_type: 'text',
-      title: "Aide extérieure",
-      payload: 'EXT_HELP'
-    },
-    {
-      content_type: 'text',
-      title: "Motivation personnelle",
-      payload: 'PERSONAL_MOTIV'
-    },
-    {
-      content_type: 'text',
-      title: "Les deux",
-      payload: 'BOTH'
-    },
-    {
-      content_type: 'text',
-      title: "Je ne sais pas",
-      payload: 'DONT_KNOW'
-    },
-    {
-      content_type: 'text',
-      title: "Passer directement à la méthode",
-      payload: 'METHOD'
-    }
-  ]
+RAISONS_EFFICACITE = [
+  {
+    content_type: 'text',
+    title: "Aide extérieure",
+    payload: 'EXT_HELP'
+  },
+  {
+    content_type: 'text',
+    title: "Motivation personnelle",
+    payload: 'PERSONAL_MOTIV'
+  },
+  {
+    content_type: 'text',
+    title: "Les deux",
+    payload: 'BOTH'
+  },
+  {
+    content_type: 'text',
+    title: "Je ne sais pas",
+    payload: 'DONT_KNOW'
+  },
+  {
+    content_type: 'text',
+    title: "Passer directement à la méthode",
+    payload: 'METHOD'
+  }
+]
 
 
 ANS_WHY_EFFICIENCY = {
