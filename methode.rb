@@ -18,7 +18,7 @@ class Methode
             attachment: {
               type: 'image',
               payload: {
-                url: 'https://gph.is/Vx8pJO'
+                url: 'https://media.giphy.com/media/14udF3WUwwGMaA/giphy.gif'
               }
             }
           )
@@ -28,7 +28,7 @@ class Methode
             attachment: {
               type: 'image',
               payload: {
-                url: 'https://gph.is/1LnCqDw'
+                url: 'https://media.giphy.com/media/10tIjpzIu8fe0/giphy.gif'
               }
             }
           )
