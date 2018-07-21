@@ -3,7 +3,7 @@ require_relative '././text.rb'
 
 class MomentPresent
   def self.exo_random
-    exos_moment_present = ["exo_jeu_du_detail", "minuteur"]
+    exos_moment_present = ["exo_jeu_du_detail"]
     exos_moment_present.sample
   end
 
