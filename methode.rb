@@ -18,12 +18,20 @@ class Methode
             attachment: {
               type: 'image',
               payload: {
-                url: 'https://i.imgur.com/iMKrDQc.gif'
+                url: 'https://gph.is/Vx8pJO'
               }
             }
-        )
+          )
       elsif answer.include?("non")
         say(sender_id, ANS_METHODE_MOTIVE[:non])
+        message.reply(
+            attachment: {
+              type: 'image',
+              payload: {
+                url: 'https://gph.is/1LnCqDw'
+              }
+            }
+          )
       else
         say(sender_id, ANS_METHODE_MOTIVE[:unknown_command], METHODE_MOTIVE)
       end
