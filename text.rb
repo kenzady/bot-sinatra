@@ -351,3 +351,9 @@ ANS_METHODE_MOTIVE = {
   unknown_command:
   "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
 }
+
+START_EXERCISE = {
+  oui: "Go !",
+  non: "Changer d'exo",
+  retour: "Autre dimension"
+}

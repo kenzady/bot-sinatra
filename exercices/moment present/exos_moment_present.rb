@@ -21,6 +21,6 @@ class MomentPresent
     end
   end
 
-  def self.minuteur(sender_id)
-  end
+  # def self.minuteur(sender_id)
+  # end
 end
