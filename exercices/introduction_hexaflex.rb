@@ -17,8 +17,8 @@ class IntroductionHexaflex
       answer = message.text.downcase
       if answer.include?("présent")
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
-        exercice_aleat = MomentPresent.exo_random.to_sym
         obj = MomentPresent.new
+        exercice_aleat = MomentPresent.exo_random.to_sym
         obj.send(exercice_aleat, sender_id) # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
