@@ -5,10 +5,3 @@ JEU_DU_DETAIL = {
   ready: "Est-tu prêt ? Tu as 30 sec dès que tu push le bouton !"
 
 }
-
-
-START_EXERCISE = {
-  oui: "Go !",
-  non: "Changer d'exo",
-  retour: "Autre dimension"
-}
