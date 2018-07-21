@@ -18,9 +18,7 @@ class IntroductionHexaflex
       if answer.include?("présent")
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
         obj = MomentPresent.new
-        exercice_aleat = MomentPresent.exo_random+'(sender_id)' # choisi aléatoirement un exercice de la dimension choisie
-        # le pb ici est que la ligne ci dessous appelle jeu_du_detail(arg)
-        # et pas MomentPresent.jeu_du_detail(arg)
+        exercice_aleat = MomentPresent.exo_random+'('+sender_id+')' # choisi aléatoirement un exercice de la dimension choisie
         # je ne sais pas comment résoudre (Kenza)
         obj.send(exercice_aleat)
       elsif answer.include?("défusion")
