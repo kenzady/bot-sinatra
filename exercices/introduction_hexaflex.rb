@@ -7,7 +7,7 @@ class IntroductionHexaflex
       say(sender_id, PRESENTATION_HEXAFLEX[:act])
       say(sender_id, PRESENTATION_HEXAFLEX[:flexibilité]) # il faudra rajouter une liste d'articles explicanr chaque branche car pour l'instant le user ne sais pas de quoi il s'agit avant de cliquer
       say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
-      IntroductionHexaflex.analyse_choix_dimension
+      IntroductionHexaflex.analyse_choix_dimension(sender_id)
     end
   end
 
