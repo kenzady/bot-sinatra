@@ -1,5 +1,5 @@
-require_relative 'exercices/textes_introduction_hexaflex'
-require_relative 'exercices/moment_present/exos_moment_present'
+require_relative 'textes_introduction_hexaflex'
+require_relative 'moment present/exos_moment_present'
 
 class IntroductionHexaflex
   def self.presentation_hexaflex(sender_id) # presente rapidement le sujet et demande au user de choisir une dimension
