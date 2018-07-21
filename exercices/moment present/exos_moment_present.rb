@@ -6,7 +6,7 @@ class MomentPresent
     exos_moment_present.sample
   end
 
-  def self.exo_jeu_du_detail(sender_id)
+  def exo_jeu_du_detail(sender_id)
     say(sender_id, JEU_DU_DETAIL[:intro])
     say(sender_id, JEU_DU_DETAIL[:ready], START_EXERCISE)
     Bot.on :message do |message|
