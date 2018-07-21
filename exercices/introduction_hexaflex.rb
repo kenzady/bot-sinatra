@@ -18,11 +18,13 @@ class IntroductionHexaflex
       if answer.include?("présent")
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
         exercice_aleat = MomentPresent.exo_random+"(sender_id)"
-        MomentPresent.exercice_aleat # choisi aléatoirement un exercice de la dimension choisie
+        method_exo = methods.each { |meth| Class.send(meth, exercice_aleat) } # transforme string en méthode
+        MomentPresent.method_exo # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
         exercice_aleat = Defusion.exo_random
-        Defusion.exercice_aleat # choisi aléatoirement un exercice de la dimension choisie
+        method_exo = methods.each { |meth| Class.send(meth, exercice_aleat) }
+        Defusion.method_exo # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
       elsif answer.include?("valeurs")
