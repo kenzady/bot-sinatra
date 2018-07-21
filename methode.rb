@@ -22,6 +22,7 @@ class Methode
               }
             }
           )
+        IntroductionHexaflex.presentation_hexaflex(sender_id)
       elsif answer.include?("non")
         say(sender_id, ANS_METHODE_MOTIVE[:non])
         message.reply(
