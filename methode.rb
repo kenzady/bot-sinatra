@@ -1,5 +1,6 @@
 require 'facebook/messenger'
 require_relative 'text'
+require_relative 'exercices/moment_present/introduction_hexaflex'
 
 class Methode
   def self.methode_init(sender_id)
