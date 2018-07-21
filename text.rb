@@ -343,7 +343,7 @@ METHODE_MOTIVE = [
 
 ANS_METHODE_MOTIVE = {
   oui:
-    "Trop cool! (+gif)",
+    "Trop cool!",
 
   non:
     "Dommage... N'hésite pas à revenir vers moi si tu changes d'avis, je suis toujours là pour t'aider !",
