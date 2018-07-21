@@ -1,4 +1,4 @@
-require_relative 'textes_moment_present'
+require_relative 'exercices/moment_present/textes_moment_present'
 
 class MomentPresent
   def self.exo_random
