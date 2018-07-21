@@ -1,5 +1,5 @@
 require_relative 'textes_moment_present'
-require_relative './text.rb'
+require_relative '../text.rb'
 
 class MomentPresent
   def self.exo_random
