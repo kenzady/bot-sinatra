@@ -21,6 +21,6 @@ START_EXERCISE = [
     content_type: 'text',
     title: 'Autre dimension',
     payload: 'ANOTHER_DIMENSION'
-  },
+  }
 ]
 
