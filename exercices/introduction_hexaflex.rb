@@ -19,8 +19,10 @@ class IntroductionHexaflex
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
         # obj = MomentPresent.new
         exercice_aleat = MomentPresent.exo_random+'('+sender_id+')' # choisi aléatoirement un exercice de la dimension choisie
+        say(sender_id, "test 1")
         # je ne sais pas comment résoudre (Kenza)
         MomentPresent.send(exercice_aleat)
+        say(sender_id, "test 2")
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
         # exercice_aleat = Defusion.exo_random
