@@ -14,6 +14,14 @@ class Methode
       answer = message.text.downcase
       if answer.include?("oui")
         say(sender_id, ANS_METHODE_MOTIVE[:oui])
+          message.reply(
+            attachment: {
+              type: 'image',
+              payload: {
+                url: 'https://i.imgur.com/iMKrDQc.gif'
+              }
+            }
+        )
       elsif answer.include?("non")
         say(sender_id, ANS_METHODE_MOTIVE[:non])
       else
