@@ -25,17 +25,17 @@ LISTE_DIMENSIONS = [
     content_type: 'text',
     title: 'Acceptation',
     payload: 'ACCEPTATION'
-  }
+  },
   {
     content_type: 'text',
     title: 'Valeurs',
     payload: 'ACTIONS'
-  }
+  },
   {
     content_type: 'text',
     title: 'Soi comme contexte',
     payload: 'SOI_CONTEXTE'
-  }
+  },
   {
     content_type: 'text',
     title: 'Action',
