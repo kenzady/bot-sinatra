@@ -18,12 +18,21 @@ class Methode
             attachment: {
               type: 'image',
               payload: {
-                url: 'https://i.imgur.com/iMKrDQc.gif'
+                url: 'https://media.giphy.com/media/14udF3WUwwGMaA/giphy.gif'
               }
             }
-        )
+          )
+        IntroductionHexaflex.presentation_hexaflex(sender_id)
       elsif answer.include?("non")
         say(sender_id, ANS_METHODE_MOTIVE[:non])
+        message.reply(
+            attachment: {
+              type: 'image',
+              payload: {
+                url: 'https://media.giphy.com/media/10tIjpzIu8fe0/giphy.gif'
+              }
+            }
+          )
       else
         say(sender_id, ANS_METHODE_MOTIVE[:unknown_command], METHODE_MOTIVE)
       end
