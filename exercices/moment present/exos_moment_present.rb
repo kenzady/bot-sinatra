@@ -66,6 +66,7 @@ class MomentPresent
         MomentPresent.exo_random(sender_id)
       else
         say(sender_id, MINUTEUR[:unknown_command], MINUTEUR_TIME)
+      end
     end
   end
 
@@ -105,6 +106,7 @@ class MomentPresent
           MomentPresent.exo_random(sender_id)
         else
           say(sender_id, MINUTEUR[:unknown_command], MINUTEUR[:feedback])
+        end
       end
   end
 
