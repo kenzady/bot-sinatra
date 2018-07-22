@@ -9,7 +9,8 @@ class GeneraleExos
     exercice = exos_dim.sample #selectionne un exercice au hasard
     exos_dim.each do |exo|
       if exercice == exo
-        dim.exo(sender_id)
+        exo = "exo(sender_id)"
+        dim.send(exo)
       end
     end
     if exercice == "exo_jeu_du_detail"
