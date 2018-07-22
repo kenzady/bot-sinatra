@@ -46,7 +46,7 @@ def humour_analysis(sender_id)
     if answer.include?("sévèrement") || answer.include?("moyennement")
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) # Asks for the causes of the stress
       what_is_ur_objective(sender_id)
-    elsif answer.include?("peu")
+    elsif answer.include?("peu") || answer.include?("pas")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
       what_is_ur_objective(sender_id)
     elsif
