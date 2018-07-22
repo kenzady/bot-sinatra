@@ -95,7 +95,7 @@ class MomentPresent
           }
         )
       #sleep(40)
-      say(sender_id, MINUTEUR[:feedback])
+      say(sender_id, MINUTEUR[:feedback], FEEDBACK)
       MomentPresent.feedback(sender_id)
     end
   end
