@@ -33,7 +33,7 @@ class MomentPresent
           savane = ["zèbre", "éléphant", "girafe", "buffle", "anthilope", "lion", "oiseau", "herbe", "arbre", "rivière", "nuage", "montagne"]
           count = 0
           # Compte le nombre de bonne réponse du user et donne un encouragement en conséquence
-          savane.any? do |word|
+          savane.each do |word|
             if str.include?(word)
               count += 1
             end
