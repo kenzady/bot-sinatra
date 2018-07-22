@@ -1,17 +1,19 @@
 JEU_DU_DETAIL = {
   intro:
   "Let's go!
-  Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour décrire le plus de détails possible. 👁🖼" ,
+  Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour en décrire le plus de détails possible. 👁🖼" ,
   ready:
-  "Est-tu prêt ? Tu as 30 sec dès que tu push le bouton !",
+  "Est-tu prêt ? Tu as 30 sec à partir du moment où tu cliques sur le bouton !",
   time_up:
   "Time's up ! Décris moi ce que tu as vu 😃",
   quel_oeil:
   "Quel oeil ! J'en avais manqué plein !",
+  peux_mieux_faire:
+  "C'est un bon début ! Mais je suis sûr que tu t'amélioreras à force de répétition ! 😉",
   but_exercice:
   "Cet exercice est fait pour te faire travailler ta concentration et donc à faire le vide autour de toi pendant un court instant. J'espère que tu l'as aimé.",
   nouvel_exercice:
-  "Maintenant que celui-ci est terminé, as-tu envie d'en faire un autre?",
+  "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
   au_revoir:
   "Pas de souci, en espérant que tu reviennes bientôt !"
 }

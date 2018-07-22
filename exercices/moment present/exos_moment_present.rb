@@ -5,14 +5,11 @@ class MomentPresent
   def self.exo_random(sender_id)
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
     exercice = exos_moment_present.sample #selectionne un exercice au hasard
-
     if exercice == "exo_jeu_du_detail"
       MomentPresent.exo_jeu_du_detail(sender_id)
-
     elsif exercice == "exo_minuteur"
       MomentPresent.exo_minuteur_start(sender_id)
     end
-
   end
 
   def self.exo_jeu_du_detail(sender_id)
@@ -30,10 +27,22 @@ class MomentPresent
             }
           }
         )
-        say(sender_id, JEU_DU_DETAIL[:time_up]) #temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
+        say(sender_id, JEU_DU_DETAIL[:time_up]) # Temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-          say(sender_id, JEU_DU_DETAIL[:quel_oeil])
+          savane = ["zèbre", "éléphant", "girafe", "buffle", "anthilope", "lion", "oiseau", "herbe", "arbre", "rivière", "nuage", "montagne"]
+          count = 0
+          # Compte le nombre de bonne réponse du user et donne un encouragement en conséquence
+          savane.any? do |word|
+            if str.include?(word)
+              count += 1
+            end
+          end
+          if count > savane.size/2
+            say(sender_id, JEU_DU_DETAIL[:quel_oeil])
+          else
+            say(sender_id, JEU_DU_DETAIL[:peux_mieux_faire])
+          end
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
           say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           MomentPresent.nouvel_exercice(sender_id) #redirige vers la methode nouvel exercice
