@@ -19,21 +19,31 @@ class MomentPresent
     say(sender_id, JEU_DU_DETAIL[:intro])
     say(sender_id, JEU_DU_DETAIL[:ready], START_EXERCISE)
     Bot.on :message do |message|
-      message.reply(
-        attachment: {
-          type: 'image',
-          payload: {
-            url: 'https://data.fou-de-puzzle.com/.122/larsen-fh9-puzzle-cadre-les-animaux-de-la-savane-africaine-65-pieces--puzzle.48412-1.jpg'
+      puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+      answer = message.text.downcase
+      if answer.include?("go")
+        message.reply(
+          attachment: {
+            type: 'image',
+            payload: {
+              url: 'https://data.fou-de-puzzle.com/.122/larsen-fh9-puzzle-cadre-les-animaux-de-la-savane-africaine-65-pieces--puzzle.48412-1.jpg'
+            }
           }
-        }
-      )
-      say(sender_id, JEU_DU_DETAIL[:time_up])
-      Bot.on :message do |message|
-        puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-        say(sender_id, JEU_DU_DETAIL[:quel_oeil])
-        say(sender_id, JEU_DU_DETAIL[:but_exercice])
-        say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
-        MomentPresent.nouvel_exercice(sender_id)
+        )
+        say(sender_id, JEU_DU_DETAIL[:time_up])
+        Bot.on :message do |message|
+          puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+          say(sender_id, JEU_DU_DETAIL[:quel_oeil])
+          say(sender_id, JEU_DU_DETAIL[:but_exercice])
+          say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
+          MomentPresent.nouvel_exercice(sender_id)
+        end
+      elsif answer.include?("exo")
+        MomentPresent.exo_jeu_du_detail(sender_id)
+      elsif answer.include?("dimension")
+        IntroductionHexaflex.presentation_hexaflex(sender_id)
+      else
+        say(sender_id, MINUTEUR[:unknown_command], START_EXERCISE)
       end
     end
   end
