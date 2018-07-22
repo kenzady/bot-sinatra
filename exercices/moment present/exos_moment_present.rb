@@ -30,11 +30,12 @@ class MomentPresent
         say(sender_id, JEU_DU_DETAIL[:time_up]) # Temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+          answer = message.text.downcase
           savane = ["zèbre", "éléphant", "girafe", "buffle", "anthilope", "lion", "oiseau", "herbe", "arbre", "rivière", "nuage", "montagne"]
           count = 0
           # Compte le nombre de bonne réponse du user et donne un encouragement en conséquence
           savane.each do |word|
-            if message.include?(word)
+            if answer.include?(word)
               count += 1
             end
           end
