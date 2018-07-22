@@ -1,7 +1,7 @@
 require_relative 'textes_moment_present'
 
 class MomentPresent
-  def self.exo_random
+  def self.exo_random(sender_id)
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
     exercice = exos_moment_present.sample
 
