@@ -46,19 +46,19 @@ class MomentPresent
       answer = message.text.downcase
       if answer.include?("10 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
-        sleep(600)
+        #sleep(600)
         MomentPresent.exo_minuteur_suite(sender_id)
       elsif answer.include?("30 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
-        sleep(1800)
+        #sleep(1800)
         MomentPresent.exo_minuteur_suite(sender_id)
       elsif answer.include?("1 heure")
         say(sender_id, ANS_MINUTEUR[:play])
-        sleep(3600)
+        #sleep(3600)
         MomentPresent.exo_minuteur_suite(sender_id)
       elsif answer.include?("1 heure 30")
         say(sender_id, ANS_MINUTEUR[:play])
-        sleep(5400)
+        #sleep(5400)
         MomentPresent.exo_minuteur_suite(sender_id)
       elsif answer.include?("autre")
         say(sender_id, ANS_MINUTEUR[:skip])
@@ -84,7 +84,7 @@ class MomentPresent
             }
           }
         )
-      sleep(40)
+      #sleep(40)
       say(sender_id, MINUTEUR[:feedback])
       MomentPresent.feedback(sender_id)
     end
