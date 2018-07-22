@@ -1,18 +1,18 @@
 require_relative 'textes_moment_present'
-
+require_relative './gestion_generale_exos'
 
 class MomentPresent
   def self.exo_random(sender_id)
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
     exercice = exos_moment_present.sample #selectionne un exercice au hasard
     if exercice == "exo_jeu_du_detail"
-      MomentPresent.exo_jeu_du_detail(sender_id)
+      MomentPresent.exo_jeu_du_detail(sender_id, exos_moment_present)
     elsif exercice == "exo_minuteur"
       MomentPresent.exo_minuteur_start(sender_id)
     end
   end
 
-  def self.exo_jeu_du_detail(sender_id)
+  def self.exo_jeu_du_detail(sender_id, exos_moment_present)
     say(sender_id, JEU_DU_DETAIL[:intro]) #intro de l'exercice
     say(sender_id, JEU_DU_DETAIL[:ready], START_EXERCISE) #demande s'il veut faire l'exercice ou changer d'exercice ou de dimension
     Bot.on :message do |message|
@@ -46,7 +46,7 @@ class MomentPresent
           end
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
           say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          MomentPresent.nouvel_exercice(sender_id) #redirige vers la methode nouvel exercice
+          GeneraleExos.nouvel_exercice(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") #redirige vers la methode nouvel exercice
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         MomentPresent.exo_random(sender_id) #change d'exo

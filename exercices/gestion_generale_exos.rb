@@ -19,7 +19,7 @@ class GeneraleExos
     end
   end
 
-def self.nouvel_exercice(sender_id, dimension, exos_dim, exo_fait)
+def self.nouvel_exercice(sender_id, dim, exos_dim, exo_fait)
   Bot.on :message do |message| #recupere la réponse de l'utilisateur
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
@@ -32,6 +32,7 @@ def self.nouvel_exercice(sender_id, dimension, exos_dim, exo_fait)
         IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
       else
         say(sender_id, NEW_EXO[:unknown_command], NOUVEL_EXERCICE) #pas compris, on redemande
+        GeneraleExos.nouvel_exercice
       end
     end
 end
