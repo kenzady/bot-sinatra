@@ -1,5 +1,5 @@
 require_relative 'textes_moment_present'
-require_relative './gestion_generale_exos'
+require_relative '../gestion_generale_exos'
 
 class MomentPresent
   def self.exo_random(sender_id)
