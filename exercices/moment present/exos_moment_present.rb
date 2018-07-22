@@ -6,11 +6,11 @@ class MomentPresent
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
     exercice = exos_moment_present.sample
 
-    if exercice = "exo_jeu_du_detail"
+    if exercice == "exo_jeu_du_detail"
       MomentPresent.exo_jeu_du_detail(sender_id)
 
-    elsif exercice = "exo_minuteur"
-      MomentPresent.exo_minuteur(sender_id)
+    elsif exercice == "exo_minuteur"
+      MomentPresent.exo_minuteur_start(sender_id)
     end
 
   end
@@ -27,14 +27,11 @@ class MomentPresent
           }
         }
       )
-      sleep(30)
       say(sender_id, JEU_DU_DETAIL[:time_up])
       Bot.on :message do |message|
         puts "Received '#{message.inspect}' from #{message.sender}" # debug only
         say(sender_id, JEU_DU_DETAIL[:quel_oeil])
-        sleep(3)
         say(sender_id, JEU_DU_DETAIL[:but_exercice])
-        sleep(5)
         say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
         MomentPresent.nouvel_exercice(sender_id)
       end
