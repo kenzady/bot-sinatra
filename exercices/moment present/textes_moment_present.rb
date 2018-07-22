@@ -24,7 +24,7 @@ MINUTEUR = {
   time_up:
   "Dring Dring, Note maintenant ce que tu étais en train de faire quand l'alarme a sonné.",
   respirations:
-  "Super ! Maintenant prends 4 grandes respirations, sans penser à ce que tu étais en train de faire puis expire. Tu peux suivre ce gif pour t'aider."
+  "Super ! Maintenant prends 4 grandes respirations, sans penser à ce que tu étais en train de faire puis expire. Tu peux suivre ce gif pour t'aider.",
   feedback:
   "Voilà, c'est terminé ! As-tu apprécié cet exercice?",
   unknown_command:
