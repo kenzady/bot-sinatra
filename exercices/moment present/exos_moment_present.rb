@@ -34,7 +34,7 @@ class MomentPresent
           count = 0
           # Compte le nombre de bonne réponse du user et donne un encouragement en conséquence
           savane.each do |word|
-            if str.include?(word)
+            if message.include?(word)
               count += 1
             end
           end
