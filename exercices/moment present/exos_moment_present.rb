@@ -1,5 +1,6 @@
 require_relative 'textes_moment_present'
 
+
 class MomentPresent
   def self.exo_random(sender_id)
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
@@ -34,7 +35,8 @@ class MomentPresent
         sleep(3)
         say(sender_id, JEU_DU_DETAIL[:but_exercice])
         sleep(5)
-        say(sender_id, JEU_DU_DETAIL[:nouvel_exercice])
+        say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
+        MomentPresent.nouvel_exercice(sender_id)
       end
     end
   end
@@ -106,6 +108,23 @@ class MomentPresent
           MomentPresent.exo_random(sender_id)
         else
           say(sender_id, MINUTEUR[:unknown_command], MINUTEUR[:feedback])
+        end
+      end
+  end
+
+  def self.nouvel_exercice(sender_id)
+    Bot.on :message do |message|
+        puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+        answer = message.text.downcase
+        if answer.include?("oui")
+          MomentPresent.exo_random(sender_id)
+        elsif answer.include?("non")
+          MomentPresent.exo_random(sender_id)
+        elsif answer.include?("changer")
+          say(sender_id, ANS_FEEDBACK[:pas_du_tout])
+          IntroductionHexaflex.presentation_hexaflex(sender_id)
+        else
+          say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
         end
       end
   end
