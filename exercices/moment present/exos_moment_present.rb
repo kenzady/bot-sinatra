@@ -4,7 +4,7 @@ require_relative 'textes_moment_present'
 class MomentPresent
   def self.exo_random(sender_id)
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
-    exercice = exos_moment_present.sample
+    exercice = exos_moment_present.sample #selectionne un exercice au hasard
 
     if exercice == "exo_jeu_du_detail"
       MomentPresent.exo_jeu_du_detail(sender_id)
@@ -16,12 +16,12 @@ class MomentPresent
   end
 
   def self.exo_jeu_du_detail(sender_id)
-    say(sender_id, JEU_DU_DETAIL[:intro])
-    say(sender_id, JEU_DU_DETAIL[:ready], START_EXERCISE)
+    say(sender_id, JEU_DU_DETAIL[:intro]) #intro de l'exercice
+    say(sender_id, JEU_DU_DETAIL[:ready], START_EXERCISE) #demande s'il veut faire l'exercice ou changer d'exercice ou de dimension
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
-      if answer.include?("go")
+      if answer.include?("go") #si l'utilisateur veut faire cet exo, affiche l'image
         message.reply(
           attachment: {
             type: 'image',
@@ -30,33 +30,33 @@ class MomentPresent
             }
           }
         )
-        say(sender_id, JEU_DU_DETAIL[:time_up])
+        say(sender_id, JEU_DU_DETAIL[:time_up]) #temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           say(sender_id, JEU_DU_DETAIL[:quel_oeil])
-          say(sender_id, JEU_DU_DETAIL[:but_exercice])
-          say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
-          MomentPresent.nouvel_exercice(sender_id)
+          say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
+          say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+          MomentPresent.nouvel_exercice(sender_id) #redirige vers la methode nouvel exercice
         end
-      elsif answer.include?("exo")
-        MomentPresent.exo_jeu_du_detail(sender_id)
-      elsif answer.include?("dimension")
-        IntroductionHexaflex.presentation_hexaflex(sender_id)
+      elsif answer.include?("exo") #l'utilisateur veut changer d'exo
+        MomentPresent.exo_random(sender_id) #change d'exo
+      elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
+        IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
       else
-        say(sender_id, MINUTEUR[:unknown_command], START_EXERCISE)
+        say(sender_id, MINUTEUR[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
     end
   end
 
   def self.exo_minuteur_start(sender_id)
-    say(sender_id, MINUTEUR[:intro])
-    say(sender_id, MINUTEUR[:ready], MINUTEUR_TIME)
+    say(sender_id, MINUTEUR[:intro]) #on explique les consignes
+    say(sender_id, MINUTEUR[:ready], MINUTEUR_TIME) #on demande combien de temps la personne veut attendre
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
       if answer.include?("10 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
-        #sleep(600)
+        #sleep(600) -- ici le but serait de 'pauser' pendant le nombre de secondes demandées
         MomentPresent.exo_minuteur_suite(sender_id)
       elsif answer.include?("30 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
@@ -81,12 +81,12 @@ class MomentPresent
 
 
   def self.exo_minuteur_suite(sender_id)
-    say(sender_id, MINUTEUR[:time_up])
+    say(sender_id, MINUTEUR[:time_up]) #on informe l'utilisateur que le temps est écoulé et on demande ce qu'il faisait (open answer)
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
-      say(sender_id, MINUTEUR[:respirations])
-      message.reply(
+      say(sender_id, MINUTEUR[:respirations]) #exercice de respiration
+      message.reply( #avec gif
           attachment: {
             type: 'image',
             payload: {
@@ -95,43 +95,42 @@ class MomentPresent
           }
         )
       #sleep(40)
-      say(sender_id, MINUTEUR[:feedback], FEEDBACK)
-      MomentPresent.feedback(sender_id)
+      say(sender_id, MINUTEUR[:feedback], FEEDBACK) #demande feedback
+      MomentPresent.feedback(sender_id) #renvoie a la method feedback pour répondre a l'utilisateur
     end
   end
 
-  def self.feedback(sender_id)
+  def self.feedback(sender_id) #demande du feedback a l'utilisateur sur l'exercice
       Bot.on :message do |message|
         puts "Received '#{message.inspect}' from #{message.sender}" # debug only
         answer = message.text.downcase
-        if answer.include?("beaucoup")
+        if answer.include?("beaucoup") #beaucoup aimé
           say(sender_id, ANS_FEEDBACK[:beaucoup])
-          MomentPresent.exo_random(sender_id)
-        elsif answer.include?("peu")
+          MomentPresent.exo_random(sender_id) #redirige vers un autre exercice
+        elsif answer.include?("peu") #un peu aimé
           say(sender_id, ANS_FEEDBACK[:un_peu])
-          MomentPresent.exo_random(sender_id)
-        elsif answer.include?("pas")
+          MomentPresent.exo_random(sender_id)#redirige vers un autre exercice
+        elsif answer.include?("pas") #pas aimé
           say(sender_id, ANS_FEEDBACK[:pas_du_tout])
-          MomentPresent.exo_random(sender_id)
+          MomentPresent.exo_random(sender_id)#redirige vers un autre exercice
         else
-          say(sender_id, MINUTEUR[:unknown_command], MINUTEUR[:feedback])
+          say(sender_id, MINUTEUR[:unknown_command], MINUTEUR[:feedback]) #pas compris, on redemande
         end
       end
   end
 
   def self.nouvel_exercice(sender_id)
-    Bot.on :message do |message|
+    Bot.on :message do |message| #recupere la réponse de l'utilisateur
         puts "Received '#{message.inspect}' from #{message.sender}" # debug only
         answer = message.text.downcase
-        if answer.include?("oui")
-          MomentPresent.exo_random(sender_id)
+        if answer.include?("oui")  #utilisateur veut faire un autre exercice
+          MomentPresent.exo_random(sender_id) #nouvel exercice random
         elsif answer.include?("non")
-          MomentPresent.exo_random(sender_id)
-        elsif answer.include?("changer")
-          say(sender_id, ANS_FEEDBACK[:pas_du_tout])
-          IntroductionHexaflex.presentation_hexaflex(sender_id)
+          say(sender_id, JEU_DU_DETAIL[:au_revoir]) #pas de nouvel exercice, on dit au revoir
+        elsif answer.include?("changer") #utilisateur veut changer de dimension
+          IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
         else
-          say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE)
+          say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE) #pas compris, on redemande
         end
       end
   end
