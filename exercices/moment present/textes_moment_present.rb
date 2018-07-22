@@ -11,7 +11,7 @@ JEU_DU_DETAIL = {
   but_exercice:
   "Cet exercice est fait pour te faire travailler ta concentration et donc à faire le vide autour de toi pendant un court instant. J'espère que tu l'as aimé.",
   nouvel_exercice:
-  "Maintenant que celui-ci est terminé, as-tu envie d'en faire un autre?"
+  "Maintenant que celui-ci est terminé, as-tu envie d'en faire un autre?",
   au_revoir:
   "Pas de souci, en espérant que tu reviennes bientôt !"
 }
