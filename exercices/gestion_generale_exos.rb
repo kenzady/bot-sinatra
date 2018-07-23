@@ -1,3 +1,4 @@
+'moment_present/exos_moment_present'
 #methode except pour exclure l'exo déjà effectué de la liste des exos lorsque le user veut en faire un nouveau
 class Array
   def except(value)
