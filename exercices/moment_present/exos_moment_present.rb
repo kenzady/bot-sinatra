@@ -32,7 +32,7 @@ class MomentPresent
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           answer = message.text.downcase
-          savane = ["zèbre", "éléphant", "girafe", "buffle", "anthilope", "lion", "oiseau", "herbe", "arbre", "rivière", "nuage", "montagne"]
+          savane = ["zèbre", "zebre", "éléphant", "elephant" "girafe", "buffle", "antilope", "lion", "oiseau", "herbe", "arbre", "rivière", "riviere", "nuage", "montagne"]
           count = 0
           # Compte le nombre de bonne réponse du user et donne un encouragement en conséquence
           savane.each do |word|
