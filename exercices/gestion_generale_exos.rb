@@ -1,5 +1,4 @@
 require_relative 'moment_present/exos_moment_present'
-require_relative '../gestion_generale_exos'
 require_relative 'introduction_hexaflex'
 #methode except pour exclure l'exo déjà effectué de la liste des exos lorsque le user veut en faire un nouveau
 class Array
