@@ -1,4 +1,6 @@
 require_relative 'moment_present/exos_moment_present'
+require_relative '../gestion_generale_exos'
+require_relative 'introduction_hexaflex'
 #methode except pour exclure l'exo déjà effectué de la liste des exos lorsque le user veut en faire un nouveau
 class Array
   def except(value)
@@ -35,7 +37,7 @@ def self.nouvel_exercice(sender_id, dim, exos_dim, exo_fait)
       IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
     else
       say(sender_id, NEW_EXO[:unknown_command], NOUVEL_EXERCICE) #pas compris, on redemande
-      #GeneraleExos.nouvel_exercice(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail")
+      GeneraleExos.nouvel_exercice(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail")
     end
   end
 end
