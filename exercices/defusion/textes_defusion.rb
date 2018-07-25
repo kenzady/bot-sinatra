@@ -31,7 +31,7 @@ ANS_CHOCOLAT_CHOCOLAT = [
   },
   {
     content_type: 'text',
-    title: "Pas envie de faire cet exo",
+    title: "Autre exo",
     payload: 'CHANGE_EXO'
   },
   {
