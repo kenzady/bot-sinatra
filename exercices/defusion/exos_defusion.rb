@@ -53,6 +53,9 @@ class Defusion
             answer_positive = message.text.downcase
             #renvoyer la pensée négative + positive?
             say(sender_id, JEU_DU_MAIS[:explication]) #explique le but de l'exercice
+            say(sender_id, JEU_DU_MAIS[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+            GeneraleExos.nouvel_exercice(sender_id, Defusion, exos_defusion, "exo_jeu_du_mais") #redirige vers la methode nouvel exercice
+
           end
     end
 
