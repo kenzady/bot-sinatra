@@ -48,7 +48,7 @@ def humour_analysis(sender_id)
       what_is_ur_objective(sender_id)
     elsif answer.include?("peu") || answer.include?("pas")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
-      what_is_ur_objective(sender_id)
+      Methode.methode_init(sender_id) #goes straight to the method
     elsif
       say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
       humour_analysis(sender_id)
