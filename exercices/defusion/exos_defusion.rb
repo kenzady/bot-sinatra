@@ -2,7 +2,7 @@ require_relative 'textes_defusion'
 require_relative '../gestion_generale_exos'
 
 class Defusion
-  def self.exo_random
+  def self.exo_random(sender_id)
     exos_defusion = ["exo_chocolat_chocolat", "exo_jeu_du_mais"]
     exercice = exos_defusion.sample
 
@@ -41,7 +41,7 @@ class Defusion
     end
   end
 
-  def self.exo_jeu_du_mais
+  def self.exo_jeu_du_mais(sender_id, exos_defusion)
     say(sender_id, CHOCOLAT_CHOCOLAT[:intro]) #intro de l'exercice, on demande a l'utilisateur d'écrire une pensée négative
     Bot.on :message do |message| #pensée négative
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
