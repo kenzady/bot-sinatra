@@ -21,7 +21,7 @@ class IntroductionHexaflex
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
         # exercice_aleat = Defusion.exo_random
-        Defusion.exercice_aleat # choisi aléatoirement un exercice de la dimension choisie
+        Defusion.exo_random(sender_id) # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
       elsif answer.include?("valeurs")
