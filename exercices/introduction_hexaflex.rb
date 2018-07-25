@@ -1,6 +1,7 @@
 require_relative 'textes_introduction_hexaflex'
 require_relative 'moment_present/exos_moment_present'
 require_relative '../text'
+require_relative 'defusion/exos_defusion'
 
 class IntroductionHexaflex
   def self.presentation_hexaflex(sender_id) # presente rapidement le sujet et demande au user de choisir une dimension
