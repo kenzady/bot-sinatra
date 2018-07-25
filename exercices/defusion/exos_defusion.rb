@@ -38,6 +38,7 @@ class Defusion
       else
         say(sender_id, CHOCOLAT_CHOCOLAT[:unknown_command], ANS_CHOCOLAT_CHOCOLAT) #pas compris, on redemande
       end
+    end
   end
 
   def self.exo_jeu_du_mais
