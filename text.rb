@@ -20,17 +20,17 @@ si tu veux en savoir plus sur le sujet",
 HUMOUR = [
   {
     content_type: 'text',
-    title: 'Sévèrement stréssé',
+    title: 'Sévèrement stréssé(e)',
     payload: 'HIGLY_STRESSED'
   },
   {
     content_type: 'text',
-    title: 'Peu stressé',
+    title: 'Peu stressé(e)',
     payload: 'SOMEWHAT_STRESSED'
   },
   {
     content_type: 'text',
-    title: 'Pas du tout stressé',
+    title: 'Pas du tout stressé(e)',
     payload: 'NOT_STRESSED'
   }
 ]
@@ -182,7 +182,7 @@ RAISONS_EFFICACITE = [
   },
   {
     content_type: 'text',
-    title: "Passer directement à la méthode",
+    title: "Aller à la méthode",
     payload: 'METHOD'
   }
 ]
@@ -220,7 +220,7 @@ TYPE_AIDE_EXTERIEURE = [
     },
     {
       content_type: 'text',
-      title: "Passer directement à la méthode",
+      title: "Aller à la méthode",
       payload: 'METHOD'
     }
   ]
@@ -236,12 +236,12 @@ ANS_AIDE_EXTERIEURE = {
 RAISONS_INEFFICACITE = [
     {
       content_type: 'text',
-      title: "Je ne savais pas comment faire/vers quoi me tourner",
+      title: "Ne savais pas comment faire",
       payload: 'SAVAIT_PAS'
     },
     {
       content_type: 'text',
-      title: "Je ne me suis pas investi(e)",
+      title: "Pas assez investi(e)",
       payload: 'NON_INVESTISSEMENT'
     },
     {
@@ -256,7 +256,7 @@ RAISONS_INEFFICACITE = [
     },
     {
       content_type: 'text',
-      title: "Passer directement à la méthode",
+      title: "Aller à la méthode",
       payload: 'METHOD'
     }
   ]
@@ -300,7 +300,7 @@ PQ_INACTION = [
   },
   {
     content_type: 'text',
-    title: "Je n'en avais pas les moyens",
+    title: "Pas les moyens",
     payload: 'NO_MEANS'
   },
   {
