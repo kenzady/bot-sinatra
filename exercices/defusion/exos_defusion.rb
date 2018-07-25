@@ -43,16 +43,16 @@ class Defusion
   end
 
   def self.exo_jeu_du_mais(sender_id, exos_defusion)
-    say(sender_id, CHOCOLAT_CHOCOLAT[:intro]) #intro de l'exercice, on demande a l'utilisateur d'écrire une pensée négative
+    say(sender_id, JEU_DU_MAIS[:intro]) #intro de l'exercice, on demande a l'utilisateur d'écrire une pensée négative
     Bot.on :message do |message| #pensée négative
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           answer_negative = message.text
-          say(sender_id, CHOCOLAT_CHOCOLAT[:pensee_positive]) #demande la pensée positive
+          say(sender_id, JEU_DU_MAIS[:pensee_positive]) #demande la pensée positive
           Bot.on :message do |message| # pensée positive
             puts "Received '#{message.inspect}' from #{message.sender}" # debug only
             answer_positive = message.text.downcase
             #renvoyer la pensée négative + positive?
-            say(sender_id, CHOCOLAT_CHOCOLAT[:explication]) #explique le but de l'exercice
+            say(sender_id, JEU_DU_MAIS[:explication]) #explique le but de l'exercice
           end
     end
 
