@@ -10,7 +10,8 @@ class Defusion
       exos_defusion[1] = "exo_jeu_du_mais"
       Defusion.exo_chocolat_chocolat(sender_id, exos_defusion)
     elsif exercice == "exo_jeu_du_mais"
-      Defusion.exo_jeu_du_mais(sender_id)
+      exos_defusion[1] = "exo_chocolat_chocolat"
+      Defusion.exo_jeu_du_mais(sender_id, exos_defusion)
     end
   end
 
