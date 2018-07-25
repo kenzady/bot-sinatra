@@ -48,7 +48,11 @@ JEU_DU_MAIS = {
 "Très bien. Maintenant je vais te demander d'y associer une pensée positive. Par exemple, si j'avais choisi 'Je me sens incapable de réussir mon exam', ici je pourrais dire 'Mais, ce n’est qu’une impression subjective et je vais travailler dur et finalement je réussirai'. À toi de jouer.",
   explication:
 "En réalité, ceci est un outil très puissant. Le cerveau est peut-être merveilleux, mais quand il est confronté à un 'MAIS', il ne prend en compte que la seconde partie de la phrase.
-C'est donc un outil mental prodigieux d’efficacité pour chasser les pensées négatives."
+C'est donc un outil mental prodigieux d’efficacité pour chasser les pensées négatives.",
+  nouvel_exercice:
+  "Maintenant que nous avons fini ce petit exercice, as-tu envie d'en faire un autre ?",
+  unknown_command:
+  "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?"
 
 }
 
