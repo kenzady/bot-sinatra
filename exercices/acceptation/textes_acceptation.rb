@@ -10,7 +10,11 @@ ALLUMETTE = {
   explication_metaphore:
 "Je te parle de cette métaphore car c'est la même logique qui s'appliquent sur nos problèmes et nos pensées. En effet, les stratégies d'évitement d'expérience peuvent fonctionner lorsqu'elles sont appliquées à des pensées, des images et des sensations physiques modérément désagréables mais vont à fins contraires dès que l'intensité de l'inconfort dépasse un certain seuil.",
   explication_part_2:
-  "C'est pourquoi il est préférable de confronter ses pensées plutôt que d'essayer de les éviter à tout prix, et c'est ce sur quoi nous allons travailler avec ce thème de l'acceptation !"
+  "C'est pourquoi il est préférable de confronter ses pensées plutôt que d'essayer de les éviter à tout prix, et c'est ce sur quoi nous allons travailler avec ce thème de l'acceptation !",
+  demande_feedback:
+  "As-tu apprécié cet exercice ?",
+  nouvel_exercice:
+  "Que veux-tu faire maintenant ?"
 }
 
 
@@ -46,3 +50,39 @@ START_EXERCISE = [
     payload: 'ANOTHER_DIMENSION'
   }
 ]
+
+
+FEEDBACK = [
+  {
+    content_type: 'text',
+    title: 'Beaucoup',
+    payload: 'BEAUCOUP'
+  },
+  {
+    content_type: 'text',
+    title: "Un petit peu",
+    payload: 'UN_PEU'
+  },
+  {
+    content_type: 'text',
+    title: 'Pas du tout',
+    payload: 'PAS_DU_TOUT'
+  }
+]
+
+
+
+ANS_FEEDBACK = {
+beaucoup:
+"Cool 😎! Moi j'aime bien les métaphores car elles permettent de mieux se mettre en situation. Hâte de réitérer l'expérience avec toi ! 😉
+Que veux tu faire maintenant?",
+
+un_peu:
+"Tant mieux ! Moi j'aime bien les métaphores car elles permettent de mieux se mettre en situation. Hâte de réitérer l'expérience avec toi ! 😉
+Que veux-tu faire maintenant?",
+
+pas_du_tout:
+"J'en suis navré 😞😔 Moi j'aime bien les métaphores car elles permettent de mieux se mettre en situation. J'espère que tu apprécieras mieux les prochaines !
+Que veux tu faire maintenant?"
+
+}

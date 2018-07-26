@@ -44,28 +44,50 @@ class Acceptation
               }
             }
           )
-        Bot.on :message do |message|
-          puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-          answer = message.text.downcase
-          savane = ["zèbre", "zebre", "éléphant", "elephant" "girafe", "buffle", "antilope", "lion", "oiseau", "herbe", "arbre", "rivière", "riviere", "nuage", "montagne"]
-          count = 0
-          # Compte le nombre de bonne réponse du user et donne un encouragement en conséquence
-          savane.each do |word|
-            if answer.include?(word)
-              count += 1
+          say(sender_id, ALLUMETTE[:explication_metaphore]) #on explique la métaphore
+          say(sender_id, ALLUMETTE[:explication_part_2]) #on explique la métaphore partie 2 pour pas que ce soit trop long
+          say(sender_id, ALLUMETTE[:demande_feedback], FEEDBACK) #demande feedback
+          Bot.on :message do |message|
+            puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+            answer = message.text.downcase
+            if answer.include?("beaucoup") #beaucoup aimé
+              say(sender_id, ANS_FEEDBACK[:beaucoup], NOUVEL_EXERCICE) #merci + demande ce que l'utilisateur veut faire
+            elsif answer.include?("peu") #un peu aimé
+              say(sender_id, ANS_FEEDBACK[:un_peu], NOUVEL_EXERCICE) #merci + demande ce que l'utilisateur veut faire
+            elsif answer.include?("pas") #pas aimé
+              say(sender_id, ANS_FEEDBACK[:pas_du_tout], NOUVEL_EXERCICE) #OK + demande ce que l'utilisateur veut faire
+            end
+
+            Bot.on :message do |message| #recupere la réponse pour nouvel exo ou pas?
+              puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+              answer = message.text.downcase
+              if answer.include?("nouvel")  #utilisateur veut faire un autre exercice
+                Acceptation.exo_random(sender_id) #nouvel exercice random
+              elsif answer.include?("fini")
+                say(sender_id, ALLUMETTE[:au_revoir]) #pas de nouvel exercice, on dit au revoir
+                message.reply( #gif buh bye
+                  attachment: {
+                    type: 'image',
+                    payload: {
+                      url: 'https://media.giphy.com/media/l0MYzLLxlJDfYtzy0/giphy.gif'
+                    }
+                  }
+                )
+              elsif answer.include?("changer") #utilisateur veut changer de dimension
+                IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
+              else
+                say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE) #pas compris, on demande ce qu'il veut faire
+              end
             end
           end
-          if count > savane.size/2
-            say(sender_id, ALLUMETTE[:quel_oeil])
-          else
-            say(sender_id, ALLUMETTE[:peux_mieux_faire])
-          end
-          say(sender_id, ALLUMETTE[:but_exercice]) #explique le but de l'exercice
-          say(sender_id, ALLUMETTE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice(sender_id, MomentPresent, exos_moment_present, "exo_ALLUMETTE") #redirige vers la methode nouvel exercice
         end
-
+      elsif answer.include?("exo") #l'utilisateur veut changer d'exo
+        Acceptation.exo_random(sender_id) #change d'exo
+      elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
+        IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
+      else
+        say(sender_id, ALLUMETTE[:intro_nom], START_EXERCISE) #pas compris, on redemande
       end
+    end
   end
-
 end
