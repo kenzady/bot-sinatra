@@ -90,4 +90,10 @@ class Acceptation
       end
     end
   end
+
+
+  def self.exo_distance_objectif(sender_id, exos_acceptation)
+    #nothing here yet because I'm fucking tired of this shit
+
+  end
 end
