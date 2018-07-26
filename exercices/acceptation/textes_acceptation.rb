@@ -10,3 +10,19 @@ ALLUMETTE = {
   explication_part_2:
   "C'est pourquoi il est préférable de confronter ses pensées plutôt que d'essayer de les éviter à tout prix, et c'est ce sur quoi nous allons travailler avec ce thème de l'acceptation !"
 }
+
+
+
+DISTANCE_OBJECTIF = {
+intro:
+"Allez ! Pour cet exercice, je vais te demander de m'écrire un objectif ou une action que tu as envie de réaliser mais pour lequel tu éprouves de la difficulté à te 'mettre en route' ou même que tu fuis.",
+pensees_empechent:
+"Très bien, maintenant pourrais-tu m'écrire les pensées qui t'empêchent d'avancer vers cet objectif ? Cela peut être de l'auto-critique, des anticipations, de la peur, du desespoir par exemple.",
+raisons:
+"Okay, merci. Maintenant tu vas me dire quelles seraient tes raisons pour atteindre cet objectif, réaliser cette action.",
+sens_profond:
+"Malgré tous les freins qui se présentent à toi, il y a des raisons profondes pour ton envie d'atteindre cet objectif. ",
+technique_blocage:
+"Ce que je vais te demander, c'est qu'à chaque fois que tu ressens un blocage vis-à-vis de cet objectif, tu t'ancres dans tes valeurs. Comment?
+Je t'invite à suivre cette vidéo (-> Trouver ou faire une vidéo qui correspond aux consignes)"
+}
