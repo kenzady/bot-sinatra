@@ -1,6 +1,6 @@
 DINER_CELEBRATION = {
 ready:
-"Cet exercice s'appelle 'Dîner de célébration de vie' et va te projeter dans le futur. Ça te dit ?"
+"Cet exercice s'appelle 'Dîner de célébration de vie' et va te projeter dans le futur. Ça te dit ?",
 intro:
 "Vamos ! Imaginons que dans 10 ans, les personnes les plus proches de toi décident d’organiser un dîner en ton honneur. A cet évènement tous ceux qui vous sont chers sont présents une coupe à la main.",
 fete:
