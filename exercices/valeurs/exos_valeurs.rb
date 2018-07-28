@@ -53,8 +53,7 @@ class Valeurs
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
-      if answer.include?("go") #si l'utilisateur veut faire cet exo, affiche l'image
-        ###### EXERCICE #######
+      if answer.include?("go") #si l'utilisateur veut faire cet exo
         say(sender_id, SE_REMERCIER[:intro])
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
