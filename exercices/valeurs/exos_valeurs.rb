@@ -73,11 +73,4 @@ class Valeurs
     end
   end
 
-
-
-
-
-
-
-
 end
