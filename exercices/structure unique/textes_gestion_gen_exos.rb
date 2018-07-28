@@ -23,3 +23,21 @@ START_EXERCISE = [
     payload: 'ANOTHER_DIMENSION'
   }
 ]
+
+NOUVEL_EXERCICE = [
+  {
+    content_type: 'text',
+    title: 'Nouvel exercice',
+    payload: 'NOUVEL_EXERCICE'
+  },
+  {
+    content_type: 'text',
+    title: "J'en ai fini",
+    payload: 'GOODBYE'
+  },
+  {
+    content_type: 'text',
+    title: 'Changer de thème',
+    payload: 'CHANGER_THEME'
+  }
+]

@@ -119,21 +119,3 @@ Que veux-tu faire maintenant?",
 Que veux tu faire maintenant?"
 
 }
-
-NOUVEL_EXERCICE  = [
-  {
-    content_type: 'text',
-    title: 'Oui',
-    payload: 'OUI'
-  },
-  {
-    content_type: 'text',
-    title: "Non",
-    payload: 'NON'
-  },
-  {
-    content_type: 'text',
-    title: 'Changer de thème',
-    payload: 'CHANGER_THEME'
-  }
-]
