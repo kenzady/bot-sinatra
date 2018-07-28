@@ -30,7 +30,7 @@ MINUTEUR = {
   respirations:
   "Super ! Maintenant prends 4 grandes respirations, sans penser à ce que tu étais en train de faire puis expire. Tu peux suivre ce gif pour t'aider.",
   feedback:
-  "Voilà, c'est terminé ! As-tu apprécié cet exercice?",
+  "Voilà, c'est terminé ! As-tu apprécié cet exercice ?",
   unknown_command:
   "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?"
 }
