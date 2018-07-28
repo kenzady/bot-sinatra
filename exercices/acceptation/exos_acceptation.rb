@@ -1,5 +1,7 @@
 require_relative 'textes_acceptation'
 require_relative '../gestion_generale_exos'
+
+require_relative '../structure unique/gestion_generale_exos'
 require_relative '../structure unique/textes_gestion_gen_exos'
 
 class Acceptation
