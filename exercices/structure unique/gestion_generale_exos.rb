@@ -41,7 +41,7 @@ def self.nouvel_exercice?(sender_id, dim, exos_dim, exo_fait)
       IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
     else
       say(sender_id, NEW_EXO[:unknown_command], NOUVEL_EXERCICE) #pas compris, on redemande
-      GeneraleExos.nouvel_exercice(sender_id, MomentPresent, exos_dim, "exo_jeu_du_detail")
+      GeneraleExos.nouvel_exercice?(sender_id, MomentPresent, exos_dim, "exo_jeu_du_detail")
     end
   end
 end
