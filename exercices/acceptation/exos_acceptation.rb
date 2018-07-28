@@ -102,7 +102,6 @@ class Acceptation
         #####EXERCICE TO DO ########
           say(sender_id, DISTANCE_OBJECTIF[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Acceptation, exos_acceptation, "exo_distance_objectif") #redirige vers la methode nouvel exercice
-        end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         Acceptation.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
@@ -111,6 +110,5 @@ class Acceptation
         say(sender_id, DISTANCE_OBJECTIF[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
     end
-  end
   end
 end
