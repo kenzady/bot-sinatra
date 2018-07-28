@@ -46,7 +46,7 @@ class MomentPresent
           end
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
           say(sender_id, JEU_DU_DETAIL[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") #redirige vers la methode nouvel exercice
+          GeneraleExos.nouvel_exercice?(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") #redirige vers la methode nouvel exercice
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         MomentPresent.exo_random(sender_id) #change d'exo
@@ -85,7 +85,6 @@ class MomentPresent
         MomentPresent.exo_random(sender_id)
       else
         say(sender_id, MINUTEUR[:unknown_command], MINUTEUR_TIME)
-        MomentPresent.exo_minuteur_start(sender_id, exos_moment_present)
       end
     end
   end
