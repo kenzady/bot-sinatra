@@ -34,9 +34,10 @@ class Valeurs
           answer = message.text.downcase
           say(sender_id, DINER_CELEBRATION[:reponse_valeurs]) #lui dit que ce sont ses valeurs
           say(sender_id, DINER_CELEBRATION[:note_valeurs])  #lui dit de les noter (+ il faudrait qu'on essaie de les sauvegarder)
-        end
           say(sender_id, DINER_CELEBRATION[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Valeurs, exos_valeurs, "exo_diner_celebration") #redirige vers la methode nouvel exercice
+        end
+
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         Valeurs.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
@@ -59,9 +60,9 @@ class Valeurs
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           answer = message.text.downcase
           say(sender_id, SE_REMERCIER[:note]) #lui dire qu'on prend note et que ce sont ses valeurs
-        end
           say(sender_id, SE_REMERCIER[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Valeurs, exos_valeurs, "exo_se_remercier") #redirige vers la methode nouvel exercice
+        end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         Valeurs.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
