@@ -18,8 +18,6 @@ ALLUMETTE = {
 
 }
 
-
-
 DISTANCE_OBJECTIF = {
 intro:
 "Allez ! Pour cet exercice, je vais te demander de m'écrire un objectif ou une action que tu as envie de réaliser mais pour lequel tu éprouves de la difficulté à te 'mettre en route' ou même que tu fuis.",
@@ -33,25 +31,6 @@ technique_blocage:
 "Ce que je vais te demander, c'est qu'à chaque fois que tu ressens un blocage vis-à-vis de cet objectif, tu t'ancres dans tes valeurs. Comment?
 Je t'invite à suivre cette vidéo (-> Trouver ou faire une vidéo qui correspond aux consignes)"
 }
-
-START_EXERCISE = [
-  {
-    content_type: 'text',
-    title: 'GO!',
-    payload: 'GO'
-  },
-  {
-    content_type: 'text',
-    title: "Changer d'exo",
-    payload: 'CHANGE_EXO'
-  },
-  {
-    content_type: 'text',
-    title: 'Autre dimension',
-    payload: 'ANOTHER_DIMENSION'
-  }
-]
-
 
 FEEDBACK = [
   {

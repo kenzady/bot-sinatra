@@ -71,24 +71,6 @@ ANS_MINUTEUR = {
   "Comme tu veux 😶 Je te propose alors un autre exercice, en espérant que celui-là te plaise !"
 }
 
-START_EXERCISE = [
-  {
-    content_type: 'text',
-    title: 'GO!',
-    payload: 'GO'
-  },
-  {
-    content_type: 'text',
-    title: "Changer d'exo",
-    payload: 'CHANGE_EXO'
-  },
-  {
-    content_type: 'text',
-    title: 'Autre dimension',
-    payload: 'ANOTHER_DIMENSION'
-  }
-]
-
 FEEDBACK = [
   {
     content_type: 'text',
