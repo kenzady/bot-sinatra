@@ -70,34 +70,3 @@ ANS_MINUTEUR = {
   skip:
   "Comme tu veux 😶 Je te propose alors un autre exercice, en espérant que celui-là te plaise !"
 }
-
-FEEDBACK = [
-  {
-    content_type: 'text',
-    title: 'Beaucoup',
-    payload: 'BEAUCOUP'
-  },
-  {
-    content_type: 'text',
-    title: "Un petit peu",
-    payload: 'UN_PEU'
-  },
-  {
-    content_type: 'text',
-    title: 'Pas du tout',
-    payload: 'PAS_DU_TOUT'
-  }
-]
-
-ANS_FEEDBACK = {
-  beaucoup:
-  "Génial 😎 ! Sache que cet exercice devient de plus en plus facile à force de répétition. Hâte de réitérer l'expérience avec toi ! 😉
-Que veux tu faire maintenant?" ,
-  un_peu:
-  "Tant mieux ! Sache que cet exercice devient de plus en plus facile à force de répétition.Hâte de réitérer l'expérience avec toi ! 😉
-Que veux-tu faire maintenant?",
-  pas_du_tout:
-  "J'en suis navré 😞😔 Sache que cet exercice devient de plus en plus facile à force de répétition. J'espère que tu l'apprécieras plus la prochaine fois !
-Que veux tu faire maintenant?"
-
-}
