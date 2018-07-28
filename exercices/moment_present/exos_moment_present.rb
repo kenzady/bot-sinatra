@@ -9,7 +9,7 @@ class MomentPresent
       exos_moment_present[1] = "exo_minuteur_start"
       MomentPresent.exo_jeu_du_detail(sender_id, exos_moment_present)
     elsif exercice == "exo_minuteur"
-      MomentPresent.exo_minuteur_start(sender_id)
+      MomentPresent.exo_minuteur_start(sender_id exos_moment_present)
     end
   end
 

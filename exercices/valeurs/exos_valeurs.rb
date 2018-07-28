@@ -9,7 +9,7 @@ class Valeurs
       exos_valeurs[1] = "exo_se_remercier"
      Valeurs.exo_diner_celebration(sender_id, exos_valeurs)
     elsif exercice == "exo_se_remercier"
-     Valeurs.exo_se_remercier(sender_id)
+     Valeurs.exo_se_remercier(sender_id, exos_valeurs)
     end
   end
 
