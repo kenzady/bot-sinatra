@@ -6,9 +6,10 @@ class MomentPresent
     exos_moment_present = ["exo_jeu_du_detail", "exo_minuteur"]
     exercice = exos_moment_present.sample #selectionne un exercice au hasard
     if exercice == "exo_jeu_du_detail"
-      exos_moment_present[1] = "exo_minuteur_start"
+      exos_moment_present[1] = "exo_minuteur"
       MomentPresent.exo_jeu_du_detail(sender_id, exos_moment_present)
     elsif exercice == "exo_minuteur"
+      exos_moment_present[1] = "exo_jeu_du_detail"
       MomentPresent.exo_minuteur_start(sender_id exos_moment_present)
     end
   end

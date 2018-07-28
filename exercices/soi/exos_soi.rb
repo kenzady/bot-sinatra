@@ -9,6 +9,7 @@ class Soi
       exos_soi[1] = "exo_soi_observateur"
       Soi.exo_jeu_de_role(sender_id, exos_soi)
     elsif exercice == "exo_soi_observateur"
+      exos_soi[1] = "exo_jeu_de_role"
       Soi.exo_soi_observateur(sender_id, exos_soi)
     end
   end
