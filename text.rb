@@ -30,7 +30,7 @@ HUMOUR = [
   },
   {
     content_type: 'text',
-    title: 'Pas du tout stressé(e)',
+    title: 'Pas stressé(e)',
     payload: 'NOT_STRESSED'
   }
 ]
@@ -130,7 +130,7 @@ OBJECTIVES = [
   },
   {
     content_type: 'text',
-    title: 'Je ne sais pas trop',
+    title: 'Je ne sais pas',
     payload: 'NE_SAIT_PAS'
   }
 ]
@@ -236,7 +236,7 @@ ANS_AIDE_EXTERIEURE = {
 RAISONS_INEFFICACITE = [
     {
       content_type: 'text',
-      title: "Ne savais pas comment faire",
+      title: "Ne savais pas quoi faire",
       payload: 'SAVAIT_PAS'
     },
     {
@@ -246,7 +246,7 @@ RAISONS_INEFFICACITE = [
     },
     {
       content_type: 'text',
-      title: "L'outil n'a pas marché",
+      title: "Ça n'a pas marché",
       payload: 'PAS_MARCHE'
     },
     {
@@ -290,12 +290,12 @@ REPONSE_TERNAIRE = [
 PQ_INACTION = [
   {
     content_type: 'text',
-    title: "Je n'osais pas en parler",
+    title: "Pas osé en parler",
     payload: 'DARE'
   },
   {
     content_type: 'text',
-    title: "Je ne savais pas vers qui me tourner",
+    title: "Pas su vers qui me tourner",
     payload: 'WHO_TO_SPEAK'
   },
   {
@@ -305,7 +305,7 @@ PQ_INACTION = [
   },
   {
     content_type: 'text',
-    title: "Je ne pensais pas avoir besoin",
+    title: "Ne pensais pas avoir besoin",
     payload: 'THINK'
   },
 ]
