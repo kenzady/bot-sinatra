@@ -25,7 +25,7 @@ HUMOUR = [
   },
   {
     content_type: 'text',
-    title: 'Peu stressé(e)',
+    title: 'Moyennement stressé(e)',
     payload: 'SOMEWHAT_STRESSED'
   },
   {
