@@ -94,6 +94,23 @@ class Acceptation
 
   def self.exo_distance_objectif(sender_id, exos_acceptation)
     #nothing here yet because I'm fucking tired of this shit
-
+    say(sender_id, DISTANCE_OBJECTIF[:ready], START_EXERCISE) #Nom de l'exercice + veux tu le faire?
+    Bot.on :message do |message|
+      puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+      answer = message.text.downcase
+      if answer.include?("go") #si l'utilisateur veut faire cet exo
+        #####EXERCICE TO DO ########
+          say(sender_id, DISTANCE_OBJECTIF[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+          GeneraleExos.nouvel_exercice(sender_id, Acceptation, exos_acceptation, "exo_distance_objectif") #redirige vers la methode nouvel exercice
+        end
+      elsif answer.include?("exo") #l'utilisateur veut changer d'exo
+        Acceptation.exo_random(sender_id) #change d'exo
+      elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
+        IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
+      else
+        say(sender_id, DISTANCE_OBJECTIF[:unknown_command], START_EXERCISE) #pas compris, on redemande
+      end
+    end
+  end
   end
 end
