@@ -1,7 +1,8 @@
 require_relative 'moment_present/exos_moment_present'
 require_relative 'introduction_hexaflex'
 require_relative 'defusion/exos_defusion'
-
+require_relative 'valeurs/exos_valeurs'
+require_relative 'acceptation/exos_acceptation'
 #methode except pour exclure l'exo déjà effectué de la liste des exos lorsque le user veut en faire un nouveau
 class Array
   def except(value)

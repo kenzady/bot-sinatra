@@ -24,12 +24,16 @@ class IntroductionHexaflex
         Defusion.exo_random(sender_id) # choisi aléatoirement un exercice de la dimension choisie
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
+        Acceptation.exo_random(sender_id)
       elsif answer.include?("valeurs")
         say(sender_id, REPONSE_CHOIX_DIM[:valeurs])
+        Valeurs.exo_random(sender_id)
       elsif answer.include?("contexte")
         say(sender_id, REPONSE_CHOIX_DIM[:soi_contexte])
+        Soi.exo_random(sender_id)
       elsif answer.include?("action")
         say(sender_id, REPONSE_CHOIX_DIM[:action])
+        ActionsEngagees.exo_random(sender_id)
       else
         say(sender_id, ANS_EFFICIENCY[:unknown_command], GESTION_STRESS)
         IntroductionHexaflex.analyse_choix_dimension
