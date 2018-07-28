@@ -6,10 +6,8 @@ class ActionsEngagees
     exos_actions_engagees = ["exo_decoupage", "exo_actions_engagees_mesure"]
     exercice = exos_actions_engagees.sample #selectionne un exercice au hasard
     if exercice == "exo_decoupage"
-      exos_actions_engagees[1] = "exo_actions_engagees_mesure"
-      ActionsEngagees.exo_DECOUPAGE(sender_id, exos_actions_engagees)
+      ActionsEngagees.exo_decoupage(sender_id, exos_actions_engagees)
     elsif exercice == "exo_actions_engagees_mesure"
-      exos_actions_engagees[1] = "exo_decoupage"
       ActionsEngagees.exo_actions_engagees_mesure(sender_id, exos_actions_engagees)
     end
   end
