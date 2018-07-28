@@ -55,6 +55,12 @@ class Valeurs
       answer = message.text.downcase
       if answer.include?("go") #si l'utilisateur veut faire cet exo, affiche l'image
         ###### EXERCICE #######
+        say(sender_id, SE_REMERCIER[:intro])
+        Bot.on :message do |message|
+          puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+          answer = message.text.downcase
+          say(sender_id, SE_REMERCIER[:note]) #lui dire qu'on prend note et que ce sont ses valeurs
+        end
           say(sender_id, SE_REMERCIER[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Valeurs, exos_valeurs, "exo_se_remercier") #redirige vers la methode nouvel exercice
         end
