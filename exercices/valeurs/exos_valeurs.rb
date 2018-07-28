@@ -1,5 +1,5 @@
 require_relative 'textes_valeurs'
-require_relative '../gestion_generale_exos'
+require_relative '../structure unique/gestion_generale_exos'
 
 class Valeurs
   def self.exo_random(sender_id)

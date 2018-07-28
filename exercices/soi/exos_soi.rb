@@ -1,5 +1,5 @@
 require_relative 'textes_soi'
-require_relative '../gestion_generale_exos'
+require_relative '../structure unique/gestion_generale_exos'
 
 class Soi
   def self.exo_random(sender_id)
