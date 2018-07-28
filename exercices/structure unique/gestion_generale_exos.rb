@@ -32,10 +32,10 @@ def self.nouvel_exercice?(sender_id, dim, exos_dim, exo_fait)
   Bot.on :message do |message| # Recupere la réponse de l'utilisateur
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
     answer = message.text.downcase
-    if answer.include?("oui")  # Utilisateur veut faire un autre exercice
+    if answer.include?("nouvel")  # Utilisateur veut faire un autre exercice
       exos_dim = exos_dim.except(exo_fait) # exclue l'exo déjà fait
       GeneraleExos.exo_random(sender_id, exos_dim, dim) #nouvel exercice random parmi ceux non faits
-    elsif answer.include?("non") # Si le user ne veut pas faire de new exo
+    elsif answer.include?("fini") # Si le user ne veut pas faire de new exo
       say(sender_id, NEW_EXO[:au_revoir]) # On dit au revoir
     elsif answer.include?("changer") # Utilisateur veut changer de dimension
       IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
