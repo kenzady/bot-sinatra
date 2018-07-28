@@ -32,7 +32,7 @@ MINUTEUR = {
   feedback:
   "Voilà, c'est terminé ! As-tu apprécié cet exercice ?",
   unknown_command:
-  "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?"
+  "Je ne comprends pas ce que tu as dit, peux-tu cliquer sur un bouton s'il te plait?"
 }
 
 
