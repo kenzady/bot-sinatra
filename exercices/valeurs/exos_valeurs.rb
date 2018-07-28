@@ -62,7 +62,6 @@ class Valeurs
         end
           say(sender_id, SE_REMERCIER[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Valeurs, exos_valeurs, "exo_se_remercier") #redirige vers la methode nouvel exercice
-        end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         Valeurs.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
