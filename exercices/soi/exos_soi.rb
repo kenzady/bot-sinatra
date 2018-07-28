@@ -14,7 +14,7 @@ class Soi
   end
 
 
-  def self.exo_jeu_de_role(sender_id, exos_soi)
+  def self.exo_soi_observateur(sender_id, exos_soi)
     say(sender_id, SOI_OBSERVATEUR[:ready], START_EXERCISE) #Nom de l'exercice + veux tu le faire?
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -35,7 +35,7 @@ class Soi
   end
 
 
-  def self.exo_soi_observateur(sender_id, exos_soi)
-    #####EXERCICE AUDIO #######
+  def self.exo_jeu_de_role(sender_id, exos_soi)
+    #####TO DO #######
   end
 end
