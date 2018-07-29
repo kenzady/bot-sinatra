@@ -27,7 +27,7 @@ class Soi
         #####CLIP AUDIO########
         message.reply(
           attachment: {
-            type: 'audio/mpeg',
+            type: 'audio',
             payload: {}
           },
             filedata: '../audio/Le_soi_observateur.mp3'
