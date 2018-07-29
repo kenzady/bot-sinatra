@@ -22,7 +22,8 @@ class GeneraleExos
     exos_dim.each do |exo| # Si l'exercice choisi aléatoirement match avec un exo de l'array d'exos, on balance l'exo en question
         #exo = "self.#{exo}"
         exercice = "#{exo}"
-        dim.new.send(exercice, sender_id)
+        arguments = [sender_id, exos_dim]
+        dim.send(exercice, *arguments)
 
       # pour tester des choses plus loins dans le code
       # if exo_aleat == "exo_jeu_du_detail"
