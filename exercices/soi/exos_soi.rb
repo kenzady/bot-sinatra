@@ -29,7 +29,7 @@ class Soi
           attachment: {
             type: 'audio',
             payload: {
-              url: 'https://drive.google.com/file/d/1Rjx2C73YNQdFPUFrO_0p1fvdbO9_WQXF'
+              url: 'https://s3.eu-west-3.amazonaws.com/botmessenger/Le_soi_observateur.mp3'
             }
           }
         )
