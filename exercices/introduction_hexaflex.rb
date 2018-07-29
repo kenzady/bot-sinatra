@@ -20,8 +20,8 @@ class IntroductionHexaflex
           {
             url:"http://www.psyris.be/wp-content/uploads/2017/03/loadimg.php_.jpeg"
           }
-        },
-        message_type: Facebook::Messenger::Bot::MessagingType::RESPONSE
+        }#,
+        #message_type: Facebook::Messenger::Bot::MessagingType::RESPONSE
       }, access_token: ENV['ACCESS_TOKEN'])
       say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
       IntroductionHexaflex.analyse_choix_dimension(sender_id)
