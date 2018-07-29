@@ -50,7 +50,7 @@ class MomentPresent
           GeneraleExos.nouvel_exercice?(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") #redirige vers la methode nouvel exercice
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
-        MomentPresent.exo_random(sender_id) #change d'exo
+        GeneraleExos.exo_random(sender_id, EXOS_MOMENT_PRESENT , MomentPresent) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
         IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
       else
