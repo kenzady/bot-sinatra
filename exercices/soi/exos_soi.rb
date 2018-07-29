@@ -51,10 +51,21 @@ class Soi
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
-      if answer.include?("go") #si l'utilisateur veut faire cet exo, put the audio clip
-        #####EXERCICE TO DO ########
-          say(sender_id, JEU_DE_ROLE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice(sender_id, Soi, exos_soi, "exo_jeu_de_role") #redirige vers la methode nouvel exercice
+      if answer.include?("go") #si l'utilisateur veut faire cet exo,
+          say(sender_id, JEU_DE_ROLE[:intro])
+          say(sender_id, JEU_DE_ROLE[:crainte])
+          Bot.on :message do |message|
+            puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+            answer = message.text.downcase
+            say(sender_id, JEU_DE_ROLE[:observateur])
+            Bot.on :message do |message|
+              puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+              answer = message.text.downcase
+              say(sender_id, JEU_DE_ROLE[:but])
+              say(sender_id, JEU_DE_ROLE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+              GeneraleExos.nouvel_exercice(sender_id, Soi, exos_soi, "exo_jeu_de_role") #redirige vers la methode nouvel exercice
+            end
+          end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         Soi.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
