@@ -1,13 +1,12 @@
 PRESENTATION_HEXAFLEX = {
   act:
-  "L’ACT fait la promotion de ce que l’on appelle la flexibilité psychologique,
-  une capacité à s’adapter à tous types de situations tout en continuant à agir
-  dans le sens de ce qui compte.",
-  flexibilité: "La flexibilité psychologique est souvent découpée en 6 dimensions
-  que l’on retrouve dans l’image ci-dessous :",
-  question_choix_dimension: "Le travail sur ces dimensions permet de se rapprocher d’une vie plus flexible et valorisée.
-  C’est ce que nous allons faire ensemble si tu le veux bien.
-  Par quelle dimension est-ce que tu aimerais commencer ? "
+  "L’ACT fait la promotion de ce que l’on appelle la flexibilité psychologique, une capacité à s’adapter à tous types de situations tout en continuant à agir dans le sens de ce qui compte.",
+  flexibilité:
+  "La flexibilité psychologique est souvent découpée en 6 dimensions que l’on retrouve dans l’image ci-dessous :",
+  question_choix_dimension:
+  "Le travail sur ces dimensions permet de se rapprocher d’une vie plus flexible et valorisée.
+C’est ce que nous allons faire ensemble si tu le veux bien.
+Par quelle dimension est-ce que tu aimerais commencer ? "
 }
 
 LISTE_DIMENSIONS = [
