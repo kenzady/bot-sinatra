@@ -51,9 +51,13 @@ class ActionsEngagees
             puts "Received '#{message.inspect}' from #{message.sender}" # debug only
             answer = message.text.downcase
             say(sender_id, DECOUPAGE[:actions]) #on demande les actions ciblées
-            say(sender_id, DECOUPAGE[:note]) #on dit de noter ces actions + on explique le but
-            say(sender_id, DECOUPAGE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-            GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") #redirige vers la methode nouvel exercice
+            Bot.on :message do |message|
+              puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+              answer = message.text.downcase
+              say(sender_id, DECOUPAGE[:note]) #on dit de noter ces actions + on explique le but
+              say(sender_id, DECOUPAGE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+              GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") #redirige vers la methode nouvel exercice
+            end
           end
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
