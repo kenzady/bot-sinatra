@@ -93,7 +93,7 @@ class StressManagement
         Methode.methode_init(sender_id)
       else
         say(sender_id, ANS_WHY_EFFICIENCY[:unknown_command], RAISONS_EFFICACITE)
-        StressManagement.analyse_efficacite
+        StressManagement.analyse_efficacite(sender_id)
       end
     end
   end
