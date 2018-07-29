@@ -28,10 +28,10 @@ class Soi
         message.reply(
           attachment: {
             type: 'audio',
-            payload: {}
-          },
-            filedata: '../audio/Le_soi_observateur.mp3'
-        )
+            payload: {
+              url: 'https://vocaroo.com/i/s19mU9PXWRUL'
+            }
+          }
           say(sender_id, SOI_OBSERVATEUR[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Soi, exos_soi, "exo_soi_observateur") #redirige vers la methode nouvel exercice
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
