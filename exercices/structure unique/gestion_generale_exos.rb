@@ -41,7 +41,6 @@ class GeneraleExos
         dim.send(exo_fait, *arguments)
       elsif  answer.include?("nouvel")  # Utilisateur veut faire un autre exercice
         GeneraleExos.exo_random(sender_id, exos_dim, dim, exo_fait) # Nouvel exercice random parmi ceux non faits
-        end
       elsif answer.include?("fini") # Si le user ne veut pas faire de new exo
         say(sender_id, NEW_EXO[:au_revoir]) # On dit au revoir
       elsif answer.include?("changer") # Utilisateur veut changer de dimension
