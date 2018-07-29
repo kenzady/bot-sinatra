@@ -1,6 +1,7 @@
 require_relative 'textes_soi'
 require_relative '../gestion_generale_exos'
 
+
 class Soi
   def self.exo_random(sender_id)
     exos_soi = ["exo_jeu_de_role", "exo_soi_observateur"]
@@ -22,6 +23,14 @@ class Soi
       answer = message.text.downcase
       if answer.include?("go") #si l'utilisateur veut faire cet exo, put the audio clip
         #####CLIP AUDIO########
+        message.reply(
+          attachment: {
+            type: 'audio',
+            filedata: {
+              '../audio/Le_soi_observateur.mp3;type=audio/mpeg'
+            }
+          }
+        )
           say(sender_id, SOI_OBSERVATEUR[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Soi, exos_soi, "exo_soi_observateur") #redirige vers la methode nouvel exercice
         end
