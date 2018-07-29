@@ -3,6 +3,7 @@ require_relative 'textes_introduction_hexaflex'
 require_relative 'moment_present/exos_moment_present'
 require_relative '../text'
 require_relative 'defusion/exos_defusion'
+require_relative 'actions_engagees/exos_actions_engagees'
 include Facebook::Messenger
 
 class IntroductionHexaflex
