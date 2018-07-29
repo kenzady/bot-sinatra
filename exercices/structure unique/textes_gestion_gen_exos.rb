@@ -20,9 +20,9 @@ NEW_EXO = {
   ask_for_new_exo:
   "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
   au_revoir:
-  "Pas de souci, en espérant que tu reviennes bientôt !",
+  'Pas de souci, en espérant que tu reviennes bientôt !',
   unknown_command: "Désolé, je n'ai pas compris. Peux-tu répéter s'il te plaît ?",
-  no_more_exos_available: "Quel bosseur ! Tu as déjà fait tous les exercices à ta disposition !"
+  no_more_exos_available: 'Quel bosseur ! Tu as déjà fait tous les exercices à ta disposition !'
 }
 
 NOUVEL_EXERCICE = [
@@ -50,7 +50,7 @@ NOUVEL_EXERCICE = [
 
 # Feedbacks routine
 
-FEEDBACK_QUESTION = "Maintenant que nous avons terminé, as-tu apprécié cet exercice ?"
+FEEDBACK_QUESTION = 'Maintenant que nous avons terminé, as-tu apprécié cet exercice ?'
 
 FEEDBACK = [
   {
