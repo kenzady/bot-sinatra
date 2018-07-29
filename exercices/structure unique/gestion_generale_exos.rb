@@ -20,26 +20,10 @@ class GeneraleExos
   def self.exo_random(sender_id, exos_dim, dim) #exos_dim est un array d'exos
     exo_aleat = exos_dim.sample #selectionne un exercice au hasard
     exos_dim.each do |exo| # Si l'exercice choisi aléatoirement match avec un exo de l'array d'exos, on balance l'exo en question
-        #exo = "self.#{exo}"
-        exercice = "#{exo}"
-        arguments = [sender_id, exos_dim]
-        dim.send(exercice, *arguments)
-
-      # pour tester des choses plus loins dans le code
-      # if exo_aleat == "exo_jeu_du_detail"
-      #   MomentPresent.exo_jeu_du_detail(sender_id, exos_dim)
-      # elsif exo_aleat == "exo_minuteur"
-      #   MomentPresent.exo_minuteur_start(sender_id, exos_dim)
-      # end
-      # fin du test
-
-      # Première partie du if statement ne fonctionne pas pour le moment
+          exercice = "#{exo}"
+          arguments = [sender_id, exos_dim]
+          dim.send(exercice, *arguments)
     end
-    # if exercice == "exo_jeu_du_detail"
-    #   MomentPresent.exo_jeu_du_detail(sender_id)
-    # elsif exercice == "exo_minuteur"
-    #   MomentPresent.exo_minuteur_start(sender_id)
-    # end
   end
 
 def self.nouvel_exercice?(sender_id, dim, exos_dim, exo_fait)

@@ -1,4 +1,4 @@
-EXOS_MOMENT_PRESENT = ["exo_jeu_du_detail", "exo_minuteur"]
+EXOS_MOMENT_PRESENT = ["exo_jeu_du_detail", "exo_minuteur_start"]
 
 JEU_DU_DETAIL = {
   intro:
