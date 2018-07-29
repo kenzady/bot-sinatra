@@ -29,7 +29,7 @@ class Soi
           attachment: {
             type: 'audio',
             payload: {
-              url: 'https://clyp.it/42khxiae.mp3'
+              url: 'https://drive.google.com/file/d/1Rjx2C73YNQdFPUFrO_0p1fvdbO9_WQXF'
             }
           }
         )
