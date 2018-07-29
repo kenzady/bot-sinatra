@@ -59,7 +59,7 @@ class MomentPresent
     end
   end
 
-  def self.exo_minuteur_start(sender_id)
+  def self.exo_minuteur_start(sender_id, exos_moment_present)
     say(sender_id, MINUTEUR[:intro]) #on explique les consignes
     say(sender_id, MINUTEUR[:ready], MINUTEUR_TIME) #on demande combien de temps la personne veut attendre
     Bot.on :message do |message|
@@ -68,19 +68,19 @@ class MomentPresent
       if answer.include?("10 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(600) -- ici le but serait de 'pauser' pendant le nombre de secondes demandées
-        MomentPresent.exo_minuteur_suite(sender_id)
+        MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("30 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(1800)
-        MomentPresent.exo_minuteur_suite(sender_id)
+        MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("1 heure")
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(3600)
-        MomentPresent.exo_minuteur_suite(sender_id)
+        MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("1 heure 30")
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(5400)
-        MomentPresent.exo_minuteur_suite(sender_id)
+        MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("autre")
         say(sender_id, ANS_MINUTEUR[:skip])
         MomentPresent.exo_random(sender_id)
@@ -91,7 +91,7 @@ class MomentPresent
   end
 
 
-  def self.exo_minuteur_suite(sender_id)
+  def self.exo_minuteur_suite(sender_id, exos_moment_present)
     say(sender_id, MINUTEUR[:time_up]) #on informe l'utilisateur que le temps est écoulé et on demande ce qu'il faisait (open answer)
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -107,11 +107,11 @@ class MomentPresent
         )
       #sleep(40)
       say(sender_id, MINUTEUR[:feedback], FEEDBACK) #demande feedback
-      MomentPresent.feedback(sender_id) #renvoie a la method feedback pour répondre a l'utilisateur
+      MomentPresent.feedback(sender_id, exos_moment_present) #renvoie a la method feedback pour répondre a l'utilisateur
     end
   end
 
-  def self.feedback(sender_id) #demande du feedback a l'utilisateur sur l'exercice
+  def self.feedback(sender_id, exos_moment_present) #demande du feedback a l'utilisateur sur l'exercice
       Bot.on :message do |message|
         puts "Received '#{message.inspect}' from #{message.sender}" # debug only
         answer = message.text.downcase

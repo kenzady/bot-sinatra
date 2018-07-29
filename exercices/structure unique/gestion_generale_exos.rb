@@ -20,7 +20,7 @@ class GeneraleExos
         exo = "self.#{exo}"
         dim.send(exo, sender_id)
       else
-        MomentPresent.exo_minuteur_start(sender_id, exos_moment_present)
+        MomentPresent.exo_minuteur_start(sender_id, exos_dim)
       end
       # Première partie du if statement ne fonctionne pas pour le moment
     end
