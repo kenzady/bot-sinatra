@@ -17,7 +17,8 @@ class GeneraleExos
     exo_aleat = exos_dim.sample #selectionne un exercice au hasard
     exos_dim.each do |exo|
       if exo_aleat == exo && exo_aleat != "exo_minuteur" # Si l'exercice choisi aléatoirement match avec un exo de l'array d'exos, on balance l'exo en question
-        exo = "self.#{exo}"
+        #exo = "self.#{exo}"
+        exo = "#{exo}"
         dim.send(exo, sender_id)
       else
         MomentPresent.exo_minuteur_start(sender_id, exos_dim)
