@@ -17,11 +17,18 @@ class Array
 end
 
 class GeneraleExos
-  def self.exo_random(sender_id, exos_dim, dim) # exos_dim est un array d'exos
-    exo_aleat = exos_dim.sample # Selectionne un exercice au hasard
-    exos_dim.each do |exo| # Si l'exercice choisi aléatoirement match avec un exo de l'array d'exos, on balance l'exo en question
-          arguments = [sender_id, exos_dim]
-          dim.send(exo, *arguments)
+  def self.exo_random(sender_id, exos_dim, dim, exo_fait = nil) # exos_dim est un array d'exos, exo_fait est setté à nil car non obligatoire
+    if exo_fait
+      exos_dim = exos_dim.except(exo_fait) # Exclue l'exo déjà fait
+    end
+    if exos_dim == [] # Si tous les exos ont déjà été faits
+      say(sender_id, NEW_EXO[:no_more_exos_available], NOUVEL_EXERCICE)
+    else
+      exo_aleat = exos_dim.sample # Selectionne un exercice au hasard
+      exos_dim.each do |exo| # Si l'exercice choisi aléatoirement match avec un exo de l'array d'exos, on balance l'exo en question
+        arguments = [sender_id, exos_dim]
+        dim.send(exo, *arguments)
+      end
     end
   end
 
@@ -33,11 +40,7 @@ class GeneraleExos
         arguments = [sender_id, exos_dim]
         dim.send(exo_fait, *arguments)
       elsif  answer.include?("nouvel")  # Utilisateur veut faire un autre exercice
-        exos_dim = exos_dim.except(exo_fait) # Exclue l'exo déjà fait
-        if exos_dim == [] # Si tous les exos ont déjà été faits
-          say(sender_id, NEW_EXO[:no_more_exos_available], NOUVEL_EXERCICE)
-        else
-        GeneraleExos.exo_random(sender_id, exos_dim, dim) # Nouvel exercice random parmi ceux non faits
+        GeneraleExos.exo_random(sender_id, exos_dim, dim, exo_fait) # Nouvel exercice random parmi ceux non faits
         end
       elsif answer.include?("fini") # Si le user ne veut pas faire de new exo
         say(sender_id, NEW_EXO[:au_revoir]) # On dit au revoir

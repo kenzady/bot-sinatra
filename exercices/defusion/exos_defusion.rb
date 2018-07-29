@@ -22,8 +22,7 @@ class Defusion
         say(sender_id, FEEDBACK_QUESTION, FEEDBACK) # Demande feedback
         GeneraleExos.analyse_feedback(sender_id, Defusion, exos_defusion, "exo_chocolat_chocolat") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
       elsif answer.include?("exo") # L'utilisateur veut changer d'exo
-        EXOS_DEFUSION = EXOS_DEFUSION.except("exo_chocolat_chocolat")
-        GeneraleExos.exo_random(sender_id, EXOS_DEFUSION , Defusion) # Change d'exo
+        GeneraleExos.exo_random(sender_id, exos_defusion, Defusion, "exo_chocolat_chocolat") # Change d'exo
       elsif answer.include?("dimension") # L'utilisateur veut changer de dimension
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) #  Redirige vers l'explication brève des dimensions
