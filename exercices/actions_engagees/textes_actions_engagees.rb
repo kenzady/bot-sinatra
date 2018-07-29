@@ -10,7 +10,7 @@ DECOUPAGE = {
   actions:
   "Parfait. Maintenant, la dernière étape va être de définir quelques actions qui seront simples à réaliser et planifier, et qui te permettront d'atteindre ces objectifs. Ici, avec l'exemple de tout à l'heure, je pourrais dire 'Un lundi par mois, j'irais aider les Restos du Coeur'. À ton tour !",
   note:
-  "Super, je te laisse noter tout cela. Il est important que tu essaies de faire les actions que tu viens de définir. C’est à travers l’action que l’on mène une vie valorisée et riche en sens."
+  "Super, je te laisse noter tout cela. Il est important que tu essaies de faire les actions que tu viens de définir. C’est à travers l’action que l’on mène une vie valorisée et riche en sens.",
   nouvel_exercice:
   "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
   unknown_command:
