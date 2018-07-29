@@ -21,11 +21,19 @@ DECOUPAGE = {
 
 MESURE = {
   ready:
-  "L'exercice que je te propose s'appelle '---' Ça te tente ?",
+  "L'exercice que je te propose s'appelle 'Mesure des Actions Engagées' Ça te dit ?",
   intro:
   "C'est parti alors, le voici !" ,
+  actions:
+  "La première étape est de définir les actions que tu fais et qui sont en accord avec tes valeurs. Par exemple, si une de mes valeurs les plus important est l'authenticité, le fait d'être moi-même en toute occasion serait une action engagées.",
+  autres:
+  "Maintenant, pourrais-tu penser à une ou plusieurs autres actions que tu pourrais faire et qui seraient en accord avec tes valeurs ?",
+  bloqueurs:
+  "Très bien. Enfin, as-tu certaines idées de choses qui te bloquent dans ton avancée ? Par exemple pour moi, le fait de me faire rejeter par les autres si j'essaue d'être moi-même pourrait-être un frein.",
+  fin:
+  "Super ! Essaie de te noter tout ça et de travailler dessus. Continue de faire les actions que tu faisais déjà, puis travaille sur le fait d'inclure celles que tu as trouvées, et essaie de supprimer les bloqueurs qui te freinnent.",
   nouvel_exercice:
-  "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
+  "Maintenant que nous avons terminé cet exercice, as-tu envie d'en faire un autre ?",
   unknown_command:
   "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?",
   au_revoir:
