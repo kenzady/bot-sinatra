@@ -28,9 +28,9 @@ class GeneraleExos
       # elsif
       # fin du test
 
-      if exercice_aleat == "exo_jeu_du_detail"
+      if exo_aleat == "exo_jeu_du_detail"
         MomentPresent.exo_jeu_du_detail(sender_id, exos_dim)
-      elsif exercice_aleat == "exo_minuteur"
+      elsif exo_aleat == "exo_minuteur"
         MomentPresent.exo_minuteur_start(sender_id, exos_dim)
       end
       # Première partie du if statement ne fonctionne pas pour le moment
