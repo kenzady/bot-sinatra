@@ -34,11 +34,16 @@ class GeneraleExos
         dim.send(exo_fait, *arguments)
       elsif  answer.include?("nouvel")  # Utilisateur veut faire un autre exercice
         exos_dim = exos_dim.except(exo_fait) # Exclue l'exo déjà fait
+        if exos_dim == [] # Si tous les exos ont déjà été faits
+          say(sender_id, NEW_EXO[:no_more_exos_available], NOUVEL_EXERCICE)
+        else
         GeneraleExos.exo_random(sender_id, exos_dim, dim) # Nouvel exercice random parmi ceux non faits
+        end
       elsif answer.include?("fini") # Si le user ne veut pas faire de new exo
         say(sender_id, NEW_EXO[:au_revoir]) # On dit au revoir
       elsif answer.include?("changer") # Utilisateur veut changer de dimension
-        IntroductionHexaflex.presentation_hexaflex(sender_id) # Redirige vers l'explication des exos
+        say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
+        IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication des exos
       else
         say(sender_id, NEW_EXO[:unknown_command], NOUVEL_EXERCICE) # Pas compris, on redemande
         GeneraleExos.nouvel_exercice?(sender_id, MomentPresent, exos_dim, "exo_jeu_du_detail")

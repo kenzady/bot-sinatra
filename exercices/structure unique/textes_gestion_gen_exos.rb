@@ -22,6 +22,7 @@ NEW_EXO = {
   au_revoir:
   "Pas de souci, en espérant que tu reviennes bientôt !",
   unknown_command: "Désolé, je n'ai pas compris. Peux-tu répéter s'il te plaît ?"
+  no_more_exos_available: "Quel bosseur ! Tu as déjà fait tous les exercices à ta disposition !"
 }
 
 NOUVEL_EXERCICE = [

@@ -9,6 +9,8 @@ C’est ce que nous allons faire ensemble si tu le veux bien.
 Par quelle dimension est-ce que tu aimerais commencer ? "
 }
 
+QUESTION_SIMPLE_DIMENSION = "Entendu ! Sur quelle dimension souhaites-tu travailler ?"
+
 LISTE_DIMENSIONS = [
   {
     content_type: 'text',
