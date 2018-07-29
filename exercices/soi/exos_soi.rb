@@ -27,11 +27,10 @@ class Soi
         #####CLIP AUDIO########
         message.reply(
           attachment: {
-            type: 'audio',
+            type: 'audio/mpeg',
             payload: {}
-          }
-            filedata: '../audio/Le_soi_observateur.mp3',
-            type: 'audio/mpeg'
+          },
+            filedata: '../audio/Le_soi_observateur.mp3'
         )
           say(sender_id, SOI_OBSERVATEUR[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Soi, exos_soi, "exo_soi_observateur") #redirige vers la methode nouvel exercice
