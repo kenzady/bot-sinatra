@@ -1,7 +1,6 @@
 JEU_DU_DETAIL = {
   intro:
-  "Let's go!
-  Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour en décrire le plus de détails possible. 👁🖼" ,
+  "Let's go! Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour en décrire le plus de détails possible. 👁🖼" ,
   ready:
   "Est-tu prêt ? Tu as 30 sec à partir du moment où tu cliques sur le bouton !",
   time_up:
@@ -30,9 +29,9 @@ MINUTEUR = {
   respirations:
   "Super ! Maintenant prends 4 grandes respirations, sans penser à ce que tu étais en train de faire puis expire. Tu peux suivre ce gif pour t'aider.",
   feedback:
-  "Voilà, c'est terminé ! As-tu apprécié cet exercice?",
+  "Voilà, c'est terminé ! As-tu apprécié cet exercice ?",
   unknown_command:
-  "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?"
+  "Je ne comprends pas ce que tu as dit, peux-tu cliquer sur un bouton s'il te plait?"
 }
 
 
@@ -70,70 +69,3 @@ ANS_MINUTEUR = {
   skip:
   "Comme tu veux 😶 Je te propose alors un autre exercice, en espérant que celui-là te plaise !"
 }
-
-START_EXERCISE = [
-  {
-    content_type: 'text',
-    title: 'GO!',
-    payload: 'GO'
-  },
-  {
-    content_type: 'text',
-    title: "Changer d'exo",
-    payload: 'CHANGE_EXO'
-  },
-  {
-    content_type: 'text',
-    title: 'Autre dimension',
-    payload: 'ANOTHER_DIMENSION'
-  }
-]
-
-FEEDBACK = [
-  {
-    content_type: 'text',
-    title: 'Beaucoup',
-    payload: 'BEAUCOUP'
-  },
-  {
-    content_type: 'text',
-    title: "Un petit peu",
-    payload: 'UN_PEU'
-  },
-  {
-    content_type: 'text',
-    title: 'Pas du tout',
-    payload: 'PAS_DU_TOUT'
-  }
-]
-
-ANS_FEEDBACK = {
-  beaucoup:
-  "Génial 😎 ! Sache que cet exercice devient de plus en plus facile à force de répétition. Hâte de réitérer l'expérience avec toi ! 😉
-Que veux tu faire maintenant?" ,
-  un_peu:
-  "Tant mieux ! Sache que cet exercice devient de plus en plus facile à force de répétition.Hâte de réitérer l'expérience avec toi ! 😉
-Que veux-tu faire maintenant?",
-  pas_du_tout:
-  "J'en suis navré 😞😔 Sache que cet exercice devient de plus en plus facile à force de répétition. J'espère que tu l'apprécieras plus la prochaine fois !
-Que veux tu faire maintenant?"
-
-}
-
-NOUVEL_EXERCICE  = [
-  {
-    content_type: 'text',
-    title: 'Oui',
-    payload: 'OUI'
-  },
-  {
-    content_type: 'text',
-    title: "Non",
-    payload: 'NON'
-  },
-  {
-    content_type: 'text',
-    title: 'Changer de thème',
-    payload: 'CHANGER_THEME'
-  }
-]

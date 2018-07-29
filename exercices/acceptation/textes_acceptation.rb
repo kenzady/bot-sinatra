@@ -18,8 +18,6 @@ ALLUMETTE = {
 
 }
 
-
-
 DISTANCE_OBJECTIF = {
 intro:
 "Allez ! Pour cet exercice, je vais te demander de m'écrire un objectif ou une action que tu as envie de réaliser mais pour lequel tu éprouves de la difficulté à te 'mettre en route' ou même que tu fuis.",
@@ -33,77 +31,3 @@ technique_blocage:
 "Ce que je vais te demander, c'est qu'à chaque fois que tu ressens un blocage vis-à-vis de cet objectif, tu t'ancres dans tes valeurs. Comment?
 Je t'invite à suivre cette vidéo (-> Trouver ou faire une vidéo qui correspond aux consignes)"
 }
-
-START_EXERCISE = [
-  {
-    content_type: 'text',
-    title: 'GO!',
-    payload: 'GO'
-  },
-  {
-    content_type: 'text',
-    title: "Changer d'exo",
-    payload: 'CHANGE_EXO'
-  },
-  {
-    content_type: 'text',
-    title: 'Autre dimension',
-    payload: 'ANOTHER_DIMENSION'
-  }
-]
-
-
-FEEDBACK = [
-  {
-    content_type: 'text',
-    title: 'Beaucoup',
-    payload: 'BEAUCOUP'
-  },
-  {
-    content_type: 'text',
-    title: "Un petit peu",
-    payload: 'UN_PEU'
-  },
-  {
-    content_type: 'text',
-    title: 'Pas du tout',
-    payload: 'PAS_DU_TOUT'
-  }
-]
-
-
-
-ANS_FEEDBACK = {
-beaucoup:
-"Cool 😎! Moi j'aime bien les métaphores car elles permettent de mieux se mettre en situation. Hâte de réitérer l'expérience avec toi ! 😉
-Que veux tu faire maintenant?",
-
-un_peu:
-"Tant mieux ! Moi j'aime bien les métaphores car elles permettent de mieux se mettre en situation. Hâte de réitérer l'expérience avec toi ! 😉
-Que veux-tu faire maintenant?",
-
-pas_du_tout:
-"J'en suis navré 😞😔 Moi j'aime bien les métaphores car elles permettent de mieux se mettre en situation. J'espère que tu apprécieras mieux les prochaines !
-Que veux tu faire maintenant?"
-
-}
-
-
-
-NOUVEL_EXERCICE  = [
-  {
-    content_type: 'text',
-    title: 'Nouvel exercice',
-    payload: 'NOUVEL_EXERCICE'
-  },
-  {
-    content_type: 'text',
-    title: "J'en ai fini",
-    payload: 'GOODBYE'
-  },
-  {
-    content_type: 'text',
-    title: 'Changer de thème',
-    payload: 'CHANGER_THEME'
-  }
-]

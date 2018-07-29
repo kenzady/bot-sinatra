@@ -55,22 +55,3 @@ C'est donc un outil mental prodigieux d’efficacité pour chasser les pensées 
   "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?"
 
 }
-
-
-NOUVEL_EXERCICE  = [
-  {
-    content_type: 'text',
-    title: 'Oui',
-    payload: 'OUI'
-  },
-  {
-    content_type: 'text',
-    title: "Non",
-    payload: 'NON'
-  },
-  {
-    content_type: 'text',
-    title: 'Changer de thème',
-    payload: 'CHANGER_THEME'
-  }
-]

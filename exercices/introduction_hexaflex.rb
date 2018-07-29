@@ -1,12 +1,30 @@
+require 'facebook/messenger'
 require_relative 'textes_introduction_hexaflex'
 require_relative 'moment_present/exos_moment_present'
 require_relative '../text'
 require_relative 'defusion/exos_defusion'
+include Facebook::Messenger
 
 class IntroductionHexaflex
   def self.presentation_hexaflex(sender_id) # presente rapidement le sujet et demande au user de choisir une dimension
       say(sender_id, PRESENTATION_HEXAFLEX[:act])
       say(sender_id, PRESENTATION_HEXAFLEX[:flexibilité]) # il faudra rajouter une liste d'articles explicanr chaque branche car pour l'instant le user ne sais pas de quoi il s'agit avant de cliquer
+      # Bot.deliver(
+      # {
+      #   recipient:
+      #   {
+      #     id: sender_id
+      #   },
+      #   attachment:
+      #   {
+      #     type:"image",
+      #     payload:
+      #     {
+      #       url:"http://www.psyris.be/wp-content/uploads/2017/03/loadimg.php_.jpeg"
+      #     }
+      #   },
+      #   message_type: Facebook::Messenger::Bot::MessagingType::RESPONSE
+      # }, access_token: ENV['ACCESS_TOKEN'])
       say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
       IntroductionHexaflex.analyse_choix_dimension(sender_id)
   end

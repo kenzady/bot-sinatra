@@ -1,5 +1,7 @@
 require_relative 'textes_defusion'
-require_relative '../gestion_generale_exos'
+
+require_relative '../structure unique/gestion_generale_exos'
+require_relative '../structure unique/textes_gestion_gen_exos'
 
 class Defusion
   def self.exo_random(sender_id)

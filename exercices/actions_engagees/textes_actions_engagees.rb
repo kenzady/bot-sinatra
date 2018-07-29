@@ -1,6 +1,6 @@
-SOI_OBSERVATEUR = {
+DECOUPAGE = {
   ready:
-  "L'exercice que je te propose s'appelle 'Le soi observateur' et c'est un exercice audio. Ça te tente ?",
+  "L'exercice que je te propose s'appelle '---' et c'est un exercice audio. Ça te tente ?",
   intro:
   "C'est parti alors, le voici !" ,
   nouvel_exercice:
@@ -11,9 +11,9 @@ SOI_OBSERVATEUR = {
   "Pas de souci, en espérant que tu reviennes bientôt !"
 }
 
-JEU_DE_ROLE = {
+MESURE = {
   ready:
-  "L'exercice que je te propose s'appelle 'Jeu de rôle' Ça te tente ?",
+  "L'exercice que je te propose s'appelle '---' Ça te tente ?",
   intro:
   "C'est parti alors, le voici !" ,
   nouvel_exercice:
