@@ -1,7 +1,6 @@
 JEU_DU_DETAIL = {
   intro:
-  "Let's go!
-  Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour en décrire le plus de détails possible. 👁🖼" ,
+  "Let's go! Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour en décrire le plus de détails possible. 👁🖼" ,
   ready:
   "Est-tu prêt ? Tu as 30 sec à partir du moment où tu cliques sur le bouton !",
   time_up:
