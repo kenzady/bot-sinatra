@@ -30,8 +30,7 @@ class ActionsEngagees
           end
         end
       elsif answer.include?("exo") # L'utilisateur veut changer d'exo
-        EXOS_ACTIONS_ENGAGEES = EXOS_ACTIONS_ENGAGEES.except("exo_actions_engagees_mesure")
-        GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees) # Change d'exo
+        GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees, "exo_actions_engagees_mesure") # Change d'exo
       elsif answer.include?("dimension") # L'utilisateur veut changer de dimension
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
