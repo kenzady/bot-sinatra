@@ -1,3 +1,5 @@
+EXOS_MOMENT_PRESENT = ["exo_jeu_du_detail", "exo_minuteur"]
+
 JEU_DU_DETAIL = {
   intro:
   "Let's go! Cet exercice s'appelle 'Le jeu du détail'.Je vais te montrer une image, et tu auras 30 secondes pour en décrire le plus de détails possible. 👁🖼" ,

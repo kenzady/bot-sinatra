@@ -1,9 +1,16 @@
 require 'facebook/messenger'
-require_relative 'textes_introduction_hexaflex'
-require_relative 'moment_present/exos_moment_present'
 require_relative '../text'
+
+require_relative 'textes_introduction_hexaflex'
+
+require_relative 'structure unique/gestion_generale_exos'
+
+require_relative 'moment_present/exos_moment_present'
+require_relative 'moment_present/textes_moment_present'
+
 require_relative 'defusion/exos_defusion'
 require_relative 'actions_engagees/exos_actions_engagees'
+
 include Facebook::Messenger
 
 class IntroductionHexaflex
@@ -36,7 +43,7 @@ class IntroductionHexaflex
       answer = message.text.downcase
       if answer.include?("présent")
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
-        MomentPresent.exo_random(sender_id)
+        GeneraleExos.exo_random(sender_id, EXOS_MOMENT_PRESENT, MomentPresent)
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
         # exercice_aleat = Defusion.exo_random
