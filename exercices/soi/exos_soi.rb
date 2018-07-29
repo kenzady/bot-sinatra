@@ -29,7 +29,7 @@ class Soi
           attachment: {
             type: 'audio',
             payload: {
-              url: 'https://vocaroo.com/i/s19mU9PXWRUL'
+              url: 'https://clyp.it/42khxiae.mp3'
             }
           }
         )
