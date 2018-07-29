@@ -8,10 +8,9 @@ Comment te sens-tu aujourd’hui ?",
   "C'est noté. Sur quel objectif voudrais-tu travailler en priorité ?",
   gestion_stress:
   "Tout d'abord, je vais te poser quelques questions pour apprendre à mieux te connaître.
-  Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?",
+Tu m'as parlé de ton stress, as-tu déjà essayé de résoudre cela ?",
   methode:
-"Passons aux choses sérieuses. Moi, ma méthode préférée pour gérer mon stress est la méthode des Thérapies cognitivo-comportementales (TCC). Il s'agit d'une méthode validée scientifiquement qui va t'aider à chasser toutes tes pensées négatives, et les réactions qui vont avec. Voici une liste d'articles intéressants
-si tu veux en savoir plus sur le sujet",
+"Passons aux choses sérieuses. Moi, ma méthode préférée pour gérer mon stress est la méthode des Thérapies cognitivo-comportementales (TCC). Il s'agit d'une méthode validée scientifiquement qui va t'aider à chasser toutes tes pensées négatives, et les réactions qui vont avec. Voici une liste d'articles intéressants si tu veux en savoir plus sur le sujet",
   motive_ou_pas:
   "Es-tu motivé pour que l'on test cette méthode ensemble au travers d'exercices assez fun ?"
 
