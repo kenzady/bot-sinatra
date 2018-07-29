@@ -1,3 +1,5 @@
+EXOS_DEFUSION = ["exo_chocolat_chocolat", "exo_jeu_du_mais"]
+
 CHOCOLAT_CHOCOLAT = {
   intro:
   "C'est parti !
@@ -18,8 +20,6 @@ Ce n’est qu’un mot mais les mots ont le pouvoir de porter avec eux les carac
 C'est un exercice que tu peux répéter par toi même aussi souvent que tu le désires, et j'espère que tu l'as apprécié ! ",
 nouvel_exercice:
   "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
-  unknown_command:
-  "Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?"
 }
 
 
@@ -31,7 +31,7 @@ ANS_CHOCOLAT_CHOCOLAT = [
   },
   {
     content_type: 'text',
-    title: "Autre exo",
+    title: "Changer d'exo",
     payload: 'CHANGE_EXO'
   },
   {

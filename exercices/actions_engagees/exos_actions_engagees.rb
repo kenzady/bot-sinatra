@@ -1,49 +1,40 @@
 require_relative 'textes_actions_engagees'
-
+require_relative '../textes_introduction_hexaflex'
 require_relative '../structure unique/gestion_generale_exos'
 require_relative '../structure unique/textes_gestion_gen_exos'
 
 class ActionsEngagees
-  def self.exo_random(sender_id)
-    exos_actions_engagees = ["exo_decoupage", "exo_actions_engagees_mesure"]
-    exercice = exos_actions_engagees.sample #selectionne un exercice au hasard
-    if exercice == "exo_decoupage"
-      ActionsEngagees.exo_decoupage(sender_id, exos_actions_engagees)
-    elsif exercice == "exo_actions_engagees_mesure"
-      ActionsEngagees.exo_actions_engagees_mesure(sender_id, exos_actions_engagees)
-    end
-  end
-
-
   def self.exo_actions_engagees_mesure(sender_id, exos_actions_engagees)
-    say(sender_id, MESURE[:ready], START_EXERCISE) #Nom de l'exercice + veux tu le faire?
+    say(sender_id, MESURE[:ready], START_EXERCISE) # Nom de l'exercice + veux tu le faire?
     Bot.on :message do |message|
-      puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+      puts "Received '#{message.inspect}' from #{message.sender}" # Debug only
       answer = message.text.downcase
       if answer.include?("go")
         say(sender_id, MESURE[:intro])
-        say(sender_id, MESURE[:actions]) #on demande les actions qu'il fait deja
+        say(sender_id, MESURE[:actions]) # On demande les actions qu'il fait deja
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           answer = message.text.downcase
-          say(sender_id, MESURE[:autres]) #on demande les actions qu'il pourrait faire
+          say(sender_id, MESURE[:autres]) # On demande les actions qu'il pourrait faire
           Bot.on :message do |message|
             puts "Received '#{message.inspect}' from #{message.sender}" # debug only
             answer = message.text.downcase
-            say(sender_id, MESURE[:bloqueurs]) #on demande les actions qui le bloquent dans son avancée
+            say(sender_id, MESURE[:bloqueurs]) # On demande les actions qui le bloquent dans son avancée
             Bot.on :message do |message|
               puts "Received '#{message.inspect}' from #{message.sender}" # debug only
               answer = message.text.downcase
-              say(sender_id, MESURE[:fin]) #on dit de noter tout cela + on explique le but
-              say(sender_id, MESURE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-              GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") #redirige vers la methode nouvel exercice
+              say(sender_id, MESURE[:fin]) # On dit de noter tout cela + on explique le but
+              say(sender_id, MESURE[:nouvel_exercice], NOUVEL_EXERCICE) # Demande a l'utilisateur ce qu'il veut faire maintenant
+              GeneraleExos.nouvel_exercice?(sender_id, ActionsEngagees, EXOS_ACTIONS_ENGAGEES, "exo_decoupage") # Redirige vers la methode nouvel exercice
             end
           end
         end
-      elsif answer.include?("exo") #l'utilisateur veut changer d'exo
-        ActionsEngagees.exo_random(sender_id) #change d'exo
-      elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
-        IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
+      elsif answer.include?("exo") # L'utilisateur veut changer d'exo
+        EXOS_ACTIONS_ENGAGEES = EXOS_ACTIONS_ENGAGEES.except("exo_actions_engagees_mesure")
+        GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees) # Change d'exo
+      elsif answer.include?("dimension") # L'utilisateur veut changer de dimension
+        say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
+        IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
       else
         say(sender_id, actions_engagees_mesure[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
@@ -71,17 +62,19 @@ class ActionsEngagees
               puts "Received '#{message.inspect}' from #{message.sender}" # debug only
               answer = message.text.downcase
               say(sender_id, DECOUPAGE[:note]) #on dit de noter ces actions + on explique le but
-              say(sender_id, DECOUPAGE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-              GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") #redirige vers la methode nouvel exercice
+              say(sender_id, FEEDBACK_QUESTION, FEEDBACK) # Demande feedback
+             GeneraleExos.analyse_feedback(sender_id, Defusion, exos_defusion, "exo_chocolat_chocolat") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
             end
           end
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
-        ActionsEngagees.exo_random(sender_id) #change d'exo
+        EXOS_ACTIONS_ENGAGEES = EXOS_ACTIONS_ENGAGEES.except("exo_decoupage")
+        GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees) # Change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
-        IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
+        say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
+        IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
       else
-        say(sender_id, DECOUPAGE[:unknown_command], START_EXERCISE) #pas compris, on redemande
+        say(sender_id, IDIOMS[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
     end
   end

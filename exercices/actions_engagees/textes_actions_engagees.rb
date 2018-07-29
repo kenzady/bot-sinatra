@@ -1,3 +1,5 @@
+EXOS_ACTIONS_ENGAGEES = ["exo_decoupage", "exo_actions_engagees_mesure"]
+
 DECOUPAGE = {
   ready:
   "L'exercice que je te propose s'appelle 'Découpage de valeurs en actions'. On le fait ?",

@@ -46,8 +46,7 @@ class IntroductionHexaflex
         GeneraleExos.exo_random(sender_id, EXOS_MOMENT_PRESENT, MomentPresent)
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
-        # exercice_aleat = Defusion.exo_random
-        Defusion.exo_random(sender_id) # choisi aléatoirement un exercice de la dimension choisie
+        GeneraleExos.exo_random(sender_id, EXOS_DEFUSION, Defusion)
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
         Acceptation.exo_random(sender_id)

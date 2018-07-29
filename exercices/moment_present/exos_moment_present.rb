@@ -1,6 +1,7 @@
 require_relative 'textes_moment_present'
 require_relative '../structure unique/gestion_generale_exos'
 require_relative '../structure unique/textes_gestion_gen_exos'
+require_relative '../textes_introduction_hexaflex'
 require_relative '../../text'
 
 class MomentPresent
@@ -39,12 +40,13 @@ class MomentPresent
           end
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
           say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
-          GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") #renvoie a la method feedback pour répondre a l'utilisateur
+          GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, EXOS_MOMENT_PRESENT , MomentPresent) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
-        IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
+        say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
+        IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
       else
         say(sender_id, IDIOMS[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
