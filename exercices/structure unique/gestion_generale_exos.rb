@@ -35,7 +35,7 @@ class GeneraleExos
     # end
   end
 
-def self.nouvel_exercice?(sender_id, dim, exos_dim, exo_fait)
+def self.nouvel_exercice(sender_id, dim, exos_dim, exo_fait)
   Bot.on :message do |message| # Recupere la réponse de l'utilisateur
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
     answer = message.text.downcase
