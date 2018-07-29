@@ -21,7 +21,7 @@ JEU_DE_ROLE = {
   observateur:
   "Très bien, merci. Maintenant, je vais te demander de te positionner en tant qu'observateur. Tu vas me décrire la situation, à la troisième personne, comme le ferait l'ami d'une personne qui a besoin d'aide.",
   but:
-  "Merci. Le but de cet exercice est d'exterioriser ses craintes, de mettre des mots plus objectifs dessus et donc, de prendre davantage de distance par rapport à la situation. J'espère que cela a bien fonctionné pour toi."
+  "Merci. Le but de cet exercice est d'exterioriser ses craintes, de mettre des mots plus objectifs dessus et donc, de prendre davantage de distance par rapport à la situation. J'espère que cela a bien fonctionné pour toi.",
   nouvel_exercice:
   "Maintenant que nous avons terminé, as-tu envie de faire un autre exercice ?",
   unknown_command:
