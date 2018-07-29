@@ -24,7 +24,6 @@ class ActionsEngagees
         #####EXERCISE TO DO ########
           say(sender_id, actions_engagees_mesure[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_actions_engagees_mesure") #redirige vers la methode nouvel exercice
-        end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         ActionsEngagees.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
