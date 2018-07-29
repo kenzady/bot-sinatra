@@ -27,12 +27,17 @@ NEW_EXO = {
 NOUVEL_EXERCICE = [
   {
     content_type: 'text',
+    title: "Refaire l'exercice",
+    payload: 'NOUVEL_EXERCICE'
+  },
+  {
+    content_type: 'text',
     title: 'Nouvel exercice',
     payload: 'NOUVEL_EXERCICE'
   },
   {
     content_type: 'text',
-    title: "J'en ai fini",
+    title: "J'ai terminé",
     payload: 'GOODBYE'
   },
   {
@@ -42,7 +47,9 @@ NOUVEL_EXERCICE = [
   }
 ]
 
-# Feedbacks
+# Feedbacks routine
+
+FEEDBACK_QUESTION = "Maintenant que nous avons terminé, as-tu apprécié cet exercice ?"
 
 FEEDBACK = [
   {
@@ -64,13 +71,10 @@ FEEDBACK = [
 
 ANS_FEEDBACK = {
   beaucoup:
-  "Génial 😎 ! Sache que cet exercice devient de plus en plus facile à force de répétition. Hâte de réitérer l'expérience avec toi ! 😉
-Que veux tu faire maintenant?" ,
+  "Génial 😎 ! Sache que cet exercice devient de plus en plus facile à force de répétition. Hâte de réitérer l'expérience avec toi ! 😉 Que veux tu faire maintenant?" ,
   un_peu:
-  "Tant mieux ! Sache que cet exercice devient de plus en plus facile à force de répétition.Hâte de réitérer l'expérience avec toi ! 😉
-Que veux-tu faire maintenant?",
+  "Tant mieux ! Sache que cet exercice devient de plus en plus facile à force de répétition.Hâte de réitérer l'expérience avec toi ! 😉 Que veux-tu faire maintenant?",
   pas_du_tout:
-  "J'en suis navré 😞😔 Sache que cet exercice devient de plus en plus facile à force de répétition. J'espère que tu l'apprécieras plus la prochaine fois !
-Que veux tu faire maintenant?"
+  "J'en suis navré 😞😔 Sache que cet exercice devient de plus en plus facile à force de répétition. J'espère que tu l'apprécieras plus la prochaine fois ! Que veux tu faire maintenant?"
 
 }
