@@ -21,9 +21,25 @@ class ActionsEngagees
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
       if answer.include?("go")
-        #####EXERCISE TO DO ########
-          say(sender_id, actions_engagees_mesure[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_actions_engagees_mesure") #redirige vers la methode nouvel exercice
+        say(sender_id, MESURE[:intro])
+        say(sender_id, MESURE[:actions]) #on demande les actions qu'il fait deja
+        Bot.on :message do |message|
+          puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+          answer = message.text.downcase
+          say(sender_id, MESURE[:autres]) #on demande les actions qu'il pourrait faire
+          Bot.on :message do |message|
+            puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+            answer = message.text.downcase
+            say(sender_id, MESURE[:bloqueurs]) #on demande les actions qui le bloquent dans son avancée
+            Bot.on :message do |message|
+              puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+              answer = message.text.downcase
+              say(sender_id, MESURE[:fin]) #on dit de noter tout cela + on explique le but
+              say(sender_id, MESURE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+              GeneraleExos.nouvel_exercice(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") #redirige vers la methode nouvel exercice
+            end
+          end
+        end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         ActionsEngagees.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
