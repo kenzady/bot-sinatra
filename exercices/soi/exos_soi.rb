@@ -28,9 +28,7 @@ class Soi
         message.reply(
           attachment: {
             type: 'audio',
-            filedata: {
-              '../audio/Le_soi_observateur.mp3;type=audio/mpeg'
-            }
+            filedata: '../audio/Le_soi_observateur.mp3;type=audio/mpeg'
           }
         )
           say(sender_id, SOI_OBSERVATEUR[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
