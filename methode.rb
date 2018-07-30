@@ -62,7 +62,7 @@ class Methode
             }
           )
       else
-        say(sender_id, ANS_METHODE_MOTIVE[:unknown_command], METHODE_MOTIVE)
+        say(sender_id, IDIOMS[:unknown_command], METHODE_MOTIVE)
       end
     end
   end

@@ -49,18 +49,18 @@ class IntroductionHexaflex
         GeneraleExos.exo_random(sender_id, EXOS_DEFUSION, Defusion)
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
-        Acceptation.exo_random(sender_id)
+        GeneraleExos.exo_random(sender_id, EXOS_ACCEPTATION, Acceptation)
       elsif answer.include?("valeurs")
         say(sender_id, REPONSE_CHOIX_DIM[:valeurs])
-        Valeurs.exo_random(sender_id)
+          GeneraleExos.exo_random(sender_id, EXOS_VALEURS, Valeurs)
       elsif answer.include?("contexte")
         say(sender_id, REPONSE_CHOIX_DIM[:soi_contexte])
-        Soi.exo_random(sender_id)
+        GeneraleExos.exo_random(sender_id, EXOS_SOI, Soi)
       elsif answer.include?("action")
         say(sender_id, REPONSE_CHOIX_DIM[:action])
-        ActionsEngagees.exo_random(sender_id)
+        GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees)
       else
-        say(sender_id, ANS_EFFICIENCY[:unknown_command], GESTION_STRESS)
+        say(sender_id, IDIOMS[:unknown_command], GESTION_STRESS)
         IntroductionHexaflex.analyse_choix_dimension
       end
     end

@@ -50,7 +50,7 @@ def humour_analysis(sender_id)
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
       Methode.methode_init(sender_id) #goes straight to the method
     elsif
-      say(sender_id, ANS_HUMOUR[:unknown_command], HUMOUR)
+      say(sender_id, IDIOMS[:unknown_command], HUMOUR)
       humour_analysis(sender_id)
     end
   end

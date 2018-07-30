@@ -47,7 +47,7 @@ class GeneraleExos
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication des exos
       else
-        say(sender_id, NEW_EXO[:unknown_command], NOUVEL_EXERCICE) # Pas compris, on redemande
+        say(sender_id, IDIOMS[:unknown_command], NOUVEL_EXERCICE) # Pas compris, on redemande
         GeneraleExos.nouvel_exercice?(sender_id, MomentPresent, exos_dim, "exo_jeu_du_detail")
       end
     end

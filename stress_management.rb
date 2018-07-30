@@ -24,7 +24,7 @@ class StressManagement
         say(sender_id, ANS_EFFICIENCY[:bad], PQ_INACTION) # Asks why the user method did not work to manage his stress
         StressManagement.analyse_reponse_resolution_stress(sender_id)
       else
-        say(sender_id, ANS_EFFICIENCY[:unknown_command], GESTION_STRESS)
+        say(sender_id, IDIOMS[:unknown_command], GESTION_STRESS)
         StressManagement.as_tu_deja_essaye_resoudre(sender_id)
       end
     end
@@ -66,7 +66,7 @@ class StressManagement
       elsif answer.include?("methode")
         Methode.methode_init(sender_id)
       else
-        say(sender_id, ANS_INEFFICIENCY[:unknown_command], RAISONS_INEFFICACITE)
+        say(sender_id, IDIOMS[:unknown_command], RAISONS_INEFFICACITE)
         StressManagement.analyse_inefficacite(sender_id)
       end
     end
@@ -92,7 +92,7 @@ class StressManagement
       elsif answer.include?("methode")
         Methode.methode_init(sender_id)
       else
-        say(sender_id, ANS_WHY_EFFICIENCY[:unknown_command], RAISONS_EFFICACITE)
+        say(sender_id, IDIOMS[:unknown_command], RAISONS_EFFICACITE)
         StressManagement.analyse_efficacite(sender_id)
       end
     end
@@ -118,7 +118,7 @@ class StressManagement
         elsif answer.include?("methode")
           Methode.methode_init(sender_id)
         else
-          say(sender_id, ANS_AIDE_EXTERIEURE[:unknown_command], TYPE_AIDE_EXTERIEURE)
+          say(sender_id, IDIOMS[:unknown_command], TYPE_AIDE_EXTERIEURE)
           StressManagement.aide_exterieure(sender_id)
         end
       end

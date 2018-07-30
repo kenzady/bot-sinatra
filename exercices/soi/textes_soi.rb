@@ -1,3 +1,5 @@
+EXOS_SOI = ["exo_jeu_de_role", "exo_soi_observateur"]
+
 SOI_OBSERVATEUR = {
   ready:
   "L'exercice que je te propose s'appelle 'Le soi observateur' et c'est un exercice audio. Ça te tente ?",

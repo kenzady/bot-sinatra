@@ -21,7 +21,6 @@ NEW_EXO = {
   "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
   au_revoir:
   'Pas de souci, en espérant que tu reviennes bientôt !',
-  unknown_command: "Désolé, je n'ai pas compris. Peux-tu répéter s'il te plaît ?",
   no_more_exos_available: 'Quel bosseur ! Tu as déjà fait tous les exercices à ta disposition !'
 }
 
@@ -77,5 +76,4 @@ ANS_FEEDBACK = {
   "Tant mieux ! Sache que cet exercice devient de plus en plus facile à force de répétition.Hâte de réitérer l'expérience avec toi ! 😉 Que veux-tu faire maintenant?",
   pas_du_tout:
   "J'en suis navré 😞😔 Sache que cet exercice devient de plus en plus facile à force de répétition. J'espère que tu l'apprécieras plus la prochaine fois ! Que veux tu faire maintenant?"
-
 }

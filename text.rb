@@ -45,9 +45,7 @@ ANS_EFFICIENCY = {
   "Il y a une première fois à tout ! Je suis heureux que tu sois venu me voir alors.
   Mais tout d'abord, y-a-t'il une raison pour laquelle tu n'as pas essayé de résoudre tes problèmes de stress ou anxiété ?",
   good:
-  "Très bien. Dirais-tu que ça a marché ?",
-  unknown_command:
-  "Désolé, je n'ai pas compris ta réponse, peux-tu répéter stp ?"
+  "Très bien. Dirais-tu que ça a marché ?"
 }
 
 CAUSE_STRESS = [
@@ -191,8 +189,7 @@ ANS_WHY_EFFICIENCY = {
   aide_exterieure: "Très bien ! Quel type d'aide as-tu consultée ?",
   motivation_personnelle: "Bravo ! C'est grandiose que tu aies une motivation personnelle forte car cela acompte pour beaucoup dans le fait de se sentir mieux ! Je pense que nous allons travailler ensemble de façon merveilleuse si tu gardes ta motivation au beau fixe !",
   both: "Génial ! Nous allons faire du très bon travail ensemble ! J'ai hâte de voir ce que cela donne !",
-  dont_know: "Aucun souci ! On ne sais pas toujours ce qui nous a aidé le plus. Mais nous allons faire un travail génial ensemble c'est certain !",
-  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+  dont_know: "Aucun souci ! On ne sais pas toujours ce qui nous a aidé le plus. Mais nous allons faire un travail génial ensemble c'est certain !"
 }
 
 
@@ -228,8 +225,7 @@ ANS_AIDE_EXTERIEURE = {
   aide_pro: "C'est génial que tu aies pris le temps d'aller voir un spécialiste ! Cela va nous permettre de commencer sur des bases solides !",
   aide_entourage: "C'est super que tu aies des gens de confiance sur qui compter ! Et le fait que tu aies eu le courage de te livrer à eux me fait penser que nous allons pouvoir grandement avancer ensemble !",
   aide_internet: "C'est une mine d'information c'est sûr ! Je peux moi-même être considéré comme de l'aide sur Internet ! Nous allons bien travailler ensemble, j'en suis convaincu !",
-  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:",
-  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:"
 }
 
 RAISONS_INEFFICACITE = [
@@ -264,8 +260,7 @@ ANS_INEFFICIENCY = {
   savait_pas: "Je comprends, souvent les gens ont peur de se livrer, et n'osent pas aller voir un spécialiste. Mais ne t'inquiète pas, je suis la pour toi et nous allons avancer dans cette aventure tous les deux, pas à pas ! :blush:",
   non_investissement: "C'est souvent un problème, surtout quand on ne peut pas utiliser l'outil à tout instant (psychologue par exemple). C'est pour ca que je pourrais t'être très utile ! En étant tout le temps dans ta poche, je peux essayer de te garder investi ! C'est très important de rester motivé afin d'aller mieux sur le long-terme ! :blush:",
   pas_marche: "Désolé d'apprendre ça. Mais tu sais, chacun a un outil qui lui correspond le mieux, et peut-être que pour toi, je suis celui qu'il faut. Il ne faut pas perdre courage et nous allons avancer tous les deux main dans la main ! :blush:",
-  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:",
-  unknown_command: "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:"
 }
 
 REPONSE_TERNAIRE = [
@@ -343,10 +338,6 @@ METHODE_MOTIVE = [
 ANS_METHODE_MOTIVE = {
   oui:
     "Trop cool!",
-
   non:
-    "Dommage... N'hésite pas à revenir vers moi si tu changes d'avis, je suis toujours là pour t'aider !",
-
-  unknown_command:
-  "Désolé, je n'ai pas compris ta réponse, peux-tu répéter ?"
+    "Dommage... N'hésite pas à revenir vers moi si tu changes d'avis, je suis toujours là pour t'aider !"
 }
