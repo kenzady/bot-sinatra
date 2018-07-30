@@ -16,15 +16,15 @@ Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
 # PersistentMenu.enable
 
 
-# # Logic for postbacks
-# def get_started
-#   Bot.on :postback do |postback|
-#     sender_id = postback.sender['id']
-#     case postback.payload
-#     when 'START' then show_humour_replies(postback.sender['id'], HUMOUR)
-#     end
-#   end
-# end
+# Logic for postbacks
+def get_started
+  Bot.on :postback do |postback|
+    sender_id = postback.sender['id']
+    case postback.payload
+    when 'GET_STARTED_PAYLOAD' then show_humour_replies(postback.sender['id'], HUMOUR)
+    end
+  end
+end
 
 # Helper function to send messages declaratively and directly
 def say(recipient_id, text, quick_replies = nil)
@@ -110,6 +110,6 @@ def handle_objective(sender_id)
   end
 end
 
-wait_for_any_input
+#wait_for_any_input
 
-# get_started
+get_started
