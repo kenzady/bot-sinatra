@@ -42,8 +42,10 @@ end
 def humour_analysis(sender_id)
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+     message.mark_seen
     answer = message.text.downcase
     if answer.include?("sévèrement") || answer.include?("moyennement")
+      message.typing_on
       say(sender_id, ANS_HUMOUR[:bad], CAUSE_STRESS) # Asks for the causes of the stress
       what_is_ur_objective(sender_id)
     elsif answer.include?("peu") || answer.include?("pas")
