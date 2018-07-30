@@ -6,8 +6,8 @@ class Methode
   def self.methode_init(sender_id)
     Bot.on :message do |message|
       say(sender_id, IDIOMS[:methode])
-      message_options =
-        recipient: { id: recipient_id },
+      message_options = {
+        recipient: { id: sender_id },
         message: {
           text: "text",
           attachment:{
@@ -36,6 +36,7 @@ class Methode
             }
           }
         }
+      }
       Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
       say(sender_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
       Methode.es_tu_motive(sender_id)
