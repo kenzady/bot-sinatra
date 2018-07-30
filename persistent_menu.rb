@@ -59,6 +59,5 @@ class PersistentMenu
         }
       ]
     }, access_token: ENV['ACCESS_TOKEN'])
-
   end
 end

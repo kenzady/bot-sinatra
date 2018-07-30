@@ -12,8 +12,8 @@ include Facebook::Messenger
 
 # IMPORTANT! Subcribe bot to your page
 Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
-Greetings.enable
 PersistentMenu.enable
+Greetings.enable
 
 
 # Logic for postbacks
