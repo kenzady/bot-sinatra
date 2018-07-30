@@ -10,6 +10,9 @@ require_relative 'moment_present/textes_moment_present'
 
 require_relative 'defusion/exos_defusion'
 require_relative 'actions_engagees/exos_actions_engagees'
+require_relative 'valeurs/exos_valeurs'
+require_relative 'soi/exos_soi'
+require_relative 'acceptation/exos_acceptation'
 
 include Facebook::Messenger
 
