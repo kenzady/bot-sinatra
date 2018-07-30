@@ -13,10 +13,44 @@ class Methode
             payload: {
               template_type:"generic",
               elements:[
-                 {
-                  title:"Article 1!",
-                  image_url:"https://petersfancybrownhats.com/company_image.png",
-                  subtitle:"We have the right hat for everyone.",
+                {
+                  title:"Test 1",
+                  image_url:"https://source.unsplash.com/random",
+                  subtitle:"Allez viens on est bien.",
+                  default_action: {
+                    type: 'web_url',
+                    url: "https://petersfancybrownhats.com/view?item=103",
+                    webview_height_ratio: "tall",
+                  },
+                  buttons:[
+                    {
+                      type:"web_url",
+                      url:"https://petersfancybrownhats.com",
+                      title:"View Website"
+                    }
+                  ]
+                }
+                {
+                  title:"Test 2",
+                  image_url:"https://source.unsplash.com/random",
+                  subtitle:"Quand ça marche, coder c'est cool.",
+                  default_action: {
+                    type: 'web_url',
+                    url: "https://petersfancybrownhats.com/view?item=103",
+                    webview_height_ratio: "tall",
+                  },
+                  buttons:[
+                    {
+                      type:"web_url",
+                      url:"https://petersfancybrownhats.com",
+                      title:"View Website"
+                    }
+                  ]
+                }
+                {
+                  title:"Test 3!",
+                  image_url:"https://source.unsplash.com/random",
+                  subtitle:"Si tu aimes les bouclettes.",
                   default_action: {
                     type: 'web_url',
                     url: "https://petersfancybrownhats.com/view?item=103",
