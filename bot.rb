@@ -97,16 +97,16 @@ def handle_objective(sender_id)
   Bot.on :message do |message|
     if message
       say(sender_id, "Okay, super ! Ne t'inquiète pas, nous allons travailler là-dessus. 😊")
+      message.reply(
+      attachment: {
+        type: 'image',
+        payload: {
+          url: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif'
+        }
+      }
+      )
       StressManagement.stress_mgmt_init(sender_id)
     end
-    message.reply(
-    attachment: {
-      type: 'image',
-      payload: {
-        url: 'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif'
-      }
-    }
-    )
   end
 end
 
