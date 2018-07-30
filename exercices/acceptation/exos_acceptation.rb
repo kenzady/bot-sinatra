@@ -5,15 +5,15 @@ require_relative '../structure unique/textes_gestion_gen_exos'
 
 class Acceptation
   def self.exo_random(sender_id)
-    exos_acceptation = ["exo_allumette", "exo_distance_objectif"]
+    exos_acceptation = ["exo_allumette", "exo_embrasser_le_mauvais"]
     exercice = exos_acceptation.sample
 
     if exercice == "exo_allumette"
-      exos_acceptation[1] = "exo_distance_objectif"
+      exos_acceptation[1] = "exo_embrasser_le_mauvais"
       Acceptation.exo_allumette(sender_id, exos_acceptation)
-    elsif exercice == "exo_distance_objectif"
+    elsif exercice == "exo_embrasser_le_mauvais"
       exos_acceptation[1] = "exo_allumette"
-      Acceptation.exo_distance_objectif(sender_id, exos_acceptation)
+      Acceptation.exo_embrasser_le_mauvais(sender_id, exos_acceptation)
     end
   end
 
@@ -94,22 +94,29 @@ class Acceptation
   end
 
 
-  def self.exo_distance_objectif(sender_id, exos_acceptation)
+  def self.exo_embrasser_le_mauvais(sender_id, exos_acceptation)
     #nothing here yet because I'm fucking tired of this shit
-    say(sender_id, DISTANCE_OBJECTIF[:ready], START_EXERCISE) #Nom de l'exercice + veux tu le faire?
+    say(sender_id, EMBRASSER[:ready], START_EXERCISE) #Nom de l'exercice + veux tu le faire?
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
-      if answer.include?("go") #si l'utilisateur veut faire cet exo
-        #####EXERCICE TO DO ########
-          say(sender_id, DISTANCE_OBJECTIF[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice(sender_id, Acceptation, exos_acceptation, "exo_distance_objectif") #redirige vers la methode nouvel exercice
+      if answer.include?("go") #si l'utilisateur veut faire cet exo, on envoie la piste audio
+        message.reply(
+          attachment: {
+            type: 'audio',
+            payload: {
+              url: 'https://s3.eu-west-3.amazonaws.com/botmessenger/acceptation+-+Embrasser+le+mauvais+et+offrir+le+bon.mp3'
+            }
+          }
+        )
+          say(sender_id, EMBRASSER[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
+          GeneraleExos.nouvel_exercice(sender_id, Acceptation, exos_acceptation, "exo_embrasser_le_mauvais") #redirige vers la methode nouvel exercice
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         Acceptation.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
         IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
       else
-        say(sender_id, DISTANCE_OBJECTIF[:unknown_command], START_EXERCISE) #pas compris, on redemande
+        say(sender_id, EMBRASSER[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
     end
   end

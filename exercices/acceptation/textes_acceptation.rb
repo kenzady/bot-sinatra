@@ -18,16 +18,15 @@ ALLUMETTE = {
 
 }
 
-DISTANCE_OBJECTIF = {
+EMBRASSER = {
+ready:
+"L'exercice que je te propose s'appelle 'Embrasser le mauvais et offrir le bon' et c'est un exercice audio. Ça te tente ?",
 intro:
-"Allez ! Pour cet exercice, je vais te demander de m'écrire un objectif ou une action que tu as envie de réaliser mais pour lequel tu éprouves de la difficulté à te 'mettre en route' ou même que tu fuis.",
-pensees_empechent:
-"Très bien, maintenant pourrais-tu m'écrire les pensées qui t'empêchent d'avancer vers cet objectif ? Cela peut être de l'auto-critique, des anticipations, de la peur, du desespoir par exemple.",
-raisons:
-"Okay, merci. Maintenant tu vas me dire quelles seraient tes raisons pour atteindre cet objectif, réaliser cette action.",
-sens_profond:
-"Malgré tous les freins qui se présentent à toi, il y a des raisons profondes pour ton envie d'atteindre cet objectif. ",
-technique_blocage:
-"Ce que je vais te demander, c'est qu'à chaque fois que tu ressens un blocage vis-à-vis de cet objectif, tu t'ancres dans tes valeurs. Comment?
-Je t'invite à suivre cette vidéo (-> Trouver ou faire une vidéo qui correspond aux consignes)"
+"C'est parti ! ",
+nouvel_exercice:
+"Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
+unknown_command:
+"Je ne comprends pas ce que tu as dit, peux-tu appuyer sur un bouton s'il te plait?",
+au_revoir:
+"Pas de souci, en espérant que tu reviennes bientôt !"
 }
