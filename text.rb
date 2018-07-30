@@ -153,7 +153,7 @@ GESTION_STRESS = [
 ANS_RESOLUTION_STRESS = {
   oui: "Génial ! Je suis content de l'apprendre. Qu'est ce qui t'a le plus aidé selon toi ?",
   moins: "C'est un début ! Qu'est ce qui t'a le plus aidé selon toi ?",
-  non: "J'en suis navré... :disappointed: Néanmoins, est-ce que tu sais pourquoi ça n'a pas marché?"
+  non: "J'en suis navré... :disappointed: Néanmoins, est-ce que tu sais pourquoi ça n'a pas marché ?"
 }
 
 RAISONS_EFFICACITE = [

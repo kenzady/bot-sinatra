@@ -4,12 +4,10 @@ require_relative 'exercices/introduction_hexaflex'
 
 class Methode
   def self.methode_init(sender_id)
-    Bot.on :message do |message|
       say(sender_id, IDIOMS[:methode])
       message_options = {
         recipient: { id: sender_id },
         message: {
-          text: "text",
           attachment:{
             type:"template",
             payload: {
@@ -40,7 +38,6 @@ class Methode
       Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
       say(sender_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
       Methode.es_tu_motive(sender_id)
-    end
   end
 
   def self.es_tu_motive(sender_id)
