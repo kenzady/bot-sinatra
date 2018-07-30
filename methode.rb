@@ -29,7 +29,7 @@ class Methode
                       title:"View Website"
                     }
                   ]
-                }
+                },
                 {
                   title:"Test 2",
                   image_url:"https://source.unsplash.com/random",
@@ -46,7 +46,7 @@ class Methode
                       title:"View Website"
                     }
                   ]
-                }
+                },
                 {
                   title:"Test 3!",
                   image_url:"https://source.unsplash.com/random",
