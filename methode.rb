@@ -39,7 +39,7 @@ class Methode
       Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
       say(sender_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
       Methode.es_tu_motive(sender_id)
-      ends
+    end
   end
 
   def self.es_tu_motive(sender_id)
