@@ -24,9 +24,8 @@ def get_started
     puts "Received '#{postback.inspect}' from #{postback.sender}"
     sender_id = postback.sender['id']
     case postback.payload
-    when 'GET_STARTED_PAYLOAD' then show_humour_replies(postback.sender['id'], HUMOUR)
+    when 'GET_STARTED_PAYLOAD' then show_humour_replies(sender_id, HUMOUR)
     when 'EXERCICES_MENU'
-      say(sender_id, IDIOMS[:ask_location])
       say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
       IntroductionHexaflex.analyse_choix_dimension(sender_id)
     end
