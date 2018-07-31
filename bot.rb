@@ -22,6 +22,12 @@ def get_started
     sender_id = postback.sender['id']
     case postback.payload
     when 'GET_STARTED_PAYLOAD' then show_humour_replies(postback.sender['id'], HUMOUR)
+    when 'COORDINATES'
+      say(sender_id, IDIOMS[:ask_location])
+      show_coordinates(sender_id)
+    when 'FULL_ADDRESS'
+      say(sender_id, IDIOMS[:ask_location])
+      show_full_address(sender_id)
     end
   end
 end
