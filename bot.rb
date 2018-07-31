@@ -12,8 +12,8 @@ include Facebook::Messenger
 
 # IMPORTANT! Subcribe bot to your page
 Facebook::Messenger::Subscriptions.subscribe(access_token: ENV["ACCESS_TOKEN"])
-PersistentMenu.enable
 Greetings.enable
+PersistentMenu.enable
 
 
 # Logic for postbacks
@@ -29,6 +29,7 @@ def get_started
     #   say(sender_id, IDIOMS[:ask_location])
     #   show_full_address(sender_id)
     # end
+    end
   end
 end
 
