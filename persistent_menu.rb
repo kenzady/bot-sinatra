@@ -1,23 +1,6 @@
 class PersistentMenu
   def self.enable
     # Create persistent menu
-    # Facebook::Messenger::Thread.set({
-    #   setting_type: 'call_to_actions',
-    #   thread_state: 'existing_thread',
-    #   call_to_actions: [
-    #     {
-    #       type: 'postback',
-    #       title: 'Exercices',
-    #       payload: 'EXERCISES'
-    #     },
-    #     {
-    #       type: 'postback',
-    #       title: 'Get an advice',
-    #       payload: 'ADVICE'
-    #     }
-    #   ]
-    # }, access_token: ENV['ACCESS_TOKEN'])
-
     Facebook::Messenger::Profile.set({
       persistent_menu: [
         {
@@ -25,29 +8,50 @@ class PersistentMenu
           composer_input_disabled: true,
           call_to_actions: [
             {
-              title: 'My Account',
+              title: 'MES EXERCICES',
               type: 'nested',
               call_to_actions: [
                 {
-                  title: 'What is a chatbot?',
+                  title: 'Moment Présent?',
                   type: 'postback',
-                  payload: 'EXTERMINATE'
+                  payload: 'MOMENT_PRESENT_MENU'
                 },
                 {
-                  title: 'History',
+                  title: 'Défusion',
                   type: 'postback',
-                  payload: 'HISTORY_PAYLOAD'
+                  payload: 'DEFUSION_MENU'
                 },
                 {
-                  title: 'Contact Info',
+                  title: 'Actions engagées',
                   type: 'postback',
-                  payload: 'CONTACT_INFO_PAYLOAD'
-                }
+                  payload: 'ACTIONS_MENU'
+                },
+                {
+                  title: 'Acceptation',
+                  type: 'postback',
+                  payload: 'ACCEPTATION_MENU'
+                },
+                {
+                  title: 'Valeurs',
+                  type: 'postback',
+                  payload: 'VALEURS_MENU'
+                },
+                {
+                  title: 'Soi comme contexte',
+                  type: 'postback',
+                  payload: 'SOI_CONTEXTE_MENU'
+                },
               ]
             },
             {
               type: 'web_url',
-              title: 'Get some help',
+              title: 'Explication de la méthode',
+              url: 'https://github.com/jgorset/facebook-messenger',
+              webview_height_ratio: 'full'
+            },
+            {
+              type: 'web_url',
+              title: 'Explication de la méthode',
               url: 'https://github.com/jgorset/facebook-messenger',
               webview_height_ratio: 'full'
             }
