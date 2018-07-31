@@ -26,7 +26,8 @@ def get_started
     case postback.payload
     when 'GET_STARTED_PAYLOAD' then show_humour_replies(sender_id, HUMOUR)
     when 'EXERCICES_MENU'
-      say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
+      say(sender_id, MENU_PERSISTANT[:mes_exercices], LISTE_DIMENSIONS)
+      # pour l'instant je met ça mais il faudra créer une méthode externe quand on aura savé les infos du user
       IntroductionHexaflex.analyse_choix_dimension(sender_id)
     end
   end

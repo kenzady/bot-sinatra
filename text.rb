@@ -16,6 +16,11 @@ Il s'agit d'une méthode validée scientifiquement qui va t'aider à chasser tou
   "Es-tu toujours motivé(e) pour que l'on test cette méthode ensemble à l'aide d'exercices assez fun ?"
 }
 
+MENU_PERSISTANT =
+  {
+    mes_exercices: "Voici la liste des 6 dimensions de l'hexaflex! Clique sur l'une d'elles pour voir les exercices déjà réalisés et les refaire si tu le souhaites. :)"
+  }
+
 HUMOUR = [
   {
     content_type: 'text',
