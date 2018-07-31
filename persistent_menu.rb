@@ -8,40 +8,9 @@ class PersistentMenu
           composer_input_disabled: true,
           call_to_actions: [
             {
-              title: 'MES EXERCICES',
-              type: 'nested',
-              call_to_actions: [
-                {
-                  title: 'Moment Présent?',
-                  type: 'postback',
-                  payload: 'MOMENT_PRESENT_MENU'
-                },
-                {
-                  title: 'Défusion',
-                  type: 'postback',
-                  payload: 'DEFUSION_MENU'
-                },
-                {
-                  title: 'Actions engagées',
-                  type: 'postback',
-                  payload: 'ACTIONS_MENU'
-                },
-                {
-                  title: 'Acceptation',
-                  type: 'postback',
-                  payload: 'ACCEPTATION_MENU'
-                },
-                {
-                  title: 'Valeurs',
-                  type: 'postback',
-                  payload: 'VALEURS_MENU'
-                },
-                {
-                  title: 'Soi comme contexte',
-                  type: 'postback',
-                  payload: 'SOI_CONTEXTE_MENU'
-                },
-              ]
+              title: 'Mes exercices',
+              type: 'postback',
+              payload: 'EXERCICES_MENU',
             },
             {
               type: 'web_url',

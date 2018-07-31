@@ -5,6 +5,8 @@ require_relative 'greetings'
 require_relative 'text'
 require_relative 'stress_management'
 require_relative 'methode'
+require_relative 'introduction_hexaflex'
+require_relative 'textes_introduction_hexaflex'
 include Facebook::Messenger
 # Facebook::Messenger::Bot
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
@@ -22,13 +24,11 @@ def get_started
     sender_id = postback.sender['id']
     case postback.payload
     when 'GET_STARTED_PAYLOAD' then show_humour_replies(postback.sender['id'], HUMOUR)
-    # when 'COORDINATES'
-    #   say(sender_id, IDIOMS[:ask_location])
-    #   show_coordinates(sender_id)
-    # when 'FULL_ADDRESS'
-    #   say(sender_id, IDIOMS[:ask_location])
-    #   show_full_address(sender_id)
-    # end
+    when 'EXERCICES_MENU'
+      say(sender_id, IDIOMS[:ask_location])
+      say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
+      IntroductionHexaflex.analyse_choix_dimension(sender_id)
+    end
     end
   end
 end
