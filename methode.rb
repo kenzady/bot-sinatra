@@ -14,52 +14,52 @@ class Methode
               template_type:"generic",
               elements:[
                 {
-                  title:"Test 1",
+                  title:"La thérapie d’acceptation et d’engagement (ACT)",
                   image_url:"https://source.unsplash.com/random",
-                  subtitle:"Allez viens on est bien.",
+                  subtitle:"Article",
                   default_action: {
                     type: 'web_url',
-                    url: "https://petersfancybrownhats.com/view?item=103",
+                    url: "https://www.lareponsedupsy.info/therapie_acceptation_engagement",
                     webview_height_ratio: "tall",
                   },
                   buttons:[
                     {
                       type:"web_url",
-                      url:"https://petersfancybrownhats.com",
+                      url:"https://www.lareponsedupsy.info/therapie_acceptation_engagement",
                       title:"View Website"
                     }
                   ]
                 },
                 {
-                  title:"Test 2",
+                  title:"Présentation brève de l’ACT par Benjamin Schoendorff",
                   image_url:"https://source.unsplash.com/random",
-                  subtitle:"Quand ça marche, coder c'est cool.",
+                  subtitle:"Video YouTube.",
                   default_action: {
                     type: 'web_url',
-                    url: "https://petersfancybrownhats.com/view?item=103",
+                    url: "https://www.youtube.com/watch?v=mJHJIGPay9I",
                     webview_height_ratio: "tall",
                   },
                   buttons:[
                     {
                       type:"web_url",
-                      url:"https://petersfancybrownhats.com",
+                      url:"https://www.youtube.com/watch?v=mJHJIGPay9I",
                       title:"View Website"
                     }
                   ]
                 },
                 {
-                  title:"Test 3!",
+                  title:"Les thérapies cognitives et comportementales",
                   image_url:"https://source.unsplash.com/random",
-                  subtitle:"Si tu aimes les bouclettes.",
+                  subtitle:"Article.",
                   default_action: {
                     type: 'web_url',
-                    url: "https://petersfancybrownhats.com/view?item=103",
+                    url: "http://www.psychologies.com/Therapies/Toutes-les-therapies/Psychotherapies/Articles-et-Dossiers/Les-therapies-cognitives-et-comportementales",
                     webview_height_ratio: "tall",
                   },
                   buttons:[
                     {
                       type:"web_url",
-                      url:"https://petersfancybrownhats.com",
+                      url:"http://www.psychologies.com/Therapies/Toutes-les-therapies/Psychotherapies/Articles-et-Dossiers/Les-therapies-cognitives-et-comportementales",
                       title:"View Website"
                     }
                   ]
