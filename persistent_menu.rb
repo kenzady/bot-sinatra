@@ -5,7 +5,7 @@ class PersistentMenu
       persistent_menu: [
         {
           locale: 'default',
-          composer_input_disabled: true,
+          composer_input_disabled: false,
           call_to_actions: [
             {
               title: 'Mes exercices',
