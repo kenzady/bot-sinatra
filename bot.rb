@@ -5,8 +5,8 @@ require_relative 'greetings'
 require_relative 'text'
 require_relative 'stress_management'
 require_relative 'methode'
-require_relative 'introduction_hexaflex'
-require_relative 'textes_introduction_hexaflex'
+require_relative 'exercices/introduction_hexaflex'
+require_relative 'exercices/textes_introduction_hexaflex'
 include Facebook::Messenger
 # Facebook::Messenger::Bot
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
