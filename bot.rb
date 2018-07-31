@@ -29,7 +29,6 @@ def get_started
       say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
       IntroductionHexaflex.analyse_choix_dimension(sender_id)
     end
-    end
   end
 end
 
