@@ -21,6 +21,7 @@ PersistentMenu.enable
 # Logic for postbacks
 def get_started
   Bot.on :postback do |postback|
+    puts "Received '#{postback.inspect}' from #{postback.sender}"
     sender_id = postback.sender['id']
     case postback.payload
     when 'GET_STARTED_PAYLOAD' then show_humour_replies(postback.sender['id'], HUMOUR)
