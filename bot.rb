@@ -57,7 +57,26 @@ def humour_analysis(sender_id)
       what_is_ur_objective(sender_id)
     elsif answer.include?("peu") || answer.include?("pas")
       say(sender_id, ANS_HUMOUR[:good], AHEAD) # Asks to continue though
-      Methode.methode_init(sender_id) #goes straight to the method
+      Bot.on :message do |message|
+        puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+        message.mark_seen
+        answer = message.text.downcase
+        if answer.include?("Allons-y!") || answer.include?("go")
+          Methode.methode_init(sender_id) #goes straight to the method
+        elsif answer.include?("non") #goodbye
+          say(sender_id, ANS_METHODE_MOTIVE[:non])
+        message.reply(
+            attachment: {
+              type: 'image',
+              payload: {
+                url: 'https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif' #sad patrick
+              }
+            }
+          )
+        else
+          say(sender_id, IDIOMS[:unknown_command], AHEAD) #pas compris, on redemande
+        end
+      end
     elsif
       say(sender_id, IDIOMS[:unknown_command], HUMOUR)
       humour_analysis(sender_id)
