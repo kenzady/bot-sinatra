@@ -1,5 +1,6 @@
 #require 'dotenv/load'
 require 'sinatra'
+require 'sinatra/activerecord'
 
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
 

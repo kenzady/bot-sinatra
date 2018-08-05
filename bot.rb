@@ -136,6 +136,6 @@ def handle_objective(sender_id)
   end
 end
 
-#wait_for_any_input
 
 get_started
+wait_for_any_input
