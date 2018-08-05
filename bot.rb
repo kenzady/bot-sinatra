@@ -7,6 +7,7 @@ require_relative 'stress_management'
 require_relative 'methode'
 require_relative 'exercices/introduction_hexaflex'
 require_relative 'exercices/textes_introduction_hexaflex'
+require_relative 'models/users'
 include Facebook::Messenger
 # Facebook::Messenger::Bot
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
@@ -23,8 +24,9 @@ def get_started
   Bot.on :postback do |postback|
     puts "Received '#{postback.inspect}' from #{postback.sender}"
     sender_id = postback.sender['id']
+    user = User.new(sender_id)
     case postback.payload
-    when 'GET_STARTED_PAYLOAD' then show_humour_replies(sender_id, HUMOUR)
+    when 'GET_STARTED_PAYLOAD' then show_humour_replies(user.user_id, HUMOUR)
     when 'EXERCICES_MENU'
       say(sender_id, MENU_PERSISTANT[:mes_exercices], LISTE_DIMENSIONS)
       # pour l'instant je met ça mais il faudra créer une méthode externe quand on aura savé les infos du user
