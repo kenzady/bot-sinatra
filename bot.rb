@@ -24,6 +24,7 @@ def get_started
   Bot.on :postback do |postback|
     puts "Received '#{postback.inspect}' from #{postback.sender}"
     sender_id = postback.sender['id']
+    #test
     user = User.new(sender_id)
     case postback.payload
     when 'GET_STARTED_PAYLOAD' then show_humour_replies(user.user_id, HUMOUR)
