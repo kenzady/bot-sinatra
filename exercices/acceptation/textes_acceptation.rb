@@ -1,3 +1,5 @@
+EXOS_ACCEPTATION = ["exo_allumette", "exo_embrasser_le_mauvais"]
+
 ALLUMETTE = {
   intro_nom:
 "L'exercice que je te propose est le suivant: l'allumette. Ca te va?",
