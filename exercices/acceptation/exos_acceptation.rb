@@ -76,7 +76,7 @@ class Acceptation
                   }
                 )
               elsif answer.include?("changer") #utilisateur veut changer de dimension
-                IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des exos
+                GeneraleExos.exo_random(sender_id, exos_acceptation, Acceptation, "exo_allumette") #redirige vers l'explication des exos
               else
                 say(sender_id, ALLUMETTE[:nouvel_exercice], NOUVEL_EXERCICE) #pas compris, on demande ce qu'il veut faire
               end
