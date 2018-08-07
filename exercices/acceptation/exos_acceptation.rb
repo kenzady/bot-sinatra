@@ -84,7 +84,7 @@ class Acceptation
           end
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
-        Acceptation.exo_random(sender_id) #change d'exo
+        GeneraleExos.exo_random(sender_id, exos_acceptation, Acceptation, "exo_allumette") #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
         IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
       else
@@ -112,7 +112,7 @@ class Acceptation
           say(sender_id, EMBRASSER[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice(sender_id, Acceptation, exos_acceptation, "exo_embrasser_le_mauvais") #redirige vers la methode nouvel exercice
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
-        Acceptation.exo_random(sender_id) #change d'exo
+        GeneraleExos.exo_random(sender_id, exos_acceptation, Acceptation, "exo_embrasser_le_mauvais") #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
         IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
       else
