@@ -35,7 +35,7 @@ class ActionsEngagees
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
       else
-        say(sender_id, actions_engagees_mesure[:unknown_command], START_EXERCISE) #pas compris, on redemande
+        say(sender_id, MESURE[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
     end
   end
@@ -72,7 +72,7 @@ class ActionsEngagees
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
       else
-        say(sender_id, IDIOMS[:unknown_command], START_EXERCISE) #pas compris, on redemande
+        say(sender_id, DECOUPAGE[:unknown_command], START_EXERCISE) #pas compris, on redemande
       end
     end
   end
