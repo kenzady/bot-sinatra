@@ -4,18 +4,18 @@ require_relative '../structure unique/gestion_generale_exos'
 require_relative '../structure unique/textes_gestion_gen_exos'
 
 class Acceptation
-  def self.exo_random(sender_id)
-    exos_acceptation = ["exo_allumette", "exo_embrasser_le_mauvais"]
-    exercice = exos_acceptation.sample
+  # def self.exo_random(sender_id)
+  #   exos_acceptation = ["exo_allumette", "exo_embrasser_le_mauvais"]
+  #   exercice = exos_acceptation.sample
 
-    if exercice == "exo_allumette"
-      exos_acceptation[1] = "exo_embrasser_le_mauvais"
-      Acceptation.exo_allumette(sender_id, exos_acceptation)
-    elsif exercice == "exo_embrasser_le_mauvais"
-      exos_acceptation[1] = "exo_allumette"
-      Acceptation.exo_embrasser_le_mauvais(sender_id, exos_acceptation)
-    end
-  end
+  #   if exercice == "exo_allumette"
+  #     exos_acceptation[1] = "exo_embrasser_le_mauvais"
+  #     Acceptation.exo_allumette(sender_id, exos_acceptation)
+  #   elsif exercice == "exo_embrasser_le_mauvais"
+  #     exos_acceptation[1] = "exo_allumette"
+  #     Acceptation.exo_embrasser_le_mauvais(sender_id, exos_acceptation)
+  #   end
+  #end
 
   def self.exo_allumette(sender_id, exos_acceptation)
     say(sender_id, ALLUMETTE[:intro_nom], START_EXERCISE) #nom de l'exercice #demande s'il veut faire l'exercice ou changer d'exercice ou de dimension
