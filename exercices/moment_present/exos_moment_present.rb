@@ -78,7 +78,7 @@ class MomentPresent
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("autre")
         say(sender_id, ANS_MINUTEUR[:skip])
-        GeneraleExos.exo_random(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") #nouvel exercice random parmi ceux non faits
+        GeneraleExos.exo_random(sender_id, exos_moment_present, MomentPresent, "exo_minuteur_start") #nouvel exercice random parmi ceux non faits
       else
         say(sender_id, IDIOMS[:unknown_command], MINUTEUR_TIME)
       end
