@@ -79,7 +79,7 @@ class Acceptation
             }
           }
         )
-          sleep(5.Minutes)
+          sleep(5.minutes)
           say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
           GeneraleExos.analyse_feedback(sender_id, Acceptation, exos_acceptation, "exo_embrasser_le_mauvais") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
