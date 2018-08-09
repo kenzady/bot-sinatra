@@ -43,7 +43,7 @@ class MomentPresent
           GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
-        GeneraleExos.exo_random(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") #change d'exo
+        GeneraleExos.exo_random(sender_id, exos_moment_present, MomentPresent, "exo_jeu_du_detail") #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication brève des dimensions
