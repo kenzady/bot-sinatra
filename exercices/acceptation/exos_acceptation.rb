@@ -51,6 +51,7 @@ class Acceptation
           say(sender_id, ALLUMETTE[:explication_part_2]) #on explique la métaphore partie 2 pour pas que ce soit trop long
           say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
           GeneraleExos.analyse_feedback(sender_id, Acceptation, exos_acceptation, "exo_allumette") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
+        end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, exos_acceptation, Acceptation, "exo_allumette") #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
