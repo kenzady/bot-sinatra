@@ -19,7 +19,7 @@ end
 class GeneraleExos
   def self.exo_random(sender_id, exos_dim, dim, exo_fait = nil) # exos_dim est un array d'exos, exo_fait est setté à nil car non obligatoire
     if exo_fait
-      exos_dim = exos_dim - exo_fait # Exclue l'exo déjà fait
+      exos_dim = exos_dim.except(exo_fait) # Exclue l'exo déjà fait
     end
     if exos_dim == [] # Si tous les exos ont déjà été faits
       say(sender_id, NEW_EXO[:no_more_exos_available], NOUVEL_EXERCICE)
