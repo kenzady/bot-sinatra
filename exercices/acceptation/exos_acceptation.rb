@@ -71,6 +71,7 @@ class Acceptation
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
       answer = message.text.downcase
       if answer.include?("go") #si l'utilisateur veut faire cet exo, on envoie la piste audio
+        say(sender_id, EMBRASSER[:intro]) #message 200 so it doesn't go into infinite loop
         message.reply(
           attachment: {
             type: 'audio',
