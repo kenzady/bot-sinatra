@@ -24,7 +24,7 @@ EMBRASSER = {
 ready:
 "L'exercice que je te propose s'appelle 'Embrasser le mauvais et offrir le bon' et c'est un exercice audio. Ça te tente ?",
 intro:
-"C'est parti ! ",
+"C'est parti !",
 nouvel_exercice:
 "Maintenant que nous avons terminé, as-tu envie d'en faire un autre ?",
 unknown_command:
