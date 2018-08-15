@@ -230,7 +230,7 @@ ANS_AIDE_EXTERIEURE = {
   aide_pro: "C'est génial que tu aies pris le temps d'aller voir un spécialiste ! Cela va nous permettre de commencer sur des bases solides !",
   aide_entourage: "C'est super que tu aies des gens de confiance sur qui compter ! Et le fait que tu aies eu le courage de te livrer à eux me fait penser que nous allons pouvoir grandement avancer ensemble !",
   aide_internet: "C'est une mine d'information c'est sûr ! Je peux moi-même être considéré comme de l'aide sur Internet ! Nous allons bien travailler ensemble, j'en suis convaincu !",
-  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! :blush:"
+  dont_know: "On a souvent du mal à savoir pourquoi les choses n'ont pas marché, c'est vrai. Mais chacun à des outils qui lui correspondent le mieux, et le tout est de continuer à chercher sa perle rare. Qui sait, ça sera peut-être moi ! 😌"
 }
 
 RAISONS_INEFFICACITE = [
