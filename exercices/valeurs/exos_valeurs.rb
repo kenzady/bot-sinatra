@@ -56,8 +56,9 @@ class Valeurs
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           answer = message.text.downcase
           say(sender_id, SE_REMERCIER[:note]) #lui dire qu'on prend note et que ce sont ses valeurs
-          say(sender_id, SE_REMERCIER[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice?(sender_id, Valeurs, exos_valeurs, "exo_se_remercier") #redirige vers la methode nouvel exercice
+          sleep(1)
+          say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
+          GeneraleExos.analyse_feedback(sender_id, Valeurs, exos_valeurs, "exo_se_remercier") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, EXOS_VALEURS , Valeurs, "exo_se_remercier") #change d'exo
