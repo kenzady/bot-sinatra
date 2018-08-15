@@ -107,7 +107,7 @@ class MomentPresent
             }
           }
         )
-      sleep(15)
+      sleep(10)
       #sleep(40)
       say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
       GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") #renvoie a la method feedback pour répondre a l'utilisateur
