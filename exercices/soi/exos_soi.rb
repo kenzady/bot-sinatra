@@ -20,8 +20,8 @@ class Soi
             }
           }
         )
-        say(sender_id, SOI_OBSERVATEUR[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-        GeneraleExos.nouvel_exercice?(sender_id, Soi, exos_soi, "exo_soi_observateur") #redirige vers la methode nouvel exercice
+          say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
+          GeneraleExos.analyse_feedback(sender_id, Soi, exos_soi, "exo_soi_observateur") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, exos_soi, Soi, "exo_soi_observateur") # Change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
