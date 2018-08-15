@@ -1,7 +1,7 @@
 IDIOMS = {
   greetings:
   "Bonjour je m’appelle Delphos. Je suis ici pour t'aider à vivre mieux et pour vivre sans stress.
-Comment te sens-tu aujourd’hui ?",
+Te sens-tu stressé aujourd'hui ?",
   unknown_command:
   "Désolé, je n'ai pas compris ta réponse, peux-tu cliquer sur un bouton s'il te plaît ?",
   objectives:
@@ -24,17 +24,17 @@ MENU_PERSISTANT =
 HUMOUR = [
   {
     content_type: 'text',
-    title: 'Sévèrement stréssé(e)',
+    title: 'Sévèrement',
     payload: 'HIGLY_STRESSED'
   },
   {
     content_type: 'text',
-    title: 'Moyennement stressé(e)',
+    title: 'Moyennement',
     payload: 'SOMEWHAT_STRESSED'
   },
   {
     content_type: 'text',
-    title: 'Pas stressé(e)',
+    title: 'Pas du tout',
     payload: 'NOT_STRESSED'
   }
 ]
