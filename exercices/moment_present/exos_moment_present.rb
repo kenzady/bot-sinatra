@@ -43,7 +43,7 @@ class MomentPresent
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
           sleep(3)
           say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
-          GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
+          GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, exos_moment_present, MomentPresent, "exo_jeu_du_detail") #change d'exo
