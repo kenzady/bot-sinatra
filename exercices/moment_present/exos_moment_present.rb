@@ -65,17 +65,21 @@ class MomentPresent
       answer = message.text.downcase
       if answer.include?("10 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
+        sleep(10)
         #sleep(600) -- ici le but serait de 'pauser' pendant le nombre de secondes demandées
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("30 minutes")
+        sleep(10)
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(1800)
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("1 heure")
+        sleep(10)
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(3600)
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("1 heure 30")
+        sleep(10)
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(5400)
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
@@ -102,6 +106,7 @@ class MomentPresent
             }
           }
         )
+      sleep(15)
       #sleep(40)
       say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
       GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") #renvoie a la method feedback pour répondre a l'utilisateur
