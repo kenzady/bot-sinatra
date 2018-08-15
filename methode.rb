@@ -6,6 +6,7 @@ class Methode
   def self.methode_init(sender_id)
       sleep(2)
       say(sender_id, IDIOMS[:methode])
+      sleep(2)
       message_options = {
         recipient: { id: sender_id },
         message: {
@@ -71,6 +72,7 @@ class Methode
         }
       }
       Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
+      sleep(2)
       say(sender_id, IDIOMS[:motive_ou_pas], METHODE_MOTIVE)
       Methode.es_tu_motive(sender_id)
   end

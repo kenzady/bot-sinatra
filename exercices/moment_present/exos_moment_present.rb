@@ -59,6 +59,7 @@ class MomentPresent
   # EXO MINUTEUR (2 PARTS)
   def self.exo_minuteur_start(sender_id, exos_moment_present)
     say(sender_id, MINUTEUR[:intro]) #on explique les consignes
+    sleep(3)
     say(sender_id, MINUTEUR[:ready], MINUTEUR_TIME) #on demande combien de temps la personne veut attendre
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -106,7 +107,7 @@ class MomentPresent
             }
           }
         )
-      sleep(15)
+      sleep(10)
       #sleep(40)
       say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
       GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") #renvoie a la method feedback pour répondre a l'utilisateur

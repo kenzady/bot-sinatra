@@ -61,21 +61,27 @@ class IntroductionHexaflex
       answer = message.text.downcase
       if answer.include?("présent")
         say(sender_id, REPONSE_CHOIX_DIM[:moment_present]) # réponse personalisée au choix de la dimension
+        sleep(1)
         GeneraleExos.exo_random(sender_id, EXOS_MOMENT_PRESENT, MomentPresent)
       elsif answer.include?("défusion")
         say(sender_id, REPONSE_CHOIX_DIM[:defusion])  # réponse personalisée au choix de la dimension
+        sleep(1)
         GeneraleExos.exo_random(sender_id, EXOS_DEFUSION, Defusion)
       elsif answer.include?("acceptation")
         say(sender_id, REPONSE_CHOIX_DIM[:acceptation])
+        sleep(1)
         GeneraleExos.exo_random(sender_id, EXOS_ACCEPTATION, Acceptation)
       elsif answer.include?("valeurs")
         say(sender_id, REPONSE_CHOIX_DIM[:valeurs])
-          GeneraleExos.exo_random(sender_id, EXOS_VALEURS, Valeurs)
+        sleep(1)
+        GeneraleExos.exo_random(sender_id, EXOS_VALEURS, Valeurs)
       elsif answer.include?("contexte")
         say(sender_id, REPONSE_CHOIX_DIM[:soi_contexte])
+        sleep(1)
         GeneraleExos.exo_random(sender_id, EXOS_SOI, Soi)
       elsif answer.include?("action")
         say(sender_id, REPONSE_CHOIX_DIM[:action])
+        sleep(1)
         GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees)
       else
         say(sender_id, IDIOMS[:unknown_command], GESTION_STRESS)
