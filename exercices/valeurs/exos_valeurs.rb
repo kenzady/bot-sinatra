@@ -31,10 +31,9 @@ class Valeurs
           sleep(3)
           say(sender_id, DINER_CELEBRATION[:note_valeurs])  #lui dit de les noter (+ il faudrait qu'on essaie de les sauvegarder)
           sleep(1)
-          say(sender_id, DINER_CELEBRATION[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-          GeneraleExos.nouvel_exercice?(sender_id, Valeurs, exos_valeurs, "exo_diner_celebration") #redirige vers la methode nouvel exercice
+          say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
+          GeneraleExos.analyse_feedback(sender_id, Valeurs, exos_valeurs, "exo_diner_celebration") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
-
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, EXOS_VALEURS , Valeurs, "exo_diner_celebration") #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
