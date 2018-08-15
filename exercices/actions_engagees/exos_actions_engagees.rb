@@ -24,6 +24,7 @@ class ActionsEngagees
               puts "Received '#{message.inspect}' from #{message.sender}" # debug only
               answer = message.text.downcase
               say(sender_id, MESURE[:fin]) # On dit de noter tout cela + on explique le but
+              sleep(3)
               say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
               GeneraleExos.analyse_feedback(sender_id, ActionsEngagees, exos_actions_engagees, "exo_actions_engagees_mesure") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
             end
@@ -61,6 +62,7 @@ class ActionsEngagees
               puts "Received '#{message.inspect}' from #{message.sender}" # debug only
               answer = message.text.downcase
               say(sender_id, DECOUPAGE[:note]) #on dit de noter ces actions + on explique le but
+              sleep(3)
               say(sender_id, FEEDBACK_QUESTION, FEEDBACK) # Demande feedback
              GeneraleExos.analyse_feedback(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
             end

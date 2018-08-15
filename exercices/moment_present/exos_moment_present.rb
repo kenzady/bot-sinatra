@@ -21,6 +21,7 @@ class MomentPresent
             }
           }
         )
+        sleep(15)
         say(sender_id, JEU_DU_DETAIL[:time_up]) # Temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -38,9 +39,11 @@ class MomentPresent
           else
             say(sender_id, JEU_DU_DETAIL[:peux_mieux_faire])
           end
+          sleep(1)
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
+          sleep(3)
           say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
-          GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
+          GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_jeu_du_detail") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
         GeneraleExos.exo_random(sender_id, exos_moment_present, MomentPresent, "exo_jeu_du_detail") #change d'exo
@@ -62,17 +65,21 @@ class MomentPresent
       answer = message.text.downcase
       if answer.include?("10 minutes")
         say(sender_id, ANS_MINUTEUR[:play])
+        sleep(10)
         #sleep(600) -- ici le but serait de 'pauser' pendant le nombre de secondes demandées
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("30 minutes")
+        sleep(10)
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(1800)
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("1 heure")
+        sleep(10)
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(3600)
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
       elsif answer.include?("1 heure 30")
+        sleep(10)
         say(sender_id, ANS_MINUTEUR[:play])
         #sleep(5400)
         MomentPresent.exo_minuteur_suite(sender_id, exos_moment_present)
@@ -99,6 +106,7 @@ class MomentPresent
             }
           }
         )
+      sleep(15)
       #sleep(40)
       say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
       GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") #renvoie a la method feedback pour répondre a l'utilisateur
