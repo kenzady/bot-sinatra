@@ -4,6 +4,7 @@ require_relative 'exercices/introduction_hexaflex'
 
 class Methode
   def self.methode_init(sender_id)
+      sleep(2)
       say(sender_id, IDIOMS[:methode])
       message_options = {
         recipient: { id: sender_id },
@@ -88,6 +89,7 @@ class Methode
             }
           }
         )
+        sleep(2)
         IntroductionHexaflex.presentation_hexaflex(sender_id)
       elsif answer.include?("non")
         say(sender_id, ANS_METHODE_MOTIVE[:non])
