@@ -24,8 +24,8 @@ class ActionsEngagees
               puts "Received '#{message.inspect}' from #{message.sender}" # debug only
               answer = message.text.downcase
               say(sender_id, MESURE[:fin]) # On dit de noter tout cela + on explique le but
-              say(sender_id, MESURE[:nouvel_exercice], NOUVEL_EXERCICE) # Demande a l'utilisateur ce qu'il veut faire maintenant
-              GeneraleExos.nouvel_exercice?(sender_id, ActionsEngagees, EXOS_ACTIONS_ENGAGEES, "exo_decoupage") # Redirige vers la methode nouvel exercice
+              say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
+              GeneraleExos.analyse_feedback(sender_id, ActionsEngagees, exos_actions_engagees, "exo_actions_engagees_mesure") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
             end
           end
         end
@@ -62,7 +62,7 @@ class ActionsEngagees
               answer = message.text.downcase
               say(sender_id, DECOUPAGE[:note]) #on dit de noter ces actions + on explique le but
               say(sender_id, FEEDBACK_QUESTION, FEEDBACK) # Demande feedback
-             GeneraleExos.analyse_feedback(sender_id, Defusion, exos_defusion, "exo_chocolat_chocolat") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
+             GeneraleExos.analyse_feedback(sender_id, ActionsEngagees, exos_actions_engagees, "exo_decoupage") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
             end
           end
         end
