@@ -21,6 +21,19 @@ class IntroductionHexaflex
       say(sender_id, PRESENTATION_HEXAFLEX[:act])
       sleep(3)
       say(sender_id, PRESENTATION_HEXAFLEX[:flexibilité]) # il faudra rajouter une liste d'articles explicanr chaque branche car pour l'instant le user ne sais pas de quoi il s'agit avant de cliquer
+      message_options = {
+        recipient: { id: sender_id },
+        message: {
+          attachment:{
+            type: 'image',
+            payload: {
+              url: 'http://www.psyris.be/wp-content/uploads/2017/03/loadimg.php_.jpeg'
+            }
+          }
+        }
+      }
+      Bot.deliver(message_options, access_token: ENV['ACCESS_TOKEN'])
+
       # Bot.deliver(
       # {
       #   recipient:
