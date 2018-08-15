@@ -50,8 +50,9 @@ class Soi
               puts "Received '#{message.inspect}' from #{message.sender}" # debug only
               answer = message.text.downcase
               say(sender_id, JEU_DE_ROLE[:but])
-              say(sender_id, JEU_DE_ROLE[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
-              GeneraleExos.nouvel_exercice(sender_id, Soi, exos_soi, "exo_jeu_de_role") #redirige vers la methode nouvel exercice
+              say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
+              GeneraleExos.analyse_feedback(sender_id, Soi, exos_soi, "exo_jeu_de_role") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
+
             end
           end
       elsif answer.include?("exo") #l'utilisateur veut changer d'exo
