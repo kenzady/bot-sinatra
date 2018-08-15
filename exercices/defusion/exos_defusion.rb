@@ -10,7 +10,7 @@ class Defusion
     sleep(5)
     say(sender_id, CHOCOLAT_CHOCOLAT[:intro_bis]) # bot dit ce qu'il ressent avec chocolat
     say(sender_id, CHOCOLAT_CHOCOLAT[:repetition]) #demande de répéter le mot chocolat pdt 1 minute
-    sleep(15) #should be a 1 minute break
+    sleep(10) #should be a 1 minute break
     say(sender_id, CHOCOLAT_CHOCOLAT[:arret_repetition])
     sleep(7)
     say(sender_id, CHOCOLAT_CHOCOLAT[:debut_repetition_souffrance], ANS_CHOCOLAT_CHOCOLAT) #demande de répéter le mot qui fait souffrir pdt 1 minute
