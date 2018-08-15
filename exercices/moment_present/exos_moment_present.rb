@@ -21,6 +21,7 @@ class MomentPresent
             }
           }
         )
+        sleep(15)
         say(sender_id, JEU_DU_DETAIL[:time_up]) # Temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
@@ -38,7 +39,9 @@ class MomentPresent
           else
             say(sender_id, JEU_DU_DETAIL[:peux_mieux_faire])
           end
+          sleep(1)
           say(sender_id, JEU_DU_DETAIL[:but_exercice]) #explique le but de l'exercice
+          sleep(3)
           say(sender_id, FEEDBACK_QUESTION, FEEDBACK) #demande feedback
           GeneraleExos.analyse_feedback(sender_id, MomentPresent, exos_moment_present, "exo_minuteur_start") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
         end
