@@ -13,6 +13,7 @@ class Valeurs
       answer = message.text.downcase
       if answer.include?("go") #si l'utilisateur veut faire cet exo, affiche l'image
         say(sender_id, DINER_CELEBRATION[:intro]) #Debut de l'exercice
+        sleep(2)
         message.reply( #bridget jones gif
           attachment: {
             type: 'image',
@@ -21,12 +22,15 @@ class Valeurs
             }
           }
         )
+        sleep(2)
         say(sender_id, DINER_CELEBRATION[:fete]) #Demande ce que l'utilisateur voudrait entendre a ce diner
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
           answer = message.text.downcase
           say(sender_id, DINER_CELEBRATION[:reponse_valeurs]) #lui dit que ce sont ses valeurs
+          sleep(3)
           say(sender_id, DINER_CELEBRATION[:note_valeurs])  #lui dit de les noter (+ il faudrait qu'on essaie de les sauvegarder)
+          sleep(1)
           say(sender_id, DINER_CELEBRATION[:nouvel_exercice], NOUVEL_EXERCICE) #demande a l'utilisateur ce qu'il veut faire maintenant
           GeneraleExos.nouvel_exercice?(sender_id, Valeurs, exos_valeurs, "exo_diner_celebration") #redirige vers la methode nouvel exercice
         end
