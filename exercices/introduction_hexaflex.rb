@@ -85,7 +85,7 @@ class IntroductionHexaflex
         GeneraleExos.exo_random(sender_id, EXOS_ACTIONS_ENGAGEES, ActionsEngagees)
       else
         say(sender_id, IDIOMS[:unknown_command], GESTION_STRESS)
-        IntroductionHexaflex.analyse_choix_dimension
+        IntroductionHexaflex.analyse_choix_dimension(sender_id)
       end
     end
   end
