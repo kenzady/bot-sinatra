@@ -1,7 +1,7 @@
 # require 'pg'
 # require 'rubygems'
 # require 'sinatra'
-# require 'active_record'
+# require 'active_record' test
 
 class User < ActiveRecord::Base
 # attr_accessor :id, :fb_id, :first_name
