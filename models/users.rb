@@ -4,6 +4,9 @@
 # require 'active_record' test
 
 class User < ActiveRecord::Base
+  def initialize(sender_id)
+    @sender_id = sender_id
+  end
 # attr_accessor :id, :fb_id, :first_name
 
 #   def self.all
