@@ -21,7 +21,7 @@ class MomentPresent
             }
           }
         )
-        sleep(15)
+        sleep(10)
         say(sender_id, JEU_DU_DETAIL[:time_up]) # Temps écoulé, l'utilisateur est invité à dire ce qu'il a vu
         Bot.on :message do |message|
           puts "Received '#{message.inspect}' from #{message.sender}" # debug only
