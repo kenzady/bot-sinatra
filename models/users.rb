@@ -3,10 +3,10 @@
 # require 'sinatra'
 # require 'active_record' test
 
-class User < ActiveRecord::Base
-  def initialize(sender_id)
-    @sender_id = sender_id
-  end
+# class User < ActiveRecord::Base
+#   def initialize(sender_id)
+#     @sender_id = sender_id
+#   end
 # attr_accessor :id, :fb_id, :first_name
 
 #   def self.all
@@ -54,5 +54,5 @@ class User < ActiveRecord::Base
 #     db.exec_params("UPDATE users SET fb_id = $2, first_name = $3 WHERE id = $1",
 #       [id, fb_id, first_name])
 #   end
-end
+# end
 
