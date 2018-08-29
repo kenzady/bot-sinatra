@@ -14,13 +14,13 @@ require 'active_record'
 # )
 # NOTE: ENV variables should be set directly in terminal for testing on localhost
 
-configure :development do
-  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'ignilifeproject', pool: 2, username: 'kenza', password: 'ignilifeprojectacek'}
-end
+# configure :development do
+#   set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'ignilifeproject', pool: 2, username: 'kenza', password: 'ignilifeprojectacek'}
+# end
 
-configure :production do
-  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'ignilifeproject', pool: 2, username: 'kenza', password: 'ignilifeprojectacek'}
-end
+# configure :production do
+#   set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'ignilifeproject', pool: 2, username: 'kenza', password: 'ignilifeprojectacek'}
+# end
 
 # Talk to Facebook
 get '/webhook' do
