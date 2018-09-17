@@ -7,21 +7,21 @@ class Defusion
   def self.exo_chocolat_chocolat(sender_id, exos_defusion)
     say(sender_id, CHOCOLAT_CHOCOLAT[:intro]) # Intro de l'exercice, chocolat lentement
     # Insérer une pause
-    sleep(5)
+    #sleep(5)
     say(sender_id, CHOCOLAT_CHOCOLAT[:intro_bis]) # bot dit ce qu'il ressent avec chocolat
     say(sender_id, CHOCOLAT_CHOCOLAT[:repetition]) #demande de répéter le mot chocolat pdt 1 minute
-    sleep(10) #should be a 1 minute break
+    #sleep(10) #should be a 1 minute break
     say(sender_id, CHOCOLAT_CHOCOLAT[:arret_repetition])
-    sleep(7)
+    #sleep(7)
     say(sender_id, CHOCOLAT_CHOCOLAT[:debut_repetition_souffrance], ANS_CHOCOLAT_CHOCOLAT) #demande de répéter le mot qui fait souffrir pdt 1 minute
     Bot.on :message do |message|
       puts "Received '#{message.inspect}' from #{message.sender}" # Debug only
       answer = message.text.downcase
       if answer.include?("bon")
         say(sender_id, CHOCOLAT_CHOCOLAT[:go]) # Commence les 1 minutes
-        sleep(15) #should be a 1 minute break
+        #sleep(15) #should be a 1 minute break
         say(sender_id, CHOCOLAT_CHOCOLAT[:fin_exercice]) # Explique le but de l'exercice
-        sleep(5)
+        #sleep(5)
         say(sender_id, FEEDBACK_QUESTION, FEEDBACK) # Demande feedback
         GeneraleExos.analyse_feedback(sender_id, Defusion, exos_defusion, "exo_chocolat_chocolat") # Renvoie a la methode analyse_feedback pour répondre a l'utilisateur
       elsif answer.include?("exo") # L'utilisateur veut changer d'exo
