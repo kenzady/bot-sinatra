@@ -27,7 +27,7 @@ MESURE = {
   intro:
   "C'est parti alors, le voici !" ,
   actions:
-  "La première étape est de définir les actions que tu fais et qui sont en accord avec tes valeurs. Par exemple, si une de mes valeurs les plus important est l'authenticité, le fait d'être moi-même en toute occasion serait une action engagée.",
+  "La première étape est de définir les actions que tu fais et qui sont en accord avec tes valeurs. Par exemple, si une de mes valeurs les plus importantes est l'authenticité, le fait d'être moi-même en toute occasion serait une action engagée.",
   autres:
   "Maintenant, pourrais-tu penser à une ou plusieurs autres actions que tu pourrais faire et qui seraient en accord avec tes valeurs ?",
   bloqueurs:
