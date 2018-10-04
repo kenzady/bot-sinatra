@@ -52,7 +52,6 @@ end
 def humour_analysis(sender_id)
   Bot.on :message do |message|
     puts "Received '#{message.inspect}' from #{message.sender}" # debug only
-    message.mark_seen
     answer = message.text.downcase
     if answer.include?("sévèrement") || answer.include?("moyennement")
       message.typing_on
