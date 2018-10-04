@@ -53,6 +53,32 @@ class GeneraleExos
             }
           }
         )
+        Bot.on :message do |message| # Recupere la réponse de l'utilisateur
+          puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+          answer = message.text.downcase
+          say(sender_id, WELCOME_BACK_QUESTION, WELCOME_BACK_ANSWERS) #says welcome back and asks the user what they want to do
+          Bot.on :message do |message| # Recupere la réponse de l'utilisateur
+            puts "Received '#{message.inspect}' from #{message.sender}" # debug only
+            answer = message.text.downcase
+            if answer.include?("exercice") # exercice
+              say(sender_id, PRESENTATION_HEXAFLEX[:question_choix_dimension], LISTE_DIMENSIONS)
+              IntroductionHexaflex.analyse_choix_dimension(sender_id)
+            elsif answer.include?("methode") # Un peu aimé
+              Methode.methode_init(sender_id)
+            elsif answer.include?("revoir") # Goodbye
+              message.reply( #avec gif mickey bye
+                attachment: {
+                  type: 'image',
+                  payload: {
+                    url: 'https://media.giphy.com/media/JDTsqJhvLOq9G/giphy.gif'
+                  }
+                }
+              )
+            else
+              say(sender_id, IDIOMS[:unknown_command], WELCOME_BACK_ANSWERS) # Pas compris, on redemande
+            end
+          end
+        end
       elsif answer.include?("changer") # Utilisateur veut changer de dimension
         say(sender_id, QUESTION_SIMPLE_DIMENSION, LISTE_DIMENSIONS)
         IntroductionHexaflex.analyse_choix_dimension(sender_id) # Redirige vers l'explication des exos

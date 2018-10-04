@@ -246,7 +246,7 @@ RAISONS_INEFFICACITE = [
     },
     {
       content_type: 'text',
-      title: "Ça n'a pas marché",
+      title: "Autre raison",
       payload: 'PAS_MARCHE'
     },
     {

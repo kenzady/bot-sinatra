@@ -77,3 +77,24 @@ ANS_FEEDBACK = {
   pas_du_tout:
   "J'en suis navré 😞😔 Sache que cet exercice devient de plus en plus facile à force de répétition. J'espère que tu l'apprécieras plus la prochaine fois ! Que veux tu faire maintenant?"
 }
+
+
+WELCOME_BACK_QUESTION = "Content de te revoir ! Que veux-tu faire ? "
+
+WELCOME_BACK_ANSWERS = [
+  {
+    content_type: 'text',
+    title: "Exercices",
+    payload: 'EXERCICE'
+  },
+  {
+    content_type: 'text',
+    title: 'Méthode',
+    payload: 'METHODE'
+  },
+    {
+    content_type: 'text',
+    title: "Au revoir",
+    payload: 'GOODBYE'
+    }
+]
