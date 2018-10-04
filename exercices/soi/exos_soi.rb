@@ -55,7 +55,7 @@ class Soi
 
             end
           end
-      elsif answer.include?("exo") #l'utilisateur veut changer d'exo
+      elsif answer.include?("exo", exos_soi, Soi, "exo_jeu_de_role") #l'utilisateur veut changer d'exo
         Soi.exo_random(sender_id) #change d'exo
       elsif answer.include?("dimension") #l'utilisateur veut changer de dimension
         IntroductionHexaflex.presentation_hexaflex(sender_id) #redirige vers l'explication des thèmes
